@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MODELO", "MODELO\MODELO.csproj", "{24493B7C-AD10-4274-854B-F692385BA385}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CONTROLADOR", "Controlador\CONTROLADOR.csproj", "{F9FA930D-E0AD-4C43-82F9-250A6B6A960D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VISTA", "VISTA\VISTA.csproj", "{45712C6C-7270-4361-8BEF-72C52D51BEAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24493B7C-AD10-4274-854B-F692385BA385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24493B7C-AD10-4274-854B-F692385BA385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24493B7C-AD10-4274-854B-F692385BA385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24493B7C-AD10-4274-854B-F692385BA385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9FA930D-E0AD-4C43-82F9-250A6B6A960D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9FA930D-E0AD-4C43-82F9-250A6B6A960D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9FA930D-E0AD-4C43-82F9-250A6B6A960D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9FA930D-E0AD-4C43-82F9-250A6B6A960D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45712C6C-7270-4361-8BEF-72C52D51BEAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45712C6C-7270-4361-8BEF-72C52D51BEAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45712C6C-7270-4361-8BEF-72C52D51BEAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45712C6C-7270-4361-8BEF-72C52D51BEAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F95AB27-5D65-423F-8BCC-AB5325E86253}
+	EndGlobalSection
+EndGlobal
