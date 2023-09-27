@@ -12,17 +12,10 @@ namespace ProyectoContabilidadDeCosto.Opciones.Inventario
 {
     public partial class Inventario : Form
     {
-        Controlador.Controller Control = new Controlador.Controller();
         public Form FormularioVista { get; set; }
         public Inventario()
         {
             InitializeComponent();
-            if(Datos.Pros.Count > 0 && Datos.Salidas.Count > 0 && Datos.Entradas.Count > 0 
-                && Datos.Inventory.Count > 0)
-            {
-                Control.RepararInventario(Datos.Inventory, Datos.Entradas, Datos.Salidas);
-                Control.RellenarInventario(Datos.Inventory, dgvInventario);
-            }
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
