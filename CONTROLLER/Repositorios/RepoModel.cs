@@ -31,4 +31,112 @@ namespace CONTROLLER.Repositorios
         }
     }
 
+    public class RepoEntrada : Repositorio<Entrada>
+    {
+        private readonly ESInventarioContext _db;
+        public RepoEntrada(ESInventarioContext db) : base(db) { _db = db; }
+
+        public void Update(Entrada c)
+        {
+            _db.Entradas.Update(c);
+            Save();
+        }
+    }
+
+    public class RepoCategoriaProd : Repositorio<CategoriaProd>
+    {
+        private readonly ESInventarioContext _db;
+        public RepoCategoriaProd(ESInventarioContext db) : base(db) { _db = db; }
+
+        public void Update(CategoriaProd c)
+        {
+            _db.CategoriaProds.Update(c);
+            Save();
+        }
+    }
+
+    public class RepoDetalleEntrada : Repositorio<DetalleEntradum>
+    {
+        private readonly ESInventarioContext _db;
+        public RepoDetalleEntrada(ESInventarioContext db) : base(db) { _db = db; }
+
+        public void Update(DetalleEntradum c)
+        {
+            _db.DetalleEntrada.Update(c);
+            Save();
+        }
+    }
+
+    public class RepoFactura : Repositorio<Factura>
+    {
+        private readonly ESInventarioContext _db;
+        public RepoFactura(ESInventarioContext db) : base(db) { _db = db; }
+
+        public void Update(Factura c)
+        {
+            _db.Facturas.Update(c);
+            Save();
+        }
+    }
+
+    public class RepoInventario : Repositorio<Inventario>
+    {
+        private readonly ESInventarioContext _db;
+        public RepoInventario(ESInventarioContext db) : base(db) { _db = db; }
+
+        public void Update(Inventario c)
+        {
+            _db.Inventarios.Update(c);
+            Save();
+        }
+    }
+
+    public class RepoLocalizacion : Repositorio<Localizacion>
+    {
+        private readonly ESInventarioContext _db;
+        public RepoLocalizacion(ESInventarioContext db) : base(db) { _db = db; }
+
+        public void Update(Localizacion c)
+        {
+            _db.Localizacions.Update(c);
+            Save();
+        }
+    }
+
+    public class RepoProducto : Repositorio<Producto>
+    {
+        private readonly ESInventarioContext _db;
+        public RepoProducto(ESInventarioContext db) : base(db) { _db = db; }
+
+        public void Update(Producto c)
+        {
+            _db.Productos.Update(c);
+            Save();
+        }
+    }
+
+    public class RepoSalida : Repositorio<Salida>
+    {
+        private readonly ESInventarioContext _db;
+        public RepoSalida(ESInventarioContext db) : base(db) { _db = db; }
+
+        public void Update(Salida c)
+        {
+            _db.Salidas.Update(c);
+            Save();
+        }
+    }
+
+    public class RepoUsuario : Repositorio<Usuario>
+    {
+        private readonly ESInventarioContext _db;
+        public RepoUsuario(ESInventarioContext db) : base(db) { _db = db; }
+
+        public void Update(Usuario c)
+        {
+            _db.Usuarios.Update(c);
+            Save();
+        }
+    }
+
 }
