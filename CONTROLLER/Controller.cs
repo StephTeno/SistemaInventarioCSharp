@@ -4,7 +4,7 @@ using MODELO.Data;
 using MODELO.Models;
 using System.Windows.Forms;
 
-namespace CONTROLLLER
+namespace CONTROLLER
 {
     public class ControllerCliente
     {

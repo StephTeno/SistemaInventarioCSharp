@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CONTROLLER;
+using MODELO.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,13 +11,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ProyectoContabilidadDeCosto.Opciones.Productos
 {
     public partial class Productos : Form
     {
+        ControllerCliente cc = new ControllerCliente();
         public Productos()
         {
             InitializeComponent();
+            ActualizarDGV();
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -25,13 +30,16 @@ namespace ProyectoContabilidadDeCosto.Opciones.Productos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            Cliente o = new Cliente();
+            cc.AgregarDatos(o);
         }
         public void ActualizarDGV()
         {
+            cc.RellenarData(dgvProductos);
         }
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
