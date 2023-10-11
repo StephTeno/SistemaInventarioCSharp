@@ -26,7 +26,7 @@ namespace CONTROLLER
 
         public void RellenarData(DataGridView dgvDatos)
         {
-            dgvDatos.DataSource = repo.GetAll();
+            //dgvDatos.DataSource = repo.GetAll();
         }
 
         public void AgregarDatos(Cliente c)
