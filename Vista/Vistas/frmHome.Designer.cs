@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             panel1 = new Panel();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             btnProfile = new FontAwesome.Sharp.IconButton();
@@ -37,17 +39,24 @@
             flpSidebar = new FlowLayoutPanel();
             Separador1 = new FontAwesome.Sharp.IconButton();
             btnInicio = new FontAwesome.Sharp.IconButton();
-            btnUser = new FontAwesome.Sharp.IconButton();
-            btnShop = new FontAwesome.Sharp.IconButton();
-            btnReport = new FontAwesome.Sharp.IconButton();
-            Separador2 = new FontAwesome.Sharp.IconButton();
-            btnManageAdmin = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            btnCloseSesion = new FontAwesome.Sharp.IconButton();
+            btnCatalogue = new FontAwesome.Sharp.IconButton();
+            btnInvoice = new FontAwesome.Sharp.IconButton();
+            btnInventory = new FontAwesome.Sharp.IconButton();
             plContenedor = new Panel();
+            ddmInventory = new CustomControls.RJControls.RJDropdownMenu(components);
+            entradasToolStripMenuItem = new ToolStripMenuItem();
+            salidasToolStripMenuItem = new ToolStripMenuItem();
+            ddmProfile = new CustomControls.RJControls.RJDropdownMenu(components);
+            ItemProfile = new ToolStripMenuItem();
+            ItemConfiguration = new ToolStripMenuItem();
+            ItemHelp = new ToolStripMenuItem();
+            ItemLogOut = new ToolStripMenuItem();
+            ItemExit = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             flpSidebar.SuspendLayout();
+            ddmInventory.SuspendLayout();
+            ddmProfile.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -100,6 +109,7 @@
             btnProfile.TextAlign = ContentAlignment.MiddleLeft;
             btnProfile.UseVisualStyleBackColor = true;
             btnProfile.Click += btnProfile_Click;
+            btnProfile.MouseEnter += btnProfile_MouseEnter;
             // 
             // btnExit
             // 
@@ -164,13 +174,9 @@
             flpSidebar.BackColor = Color.FromArgb(235, 239, 241);
             flpSidebar.Controls.Add(Separador1);
             flpSidebar.Controls.Add(btnInicio);
-            flpSidebar.Controls.Add(btnUser);
-            flpSidebar.Controls.Add(btnShop);
-            flpSidebar.Controls.Add(btnReport);
-            flpSidebar.Controls.Add(Separador2);
-            flpSidebar.Controls.Add(btnManageAdmin);
-            flpSidebar.Controls.Add(iconButton1);
-            flpSidebar.Controls.Add(btnCloseSesion);
+            flpSidebar.Controls.Add(btnCatalogue);
+            flpSidebar.Controls.Add(btnInvoice);
+            flpSidebar.Controls.Add(btnInventory);
             flpSidebar.Dock = DockStyle.Left;
             flpSidebar.Location = new Point(0, 50);
             flpSidebar.Name = "flpSidebar";
@@ -197,14 +203,13 @@
             Separador1.Name = "Separador1";
             Separador1.Size = new Size(200, 50);
             Separador1.TabIndex = 8;
-            Separador1.Text = "REGISTROS";
+            Separador1.Text = "PRINCIPAL";
             Separador1.TextAlign = ContentAlignment.BottomLeft;
             Separador1.UseVisualStyleBackColor = false;
             // 
             // btnInicio
             // 
             btnInicio.BackColor = Color.FromArgb(235, 239, 241);
-            btnInicio.Dock = DockStyle.Top;
             btnInicio.FlatAppearance.BorderSize = 0;
             btnInicio.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
             btnInicio.FlatStyle = FlatStyle.Flat;
@@ -226,182 +231,166 @@
             btnInicio.UseVisualStyleBackColor = false;
             btnInicio.Click += btnInicio_Click;
             // 
-            // btnUser
+            // btnCatalogue
             // 
-            btnUser.BackColor = Color.FromArgb(235, 239, 241);
-            btnUser.Dock = DockStyle.Top;
-            btnUser.FlatAppearance.BorderSize = 0;
-            btnUser.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
-            btnUser.FlatStyle = FlatStyle.Flat;
-            btnUser.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnUser.ForeColor = Color.Gray;
-            btnUser.IconChar = FontAwesome.Sharp.IconChar.User;
-            btnUser.IconColor = Color.Gray;
-            btnUser.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnUser.IconSize = 25;
-            btnUser.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUser.Location = new Point(0, 120);
-            btnUser.Margin = new Padding(0, 0, 0, 10);
-            btnUser.Name = "btnUser";
-            btnUser.Padding = new Padding(15, 0, 60, 0);
-            btnUser.Size = new Size(200, 50);
-            btnUser.TabIndex = 3;
-            btnUser.Text = "Usuario";
-            btnUser.TextAlign = ContentAlignment.MiddleRight;
-            btnUser.UseVisualStyleBackColor = false;
+            btnCatalogue.BackColor = Color.FromArgb(235, 239, 241);
+            btnCatalogue.Dock = DockStyle.Top;
+            btnCatalogue.FlatAppearance.BorderSize = 0;
+            btnCatalogue.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
+            btnCatalogue.FlatStyle = FlatStyle.Flat;
+            btnCatalogue.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCatalogue.ForeColor = Color.Gray;
+            btnCatalogue.IconChar = FontAwesome.Sharp.IconChar.BasketShopping;
+            btnCatalogue.IconColor = Color.Gray;
+            btnCatalogue.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            btnCatalogue.IconSize = 25;
+            btnCatalogue.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCatalogue.Location = new Point(0, 120);
+            btnCatalogue.Margin = new Padding(0, 0, 0, 10);
+            btnCatalogue.Name = "btnCatalogue";
+            btnCatalogue.Padding = new Padding(15, 0, 60, 0);
+            btnCatalogue.Size = new Size(200, 50);
+            btnCatalogue.TabIndex = 3;
+            btnCatalogue.Text = "Catálogo";
+            btnCatalogue.TextAlign = ContentAlignment.MiddleRight;
+            btnCatalogue.UseVisualStyleBackColor = false;
             // 
-            // btnShop
+            // btnInvoice
             // 
-            btnShop.BackColor = Color.FromArgb(235, 239, 241);
-            btnShop.Dock = DockStyle.Top;
-            btnShop.FlatAppearance.BorderSize = 0;
-            btnShop.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
-            btnShop.FlatStyle = FlatStyle.Flat;
-            btnShop.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnShop.ForeColor = Color.Gray;
-            btnShop.IconChar = FontAwesome.Sharp.IconChar.Shop;
-            btnShop.IconColor = Color.Gray;
-            btnShop.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnShop.IconSize = 25;
-            btnShop.ImageAlign = ContentAlignment.MiddleLeft;
-            btnShop.Location = new Point(0, 180);
-            btnShop.Margin = new Padding(0, 0, 0, 10);
-            btnShop.Name = "btnShop";
-            btnShop.Padding = new Padding(15, 0, 60, 0);
-            btnShop.Size = new Size(200, 50);
-            btnShop.TabIndex = 4;
-            btnShop.Text = "Tiendas";
-            btnShop.TextAlign = ContentAlignment.MiddleRight;
-            btnShop.UseVisualStyleBackColor = false;
+            btnInvoice.BackColor = Color.FromArgb(235, 239, 241);
+            btnInvoice.Dock = DockStyle.Top;
+            btnInvoice.FlatAppearance.BorderSize = 0;
+            btnInvoice.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
+            btnInvoice.FlatStyle = FlatStyle.Flat;
+            btnInvoice.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnInvoice.ForeColor = Color.Gray;
+            btnInvoice.IconChar = FontAwesome.Sharp.IconChar.Shop;
+            btnInvoice.IconColor = Color.Gray;
+            btnInvoice.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            btnInvoice.IconSize = 25;
+            btnInvoice.ImageAlign = ContentAlignment.MiddleLeft;
+            btnInvoice.Location = new Point(0, 180);
+            btnInvoice.Margin = new Padding(0, 0, 0, 10);
+            btnInvoice.Name = "btnInvoice";
+            btnInvoice.Padding = new Padding(15, 0, 60, 0);
+            btnInvoice.Size = new Size(200, 50);
+            btnInvoice.TabIndex = 4;
+            btnInvoice.Text = "Facturar";
+            btnInvoice.TextAlign = ContentAlignment.MiddleRight;
+            btnInvoice.UseVisualStyleBackColor = false;
             // 
-            // btnReport
+            // btnInventory
             // 
-            btnReport.BackColor = Color.FromArgb(235, 239, 241);
-            btnReport.Dock = DockStyle.Top;
-            btnReport.FlatAppearance.BorderSize = 0;
-            btnReport.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
-            btnReport.FlatStyle = FlatStyle.Flat;
-            btnReport.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnReport.ForeColor = Color.Gray;
-            btnReport.IconChar = FontAwesome.Sharp.IconChar.Bell;
-            btnReport.IconColor = Color.Gray;
-            btnReport.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnReport.IconSize = 25;
-            btnReport.ImageAlign = ContentAlignment.MiddleLeft;
-            btnReport.Location = new Point(0, 240);
-            btnReport.Margin = new Padding(0, 0, 0, 10);
-            btnReport.Name = "btnReport";
-            btnReport.Padding = new Padding(15, 0, 60, 0);
-            btnReport.Size = new Size(200, 50);
-            btnReport.TabIndex = 5;
-            btnReport.Text = "Reportes";
-            btnReport.TextAlign = ContentAlignment.MiddleRight;
-            btnReport.UseVisualStyleBackColor = false;
-            // 
-            // Separador2
-            // 
-            Separador2.BackColor = Color.FromArgb(235, 239, 241);
-            Separador2.Dock = DockStyle.Top;
-            Separador2.Enabled = false;
-            Separador2.FlatAppearance.BorderSize = 0;
-            Separador2.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
-            Separador2.FlatStyle = FlatStyle.Flat;
-            Separador2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Separador2.ForeColor = Color.Silver;
-            Separador2.IconChar = FontAwesome.Sharp.IconChar.None;
-            Separador2.IconColor = Color.Gray;
-            Separador2.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            Separador2.IconSize = 30;
-            Separador2.ImageAlign = ContentAlignment.MiddleLeft;
-            Separador2.Location = new Point(0, 300);
-            Separador2.Margin = new Padding(0, 0, 0, 10);
-            Separador2.Name = "Separador2";
-            Separador2.Size = new Size(200, 50);
-            Separador2.TabIndex = 9;
-            Separador2.Text = "AJUSTES";
-            Separador2.TextAlign = ContentAlignment.BottomLeft;
-            Separador2.UseVisualStyleBackColor = false;
-            // 
-            // btnManageAdmin
-            // 
-            btnManageAdmin.BackColor = Color.FromArgb(235, 239, 241);
-            btnManageAdmin.Dock = DockStyle.Top;
-            btnManageAdmin.FlatAppearance.BorderSize = 0;
-            btnManageAdmin.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
-            btnManageAdmin.FlatStyle = FlatStyle.Flat;
-            btnManageAdmin.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnManageAdmin.ForeColor = Color.Gray;
-            btnManageAdmin.IconChar = FontAwesome.Sharp.IconChar.UserGear;
-            btnManageAdmin.IconColor = Color.Gray;
-            btnManageAdmin.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnManageAdmin.IconSize = 25;
-            btnManageAdmin.ImageAlign = ContentAlignment.MiddleLeft;
-            btnManageAdmin.Location = new Point(0, 360);
-            btnManageAdmin.Margin = new Padding(0, 0, 0, 10);
-            btnManageAdmin.Name = "btnManageAdmin";
-            btnManageAdmin.Padding = new Padding(15, 0, 20, 0);
-            btnManageAdmin.Size = new Size(200, 50);
-            btnManageAdmin.TabIndex = 6;
-            btnManageAdmin.Text = "Administración";
-            btnManageAdmin.TextAlign = ContentAlignment.MiddleRight;
-            btnManageAdmin.UseVisualStyleBackColor = false;
-            btnManageAdmin.Click += btnManageAdmin_Click;
-            // 
-            // iconButton1
-            // 
-            iconButton1.BackColor = Color.FromArgb(235, 239, 241);
-            iconButton1.Dock = DockStyle.Top;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            iconButton1.ForeColor = Color.Gray;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.UserGear;
-            iconButton1.IconColor = Color.Gray;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconButton1.IconSize = 25;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(0, 420);
-            iconButton1.Margin = new Padding(0, 0, 0, 10);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Padding = new Padding(15, 0, 20, 0);
-            iconButton1.Size = new Size(200, 50);
-            iconButton1.TabIndex = 10;
-            iconButton1.Text = "Administración";
-            iconButton1.TextAlign = ContentAlignment.MiddleRight;
-            iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // btnCloseSesion
-            // 
-            btnCloseSesion.BackColor = Color.FromArgb(235, 239, 241);
-            btnCloseSesion.FlatAppearance.BorderSize = 0;
-            btnCloseSesion.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
-            btnCloseSesion.FlatStyle = FlatStyle.Flat;
-            btnCloseSesion.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCloseSesion.ForeColor = Color.Gray;
-            btnCloseSesion.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
-            btnCloseSesion.IconColor = Color.Gray;
-            btnCloseSesion.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnCloseSesion.IconSize = 25;
-            btnCloseSesion.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCloseSesion.Location = new Point(0, 480);
-            btnCloseSesion.Margin = new Padding(0, 0, 0, 10);
-            btnCloseSesion.Name = "btnCloseSesion";
-            btnCloseSesion.Padding = new Padding(15, 0, 35, 0);
-            btnCloseSesion.Size = new Size(200, 50);
-            btnCloseSesion.TabIndex = 7;
-            btnCloseSesion.Text = "Cerrar Sesión";
-            btnCloseSesion.TextAlign = ContentAlignment.MiddleRight;
-            btnCloseSesion.UseVisualStyleBackColor = false;
-            btnCloseSesion.Click += btnCloseSesion_Click;
+            btnInventory.BackColor = Color.FromArgb(235, 239, 241);
+            btnInventory.Dock = DockStyle.Top;
+            btnInventory.FlatAppearance.BorderSize = 0;
+            btnInventory.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
+            btnInventory.FlatStyle = FlatStyle.Flat;
+            btnInventory.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnInventory.ForeColor = Color.Gray;
+            btnInventory.IconChar = FontAwesome.Sharp.IconChar.Book;
+            btnInventory.IconColor = Color.Gray;
+            btnInventory.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            btnInventory.IconSize = 25;
+            btnInventory.ImageAlign = ContentAlignment.MiddleLeft;
+            btnInventory.Location = new Point(0, 240);
+            btnInventory.Margin = new Padding(0, 0, 0, 10);
+            btnInventory.Name = "btnInventory";
+            btnInventory.Padding = new Padding(15, 0, 48, 0);
+            btnInventory.Size = new Size(200, 50);
+            btnInventory.TabIndex = 5;
+            btnInventory.Text = "Inventario";
+            btnInventory.TextAlign = ContentAlignment.MiddleRight;
+            btnInventory.UseVisualStyleBackColor = false;
+            btnInventory.Click += btnInventory_Click;
             // 
             // plContenedor
             // 
+            plContenedor.BackColor = Color.White;
             plContenedor.Dock = DockStyle.Fill;
             plContenedor.Location = new Point(200, 50);
             plContenedor.Name = "plContenedor";
             plContenedor.Size = new Size(800, 600);
             plContenedor.TabIndex = 2;
+            // 
+            // ddmInventory
+            // 
+            ddmInventory.IsMainMenu = false;
+            ddmInventory.Items.AddRange(new ToolStripItem[] { entradasToolStripMenuItem, salidasToolStripMenuItem });
+            ddmInventory.ItemSelection = Color.Empty;
+            ddmInventory.LeftColumnColor = Color.Empty;
+            ddmInventory.MenuItemHeight = 25;
+            ddmInventory.MenuItemSelectTextColor = Color.Empty;
+            ddmInventory.MenuItemTextColor = Color.Empty;
+            ddmInventory.Name = "ddmInventory";
+            ddmInventory.PrimaryColor = Color.Empty;
+            ddmInventory.Size = new Size(120, 48);
+            // 
+            // entradasToolStripMenuItem
+            // 
+            entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
+            entradasToolStripMenuItem.Size = new Size(119, 22);
+            entradasToolStripMenuItem.Text = "Entradas";
+            // 
+            // salidasToolStripMenuItem
+            // 
+            salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
+            salidasToolStripMenuItem.Size = new Size(119, 22);
+            salidasToolStripMenuItem.Text = "Salidas";
+            // 
+            // ddmProfile
+            // 
+            ddmProfile.BackColor = Color.RoyalBlue;
+            ddmProfile.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            ddmProfile.IsMainMenu = false;
+            ddmProfile.Items.AddRange(new ToolStripItem[] { ItemProfile, ItemConfiguration, ItemHelp, ItemLogOut, ItemExit });
+            ddmProfile.ItemSelection = Color.White;
+            ddmProfile.LeftColumnColor = Color.RoyalBlue;
+            ddmProfile.MenuItemHeight = 25;
+            ddmProfile.MenuItemSelectTextColor = Color.RoyalBlue;
+            ddmProfile.MenuItemTextColor = Color.White;
+            ddmProfile.Name = "ddmProfile";
+            ddmProfile.PrimaryColor = Color.RoyalBlue;
+            ddmProfile.Size = new Size(161, 114);
+            // 
+            // ItemProfile
+            // 
+            ItemProfile.ForeColor = Color.White;
+            ItemProfile.Image = Properties.Resources.User;
+            ItemProfile.Name = "ItemProfile";
+            ItemProfile.Size = new Size(160, 22);
+            ItemProfile.Text = "Mi Perfil";
+            ItemProfile.Click += editarToolStripMenuItem_Click;
+            // 
+            // ItemConfiguration
+            // 
+            ItemConfiguration.ForeColor = Color.White;
+            ItemConfiguration.Name = "ItemConfiguration";
+            ItemConfiguration.Size = new Size(160, 22);
+            ItemConfiguration.Text = "Configuración";
+            // 
+            // ItemHelp
+            // 
+            ItemHelp.ForeColor = Color.White;
+            ItemHelp.Name = "ItemHelp";
+            ItemHelp.Size = new Size(160, 22);
+            ItemHelp.Text = "Ayuda";
+            // 
+            // ItemLogOut
+            // 
+            ItemLogOut.ForeColor = Color.White;
+            ItemLogOut.Name = "ItemLogOut";
+            ItemLogOut.Size = new Size(160, 22);
+            ItemLogOut.Text = "Cerrar Sesión";
+            ItemLogOut.Click += ItemLogOut_Click;
+            // 
+            // ItemExit
+            // 
+            ItemExit.ForeColor = Color.White;
+            ItemExit.Name = "ItemExit";
+            ItemExit.Size = new Size(160, 22);
+            ItemExit.Text = "Salir";
+            ItemExit.Click += ItemExit_Click;
             // 
             // frmHome
             // 
@@ -413,6 +402,7 @@
             Controls.Add(flpSidebar);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmHome";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmHome";
@@ -420,6 +410,8 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             flpSidebar.ResumeLayout(false);
+            ddmInventory.ResumeLayout(false);
+            ddmProfile.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -427,19 +419,25 @@
         private Panel panel1;
         private FlowLayoutPanel flpSidebar;
         private FontAwesome.Sharp.IconButton btnInicio;
-        private FontAwesome.Sharp.IconButton btnUser;
-        private FontAwesome.Sharp.IconButton btnShop;
-        private FontAwesome.Sharp.IconButton btnReport;
+        private FontAwesome.Sharp.IconButton btnCatalogue;
+        private FontAwesome.Sharp.IconButton btnInvoice;
+        private FontAwesome.Sharp.IconButton btnInventory;
         private FontAwesome.Sharp.IconButton btnManageAdmin;
-        private FontAwesome.Sharp.IconButton btnCloseSesion;
         private FontAwesome.Sharp.IconButton btnHome;
         private FontAwesome.Sharp.IconButton Separador1;
-        private FontAwesome.Sharp.IconButton Separador2;
         private FontAwesome.Sharp.IconButton btnExit;
         private FontAwesome.Sharp.IconButton btnMinus;
         private FontAwesome.Sharp.IconButton btnProfile;
         private Panel plContenedor;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private CustomControls.RJControls.RJDropdownMenu ddmInventory;
+        private ToolStripMenuItem entradasToolStripMenuItem;
+        private ToolStripMenuItem salidasToolStripMenuItem;
+        private CustomControls.RJControls.RJDropdownMenu ddmProfile;
+        private ToolStripMenuItem ItemProfile;
+        private ToolStripMenuItem ItemConfiguration;
+        private ToolStripMenuItem ItemHelp;
+        private ToolStripMenuItem ItemLogOut;
+        private ToolStripMenuItem ItemExit;
     }
 }

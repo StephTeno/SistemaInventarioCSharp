@@ -17,6 +17,7 @@ namespace Vista
         public frmAppLogin()
         {
             InitializeComponent();
+            txtUser.BorderFocusColor = Color.LightSkyBlue;
         }
         public void VaciarTextbox()
         {
@@ -32,7 +33,10 @@ namespace Vista
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtUser.Texts != "a" || txtPassword.Texts != "a")
+            {
+                txtUser.BorderColor = Color.Red; txtPassword.BorderColor = Color.Red;
                 lblErrorLogin.Visible = true;
+            }
             else
             {
                 frmHome home = new frmHome();
@@ -46,11 +50,13 @@ namespace Vista
         private void txtPassword__TextChanged(object sender, EventArgs e)
         {
             lblErrorLogin.Visible = false;
+            txtPassword.BorderColor = Color.White;
         }
 
         private void txtUser__TextChanged(object sender, EventArgs e)
         {
             lblErrorLogin.Visible = false;
+            txtUser.BorderColor = Color.White;
         }
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)

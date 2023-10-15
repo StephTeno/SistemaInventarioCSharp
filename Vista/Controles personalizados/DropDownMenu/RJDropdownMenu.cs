@@ -18,6 +18,9 @@ namespace CustomControls.RJControls
         private int menuItemHeight = 25;
         private Color menuItemTextColor = Color.Empty;//No color, The default color is set in the MenuRenderer class
         private Color primaryColor = Color.Empty;//No color, The default color is set in the MenuRenderer class
+        private Color leftColumnColor = Color.Empty;
+        private Color ItemSelect = Color.Empty;
+        private Color ItemSelectText = Color.Empty;
 
         private Bitmap menuItemHeaderSize;
 
@@ -46,14 +49,36 @@ namespace CustomControls.RJControls
             set { menuItemHeight = value; }
         }
 
-        [Browsable(false)]
+        [Category("RJ Code Advance")]
+        public Color LeftColumnColor
+        {
+            get { return leftColumnColor; }
+            set { leftColumnColor = value; }
+        }
+
+        [Category("RJ Code Advance")]
         public Color MenuItemTextColor
         {
             get { return menuItemTextColor; }
             set { menuItemTextColor = value; }
         }
 
-        [Browsable(false)]
+
+        [Category("RJ Code Advance")]
+        public Color MenuItemSelectTextColor
+        {
+            get { return ItemSelectText; }
+            set { ItemSelectText = value; }
+        }
+
+        [Category("RJ Code Advance")]
+        public Color ItemSelection
+        {
+            get { return ItemSelect; }
+            set { ItemSelect = value; }
+        }
+
+        [Category("RJ Code Advance")]
         public Color PrimaryColor
         {
             get { return primaryColor; }
@@ -99,7 +124,7 @@ namespace CustomControls.RJControls
             base.OnHandleCreated(e);
             if (this.DesignMode == false)
             {
-                this.Renderer = new MenuRenderer(isMainMenu, primaryColor, menuItemTextColor);
+                this.Renderer = new MenuRenderer(isMainMenu, primaryColor, menuItemTextColor, leftColumnColor, ItemSelect, ItemSelectText);
                 LoadMenuItemHeight();
             }
         }

@@ -40,12 +40,12 @@ namespace Vista.HOME
 
         private void btnMinus_MouseLeave(object sender, EventArgs e)
         {
-            btnMinus.BackColor = Color.RoyalBlue;
+            btnMinus.BackColor = Color.FromArgb(40, 86, 160);
         }
 
         private void btnExit_MouseLeave(object sender, EventArgs e)
         {
-            btnExit.BackColor = Color.RoyalBlue;
+            btnExit.BackColor = Color.FromArgb(40, 86, 160);
         }
 
         private void frmHome_Load(object sender, EventArgs e)
@@ -59,15 +59,13 @@ namespace Vista.HOME
         {
             if (flpSidebar.Width == 200)
             {
-                flpSidebar.Width = 70;
-                Separador1.Width = 70;
-                Separador2.Width = 70;
+                flpSidebar.Width = 75;
+                Separador1.Width = 75;
             }
             else
             {
                 flpSidebar.Width = 200;
                 Separador1.Width = 200;
-                Separador2.Width = 200;
             }
         }
 
@@ -78,12 +76,13 @@ namespace Vista.HOME
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
+            ddmProfile.Show(btnProfile, 0, btnProfile.Height);
         }
 
-        private void btnCloseSesion_Click(object sender, EventArgs e)
+        /*private void btnCloseSesion_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+        }*/
 
         public void AbrirFormInPanel(object FormHijo)
         {
@@ -106,6 +105,31 @@ namespace Vista.HOME
         private void btnManageAdmin_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new frmAccountAdmin());
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            ddmInventory.Show(btnInventory, btnInventory.Width, 0);
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProfile_MouseEnter(object sender, EventArgs e)
+        {
+            btnProfile_Click(sender, e);
+        }
+
+        private void ItemExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ItemLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

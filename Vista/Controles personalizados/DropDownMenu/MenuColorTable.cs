@@ -18,23 +18,23 @@ namespace CustomControls.RJControls
         private Color menuItemSelectedColor;
 
         //Constructor
-        public MenuColorTable(bool isMainMenu, Color primaryColor)
+        public MenuColorTable(bool isMainMenu, Color back, Color colum, Color select)
         {
             if (isMainMenu)
             {
-                backColor = Color.FromArgb(37, 39, 60);
-                leftColumnColor = Color.FromArgb(32, 33, 51);
-                borderColor = Color.FromArgb(32, 33, 51);
-                menuItemBorderColor = primaryColor;
-                menuItemSelectedColor = primaryColor;
+                backColor = back;
+                leftColumnColor = colum;
+                borderColor = back;
+                menuItemBorderColor = back;
+                menuItemSelectedColor = select;
             }
             else
             {
-                backColor = Color.White;
-                leftColumnColor = Color.LightGray;
-                borderColor = Color.LightGray;
-                menuItemBorderColor = primaryColor;
-                menuItemSelectedColor = primaryColor;
+                backColor = back;
+                leftColumnColor = colum;
+                borderColor = back;
+                menuItemBorderColor = back;
+                menuItemSelectedColor = select;
             }
         }
 

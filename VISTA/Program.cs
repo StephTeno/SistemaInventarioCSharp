@@ -1,4 +1,6 @@
+using CustomMessageBox;
 using Microsoft.Extensions.Configuration;
+using System.Diagnostics;
 
 namespace Vista
 {
@@ -11,10 +13,20 @@ namespace Vista
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new frmAppLogin());
+            Process[] process = Process.GetProcessesByName("Vista");
+
+            if (process.Length == 1)
+            {
+                // To customize application configuration such as set high DPI settings or default font,
+                // see https://aka.ms/applicationconfiguration.
+                ApplicationConfiguration.Initialize();
+                Application.Run(new frmAppLogin());
+            }
+            else 
+            {
+                RJMessageBox.Show("El programa ya se encuentra abierto", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Application.Exit();
+            }
         }
     }
 }

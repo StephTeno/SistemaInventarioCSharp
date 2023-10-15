@@ -13,19 +13,26 @@ namespace CustomControls.RJControls
     {
         //Fields
         private Color primaryColor;
+        private Color leftColumnColor;
         private Color textColor;
+        private Color Column;
+        private Color Select;
+        private Color TextSelect;
         private int arrowThickness;
 
         //Constructor
-        public MenuRenderer(bool isMainMenu, Color primaryColor, Color textColor)
-            : base(new MenuColorTable(isMainMenu, primaryColor))
+        public MenuRenderer(bool isMainMenu, Color primaryColor, Color textColor, Color Column, Color Select, Color TextSelect)
+            : base(new MenuColorTable(isMainMenu, primaryColor, Column, Select))
         {
             this.primaryColor = primaryColor;
+            this.leftColumnColor = primaryColor;
+            this.Column = Column;
+            this.TextSelect = TextSelect;
             if (isMainMenu)
             {
                 arrowThickness = 3;
                 if (textColor == Color.Empty) //Set Default Color
-                    this.textColor = Color.Gainsboro;
+                    this.textColor = Color.DimGray;
                 else//Set custom text color 
                     this.textColor = textColor;
             }
@@ -43,7 +50,8 @@ namespace CustomControls.RJControls
         protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
         {
             base.OnRenderItemText(e);
-            e.Item.ForeColor = e.Item.Selected ? Color.White : textColor;
+            e.Item.ForeColor = e.Item.Selected ? TextSelect : textColor;
+            e.Item.BackColor = e.Item.Selected ? primaryColor : Select;
         }
 
         protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
@@ -51,7 +59,7 @@ namespace CustomControls.RJControls
             //Fields
             var graph = e.Graphics;
             var arrowSize = new Size(5, 12);
-            var arrowColor = e.Item.Selected ? Color.White : primaryColor;
+            var arrowColor = e.Item.Selected ? TextSelect : primaryColor;
             var rect = new Rectangle(e.ArrowRectangle.Location.X, (e.ArrowRectangle.Height - arrowSize.Height) / 2,
                 arrowSize.Width, arrowSize.Height);
             using (GraphicsPath path = new GraphicsPath())

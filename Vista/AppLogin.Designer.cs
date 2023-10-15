@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAppLogin));
             txtUser = new CustomControls.RJControls.RJTextBox();
             txtPassword = new CustomControls.RJControls.RJTextBox();
             btnLogin = new CustomControls.RJControls.RJButton();
@@ -36,14 +37,18 @@
             btnExit = new PictureBox();
             btnMinus = new PictureBox();
             lblForgot = new Label();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)btnExit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMinus).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             SuspendLayout();
             // 
             // txtUser
             // 
             txtUser.BackColor = Color.MidnightBlue;
-            txtUser.BorderColor = Color.GhostWhite;
+            txtUser.BorderColor = Color.White;
             txtUser.BorderFocusColor = Color.White;
             txtUser.BorderRadius = 0;
             txtUser.BorderSize = 2;
@@ -168,12 +173,38 @@
             lblForgot.TabIndex = 20;
             lblForgot.Text = "¿Olvidaste tu Contraseña?";
             // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.MidnightBlue;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User;
+            iconPictureBox1.IconColor = Color.White;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            iconPictureBox1.Location = new Point(375, 134);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(32, 32);
+            iconPictureBox1.TabIndex = 21;
+            iconPictureBox1.TabStop = false;
+            // 
+            // iconPictureBox2
+            // 
+            iconPictureBox2.BackColor = Color.MidnightBlue;
+            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            iconPictureBox2.IconColor = Color.White;
+            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            iconPictureBox2.Location = new Point(375, 185);
+            iconPictureBox2.Name = "iconPictureBox2";
+            iconPictureBox2.Size = new Size(32, 32);
+            iconPictureBox2.TabIndex = 22;
+            iconPictureBox2.TabStop = false;
+            // 
             // frmAppLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MidnightBlue;
             ClientSize = new Size(700, 449);
+            Controls.Add(iconPictureBox2);
+            Controls.Add(iconPictureBox1);
             Controls.Add(lblForgot);
             Controls.Add(btnMinus);
             Controls.Add(btnExit);
@@ -183,12 +214,15 @@
             Controls.Add(txtPassword);
             Controls.Add(txtUser);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmAppLogin";
             Opacity = 0.9D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AppLogin";
             ((System.ComponentModel.ISupportInitialize)btnExit).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnMinus).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -202,5 +236,7 @@
         private PictureBox btnExit;
         private PictureBox btnMinus;
         private Label lblForgot;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
     }
 }
