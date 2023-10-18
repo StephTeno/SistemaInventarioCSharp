@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace Vista.HOME
 {
     public partial class frmHome : Form
     {
+        IconButton btnSelection;
         public frmHome()
         {
             InitializeComponent();
@@ -60,13 +62,11 @@ namespace Vista.HOME
         {
             if (flpSidebar.Width == 200)
             {
-                flpSidebar.Width = 75;
-                SeparadorPrincipal.Width = 75;
+                flpSidebar.Width = 70;
             }
             else
             {
                 flpSidebar.Width = 200;
-                SeparadorPrincipal.Width = 200;
             }
         }
 
@@ -98,18 +98,42 @@ namespace Vista.HOME
             fh.Show();
         }
 
+        private void ActiveButton(object button)
+        {
+            if (button != null)
+            {
+                DesactiveButton();
+                btnSelection = (IconButton)button;
+                btnSelection.BackColor = Color.White;
+                btnSelection.ForeColor = Color.CornflowerBlue;
+                btnSelection.IconColor = Color.CornflowerBlue;
+            }
+        }
+        private void DesactiveButton()
+        {
+            if (btnSelection != null)
+            {
+                btnSelection.BackColor = Color.FromArgb(235, 239, 241);
+                btnSelection.IconColor = Color.Gray;
+                btnSelection.ForeColor = Color.Gray;
+            }
+        }
+
         private void btnInicio_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new frmDashboard());
+            ActiveButton(btnInicio);
         }
 
-        private void btnManageAdmin_Click(object sender, EventArgs e)
+        private void btnAdmin_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new frmAccountAdmin());
+            ActiveButton(btnAdmin);
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
+            ActiveButton(btnInventory);
             ddmInventory.Show(btnInventory, btnInventory.Width, 0);
         }
 

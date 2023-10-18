@@ -125,7 +125,7 @@
             btnUbicAlma.Padding = new Padding(5, 0, 0, 0);
             btnUbicAlma.Size = new Size(150, 57);
             btnUbicAlma.TabIndex = 3;
-            btnUbicAlma.Text = "Ubicación Almacenes";
+            btnUbicAlma.Text = "Ubicación de Almacenes";
             btnUbicAlma.UseVisualStyleBackColor = true;
             btnUbicAlma.Click += btnUbicAlma_Click;
             // 

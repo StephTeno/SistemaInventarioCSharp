@@ -219,7 +219,8 @@
             btnInicio.BackColor = Color.FromArgb(235, 239, 241);
             btnInicio.Dock = DockStyle.Top;
             btnInicio.FlatAppearance.BorderSize = 0;
-            btnInicio.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
+            btnInicio.FlatAppearance.MouseDownBackColor = Color.White;
+            btnInicio.FlatAppearance.MouseOverBackColor = Color.White;
             btnInicio.FlatStyle = FlatStyle.Flat;
             btnInicio.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnInicio.ForeColor = Color.Gray;
@@ -244,7 +245,7 @@
             btnCatalogue.BackColor = Color.FromArgb(235, 239, 241);
             btnCatalogue.Dock = DockStyle.Top;
             btnCatalogue.FlatAppearance.BorderSize = 0;
-            btnCatalogue.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
+            btnCatalogue.FlatAppearance.MouseDownBackColor = Color.White;
             btnCatalogue.FlatStyle = FlatStyle.Flat;
             btnCatalogue.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnCatalogue.ForeColor = Color.Gray;
@@ -268,7 +269,7 @@
             btnInvoice.BackColor = Color.FromArgb(235, 239, 241);
             btnInvoice.Dock = DockStyle.Top;
             btnInvoice.FlatAppearance.BorderSize = 0;
-            btnInvoice.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
+            btnInvoice.FlatAppearance.MouseDownBackColor = Color.White;
             btnInvoice.FlatStyle = FlatStyle.Flat;
             btnInvoice.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnInvoice.ForeColor = Color.Gray;
@@ -292,7 +293,7 @@
             btnInventory.BackColor = Color.FromArgb(235, 239, 241);
             btnInventory.Dock = DockStyle.Top;
             btnInventory.FlatAppearance.BorderSize = 0;
-            btnInventory.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
+            btnInventory.FlatAppearance.MouseDownBackColor = Color.White;
             btnInventory.FlatStyle = FlatStyle.Flat;
             btnInventory.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnInventory.ForeColor = Color.Gray;
@@ -341,7 +342,7 @@
             btnAdmin.BackColor = Color.FromArgb(235, 239, 241);
             btnAdmin.Dock = DockStyle.Top;
             btnAdmin.FlatAppearance.BorderSize = 0;
-            btnAdmin.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
+            btnAdmin.FlatAppearance.MouseDownBackColor = Color.White;
             btnAdmin.FlatStyle = FlatStyle.Flat;
             btnAdmin.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnAdmin.ForeColor = Color.Gray;
@@ -353,20 +354,20 @@
             btnAdmin.Location = new Point(0, 360);
             btnAdmin.Margin = new Padding(0, 0, 0, 10);
             btnAdmin.Name = "btnAdmin";
-            btnAdmin.Padding = new Padding(15, 0, 30, 0);
+            btnAdmin.Padding = new Padding(15, 0, 26, 0);
             btnAdmin.Size = new Size(200, 50);
             btnAdmin.TabIndex = 10;
             btnAdmin.Text = "Administración";
             btnAdmin.TextAlign = ContentAlignment.MiddleRight;
             btnAdmin.UseVisualStyleBackColor = false;
-            btnAdmin.Click += btnManageAdmin_Click;
+            btnAdmin.Click += btnAdmin_Click;
             // 
             // btnHistorial
             // 
             btnHistorial.BackColor = Color.FromArgb(235, 239, 241);
             btnHistorial.Dock = DockStyle.Top;
             btnHistorial.FlatAppearance.BorderSize = 0;
-            btnHistorial.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
+            btnHistorial.FlatAppearance.MouseDownBackColor = Color.White;
             btnHistorial.FlatStyle = FlatStyle.Flat;
             btnHistorial.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnHistorial.ForeColor = Color.Gray;
