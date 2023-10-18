@@ -32,18 +32,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             flowLayoutPanel2 = new FlowLayoutPanel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            panel2 = new Panel();
-            lblNumUserReport = new Label();
-            lblUserReport = new Label();
-            lblNumUser = new Label();
-            lblUser = new Label();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            panel4 = new Panel();
-            lblNumShopReport = new Label();
-            lblShopReport = new Label();
-            lblNumShop = new Label();
-            lblShops = new Label();
-            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             panel3 = new Panel();
             label2 = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -52,16 +40,26 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
             label1 = new Label();
+            crdEntradas = new MaterialSkin.Controls.MaterialCard();
+            pbEntrada = new PictureBox();
+            lblEntrada = new Label();
+            lblCordEnt = new Label();
+            lblCantEnt = new Label();
+            materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            lblCantSal = new Label();
+            lblCordSal = new Label();
+            lblSalida = new Label();
+            pictureBox1 = new PictureBox();
             flowLayoutPanel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
-            panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvJustRegistered).BeginInit();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
+            crdEntradas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbEntrada).BeginInit();
+            materialCard1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanel2
@@ -81,8 +79,8 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(panel2, 0, 0);
-            tableLayoutPanel1.Controls.Add(panel4, 1, 0);
+            tableLayoutPanel1.Controls.Add(materialCard1, 1, 0);
+            tableLayoutPanel1.Controls.Add(crdEntradas, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Top;
             tableLayoutPanel1.Location = new Point(50, 30);
             tableLayoutPanel1.Margin = new Padding(50, 30, 50, 30);
@@ -92,152 +90,6 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Size = new Size(900, 150);
             tableLayoutPanel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.CornflowerBlue;
-            panel2.Controls.Add(lblNumUserReport);
-            panel2.Controls.Add(lblUserReport);
-            panel2.Controls.Add(lblNumUser);
-            panel2.Controls.Add(lblUser);
-            panel2.Controls.Add(iconPictureBox1);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(8, 8);
-            panel2.Margin = new Padding(3, 3, 10, 3);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(432, 134);
-            panel2.TabIndex = 0;
-            // 
-            // lblNumUserReport
-            // 
-            lblNumUserReport.AutoSize = true;
-            lblNumUserReport.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNumUserReport.ForeColor = Color.White;
-            lblNumUserReport.Location = new Point(307, 62);
-            lblNumUserReport.Name = "lblNumUserReport";
-            lblNumUserReport.Size = new Size(48, 25);
-            lblNumUserReport.TabIndex = 4;
-            lblNumUserReport.Text = "100";
-            // 
-            // lblUserReport
-            // 
-            lblUserReport.AutoSize = true;
-            lblUserReport.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblUserReport.ForeColor = Color.White;
-            lblUserReport.Location = new Point(271, 22);
-            lblUserReport.Name = "lblUserReport";
-            lblUserReport.Size = new Size(120, 25);
-            lblUserReport.TabIndex = 3;
-            lblUserReport.Text = "Denuncias";
-            // 
-            // lblNumUser
-            // 
-            lblNumUser.AutoSize = true;
-            lblNumUser.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNumUser.ForeColor = Color.White;
-            lblNumUser.Location = new Point(159, 62);
-            lblNumUser.Name = "lblNumUser";
-            lblNumUser.Size = new Size(66, 25);
-            lblNumUser.TabIndex = 2;
-            lblNumUser.Text = "1,000";
-            // 
-            // lblUser
-            // 
-            lblUser.AutoSize = true;
-            lblUser.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblUser.ForeColor = Color.White;
-            lblUser.Location = new Point(145, 22);
-            lblUser.Name = "lblUser";
-            lblUser.Size = new Size(96, 25);
-            lblUser.TabIndex = 1;
-            lblUser.Text = "Usuarios";
-            // 
-            // iconPictureBox1
-            // 
-            iconPictureBox1.BackColor = Color.CornflowerBlue;
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
-            iconPictureBox1.IconColor = Color.White;
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 90;
-            iconPictureBox1.Location = new Point(24, 22);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(90, 90);
-            iconPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            iconPictureBox1.TabIndex = 0;
-            iconPictureBox1.TabStop = false;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.CornflowerBlue;
-            panel4.Controls.Add(lblNumShopReport);
-            panel4.Controls.Add(lblShopReport);
-            panel4.Controls.Add(lblNumShop);
-            panel4.Controls.Add(lblShops);
-            panel4.Controls.Add(iconPictureBox2);
-            panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(460, 8);
-            panel4.Margin = new Padding(10, 3, 3, 3);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(432, 134);
-            panel4.TabIndex = 1;
-            // 
-            // lblNumShopReport
-            // 
-            lblNumShopReport.AutoSize = true;
-            lblNumShopReport.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNumShopReport.ForeColor = Color.White;
-            lblNumShopReport.Location = new Point(307, 62);
-            lblNumShopReport.Name = "lblNumShopReport";
-            lblNumShopReport.Size = new Size(48, 25);
-            lblNumShopReport.TabIndex = 8;
-            lblNumShopReport.Text = "100";
-            // 
-            // lblShopReport
-            // 
-            lblShopReport.AutoSize = true;
-            lblShopReport.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblShopReport.ForeColor = Color.White;
-            lblShopReport.Location = new Point(271, 22);
-            lblShopReport.Name = "lblShopReport";
-            lblShopReport.Size = new Size(120, 25);
-            lblShopReport.TabIndex = 7;
-            lblShopReport.Text = "Denuncias";
-            // 
-            // lblNumShop
-            // 
-            lblNumShop.AutoSize = true;
-            lblNumShop.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNumShop.ForeColor = Color.White;
-            lblNumShop.Location = new Point(159, 62);
-            lblNumShop.Name = "lblNumShop";
-            lblNumShop.Size = new Size(66, 25);
-            lblNumShop.TabIndex = 6;
-            lblNumShop.Text = "1,000";
-            // 
-            // lblShops
-            // 
-            lblShops.AutoSize = true;
-            lblShops.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblShops.ForeColor = Color.White;
-            lblShops.Location = new Point(145, 22);
-            lblShops.Name = "lblShops";
-            lblShops.Size = new Size(89, 25);
-            lblShops.TabIndex = 5;
-            lblShops.Text = "Tiendas";
-            // 
-            // iconPictureBox2
-            // 
-            iconPictureBox2.BackColor = Color.CornflowerBlue;
-            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Shop;
-            iconPictureBox2.IconColor = Color.White;
-            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.IconSize = 90;
-            iconPictureBox2.Location = new Point(28, 22);
-            iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(90, 90);
-            iconPictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            iconPictureBox2.TabIndex = 1;
-            iconPictureBox2.TabStop = false;
             // 
             // panel3
             // 
@@ -358,6 +210,120 @@
             label1.TabIndex = 0;
             label1.Text = "Dashboard";
             // 
+            // crdEntradas
+            // 
+            crdEntradas.BackColor = Color.FromArgb(255, 255, 255);
+            crdEntradas.Controls.Add(lblCantEnt);
+            crdEntradas.Controls.Add(lblCordEnt);
+            crdEntradas.Controls.Add(lblEntrada);
+            crdEntradas.Controls.Add(pbEntrada);
+            crdEntradas.Depth = 0;
+            crdEntradas.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            crdEntradas.Location = new Point(19, 19);
+            crdEntradas.Margin = new Padding(14);
+            crdEntradas.MouseState = MaterialSkin.MouseState.HOVER;
+            crdEntradas.Name = "crdEntradas";
+            crdEntradas.Padding = new Padding(14);
+            crdEntradas.Size = new Size(417, 112);
+            crdEntradas.TabIndex = 0;
+            // 
+            // pbEntrada
+            // 
+            pbEntrada.Image = Properties.Resources.Compra;
+            pbEntrada.Location = new Point(17, 17);
+            pbEntrada.Name = "pbEntrada";
+            pbEntrada.Size = new Size(75, 75);
+            pbEntrada.SizeMode = PictureBoxSizeMode.Zoom;
+            pbEntrada.TabIndex = 0;
+            pbEntrada.TabStop = false;
+            // 
+            // lblEntrada
+            // 
+            lblEntrada.AutoSize = true;
+            lblEntrada.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblEntrada.Location = new Point(113, 17);
+            lblEntrada.Name = "lblEntrada";
+            lblEntrada.Size = new Size(118, 25);
+            lblEntrada.TabIndex = 1;
+            lblEntrada.Text = "ENTRADAS";
+            // 
+            // lblCordEnt
+            // 
+            lblCordEnt.AutoSize = true;
+            lblCordEnt.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCordEnt.Location = new Point(113, 67);
+            lblCordEnt.Name = "lblCordEnt";
+            lblCordEnt.Size = new Size(40, 25);
+            lblCordEnt.TabIndex = 2;
+            lblCordEnt.Text = "C$";
+            // 
+            // lblCantEnt
+            // 
+            lblCantEnt.AutoSize = true;
+            lblCantEnt.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCantEnt.Location = new Point(159, 67);
+            lblCantEnt.Name = "lblCantEnt";
+            lblCantEnt.Size = new Size(66, 25);
+            lblCantEnt.TabIndex = 3;
+            lblCantEnt.Text = "00.00";
+            // 
+            // materialCard1
+            // 
+            materialCard1.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard1.Controls.Add(lblCantSal);
+            materialCard1.Controls.Add(lblCordSal);
+            materialCard1.Controls.Add(lblSalida);
+            materialCard1.Controls.Add(pictureBox1);
+            materialCard1.Depth = 0;
+            materialCard1.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            materialCard1.Location = new Point(464, 19);
+            materialCard1.Margin = new Padding(14);
+            materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialCard1.Name = "materialCard1";
+            materialCard1.Padding = new Padding(14);
+            materialCard1.Size = new Size(417, 112);
+            materialCard1.TabIndex = 1;
+            // 
+            // lblCantSal
+            // 
+            lblCantSal.AutoSize = true;
+            lblCantSal.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCantSal.Location = new Point(159, 67);
+            lblCantSal.Name = "lblCantSal";
+            lblCantSal.Size = new Size(66, 25);
+            lblCantSal.TabIndex = 3;
+            lblCantSal.Text = "00.00";
+            // 
+            // lblCordSal
+            // 
+            lblCordSal.AutoSize = true;
+            lblCordSal.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCordSal.Location = new Point(113, 67);
+            lblCordSal.Name = "lblCordSal";
+            lblCordSal.Size = new Size(40, 25);
+            lblCordSal.TabIndex = 2;
+            lblCordSal.Text = "C$";
+            // 
+            // lblSalida
+            // 
+            lblSalida.AutoSize = true;
+            lblSalida.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblSalida.Location = new Point(113, 17);
+            lblSalida.Name = "lblSalida";
+            lblSalida.Size = new Size(118, 25);
+            lblSalida.TabIndex = 1;
+            lblSalida.Text = "ENTRADAS";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Salida;
+            pictureBox1.Location = new Point(17, 17);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(75, 75);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
             // frmDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -371,18 +337,18 @@
             Text = "frmConfiguration";
             flowLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvJustRegistered).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            crdEntradas.ResumeLayout(false);
+            crdEntradas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbEntrada).EndInit();
+            materialCard1.ResumeLayout(false);
+            materialCard1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -392,23 +358,21 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel1;
         private Label label1;
-        private Panel panel2;
-        private Panel panel4;
         private TableLayoutPanel tableLayoutPanel1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private Label lblUser;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private Label lblNumUserReport;
-        private Label lblUserReport;
-        private Label lblNumUser;
-        private Label lblNumShopReport;
-        private Label lblShopReport;
-        private Label lblNumShop;
-        private Label lblShops;
         private DataGridView dgvJustRegistered;
         private FontAwesome.Sharp.IconButton btnSig;
         private Panel panel3;
         private FontAwesome.Sharp.IconButton iconButton1;
         private Label label2;
+        private MaterialSkin.Controls.MaterialCard crdEntradas;
+        private PictureBox pbEntrada;
+        private MaterialSkin.Controls.MaterialCard materialCard1;
+        private Label lblCantSal;
+        private Label lblCordSal;
+        private Label lblSalida;
+        private PictureBox pictureBox1;
+        private Label lblCantEnt;
+        private Label lblCordEnt;
+        private Label lblEntrada;
     }
 }

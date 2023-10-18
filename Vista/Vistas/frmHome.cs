@@ -60,12 +60,12 @@ namespace Vista.HOME
             if (flpSidebar.Width == 200)
             {
                 flpSidebar.Width = 75;
-                Separador1.Width = 75;
+                SeparadorPrincipal.Width = 75;
             }
             else
             {
                 flpSidebar.Width = 200;
-                Separador1.Width = 200;
+                SeparadorPrincipal.Width = 200;
             }
         }
 

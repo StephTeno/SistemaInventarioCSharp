@@ -36,13 +36,14 @@
             lblTitle = new Label();
             btnExit = new PictureBox();
             btnMinus = new PictureBox();
-            lblForgot = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)btnExit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMinus).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtUser
@@ -54,7 +55,7 @@
             txtUser.BorderSize = 2;
             txtUser.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point);
             txtUser.ForeColor = Color.White;
-            txtUser.Location = new Point(414, 134);
+            txtUser.Location = new Point(393, 136);
             txtUser.Margin = new Padding(4);
             txtUser.Multiline = false;
             txtUser.Name = "txtUser";
@@ -78,7 +79,7 @@
             txtPassword.BorderSize = 2;
             txtPassword.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point);
             txtPassword.ForeColor = Color.White;
-            txtPassword.Location = new Point(414, 184);
+            txtPassword.Location = new Point(393, 186);
             txtPassword.Margin = new Padding(4);
             txtPassword.Multiline = false;
             txtPassword.Name = "txtPassword";
@@ -104,7 +105,7 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Montserrat", 9.749999F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(414, 276);
+            btnLogin.Location = new Point(393, 278);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(250, 35);
             btnLogin.TabIndex = 12;
@@ -118,7 +119,7 @@
             lblErrorLogin.AutoSize = true;
             lblErrorLogin.Font = new Font("Montserrat", 8.249999F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorLogin.ForeColor = Color.FromArgb(255, 128, 128);
-            lblErrorLogin.Location = new Point(414, 233);
+            lblErrorLogin.Location = new Point(393, 235);
             lblErrorLogin.Name = "lblErrorLogin";
             lblErrorLogin.Size = new Size(183, 15);
             lblErrorLogin.TabIndex = 14;
@@ -130,7 +131,7 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Montserrat SemiBold", 16F, FontStyle.Bold, GraphicsUnit.Point);
             lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(448, 68);
+            lblTitle.Location = new Point(427, 70);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(189, 30);
             lblTitle.TabIndex = 17;
@@ -162,24 +163,13 @@
             btnMinus.MouseEnter += btnMinus_MouseEnter;
             btnMinus.MouseLeave += btnMinus_MouseLeave;
             // 
-            // lblForgot
-            // 
-            lblForgot.AutoSize = true;
-            lblForgot.Font = new Font("Montserrat", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblForgot.ForeColor = Color.CornflowerBlue;
-            lblForgot.Location = new Point(448, 324);
-            lblForgot.Name = "lblForgot";
-            lblForgot.Size = new Size(191, 20);
-            lblForgot.TabIndex = 20;
-            lblForgot.Text = "¿Olvidaste tu Contraseña?";
-            // 
             // iconPictureBox1
             // 
             iconPictureBox1.BackColor = Color.MidnightBlue;
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User;
             iconPictureBox1.IconColor = Color.White;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconPictureBox1.Location = new Point(375, 134);
+            iconPictureBox1.Location = new Point(354, 136);
             iconPictureBox1.Name = "iconPictureBox1";
             iconPictureBox1.Size = new Size(32, 32);
             iconPictureBox1.TabIndex = 21;
@@ -191,11 +181,21 @@
             iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Lock;
             iconPictureBox2.IconColor = Color.White;
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconPictureBox2.Location = new Point(375, 185);
+            iconPictureBox2.Location = new Point(354, 187);
             iconPictureBox2.Name = "iconPictureBox2";
             iconPictureBox2.Size = new Size(32, 32);
             iconPictureBox2.TabIndex = 22;
             iconPictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Gestión_de_Inventario;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(300, 449);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 23;
+            pictureBox1.TabStop = false;
             // 
             // frmAppLogin
             // 
@@ -203,9 +203,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MidnightBlue;
             ClientSize = new Size(700, 449);
+            Controls.Add(pictureBox1);
             Controls.Add(iconPictureBox2);
             Controls.Add(iconPictureBox1);
-            Controls.Add(lblForgot);
             Controls.Add(btnMinus);
             Controls.Add(btnExit);
             Controls.Add(lblTitle);
@@ -223,6 +223,7 @@
             ((System.ComponentModel.ISupportInitialize)btnMinus).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -235,8 +236,8 @@
         private Label lblTitle;
         private PictureBox btnExit;
         private PictureBox btnMinus;
-        private Label lblForgot;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private PictureBox pictureBox1;
     }
 }
