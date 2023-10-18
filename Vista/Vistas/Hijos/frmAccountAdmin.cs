@@ -73,21 +73,25 @@ namespace Vista.Vistas.Hijos
         private void btnNoti_Click(object sender, EventArgs e)
         {
             ActiveButton(btnNoti);
+            AbrirFormInPanel(new frmNotification());
         }
 
         private void btnCatAndCal_Click(object sender, EventArgs e)
         {
             ActiveButton(btnCatAndCal);
+            AbrirFormInPanel(new frmOrgProduct());
         }
 
         private void btnUmbStock_Click(object sender, EventArgs e)
         {
             ActiveButton(btnUmbStock);
+            AbrirFormInPanel(new frmUmbStock());
         }
 
         private void btnUbicAlma_Click(object sender, EventArgs e)
         {
             ActiveButton(btnUbicAlma);
+            AbrirFormInPanel(new frmUbiAlmacenes());
         }
     }
 }

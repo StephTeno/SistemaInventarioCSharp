@@ -53,6 +53,7 @@ namespace Vista.HOME
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             AbrirFormInPanel(new frmDashboard());
+
         }
 
         private void iconButton1_Click(object sender, EventArgs e)

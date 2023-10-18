@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vista.Vistas.Nietos
 {
-    public partial class frmUsers : Form
+    public partial class frmUmbStock : Form
     {
-        public frmUsers()
+        public frmUmbStock()
         {
             InitializeComponent();
         }

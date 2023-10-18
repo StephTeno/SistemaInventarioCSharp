@@ -33,8 +33,8 @@
             btnAdd = new CustomControls.RJControls.RJButton();
             btnDelete = new CustomControls.RJControls.RJButton();
             panel1 = new Panel();
-            panel2 = new Panel();
             label1 = new Label();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -69,6 +69,7 @@
             btnEdit.Text = "Editar";
             btnEdit.TextColor = Color.White;
             btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnAdd
             // 
@@ -88,6 +89,7 @@
             btnAdd.Text = "Agregar";
             btnAdd.TextColor = Color.White;
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnDelete
             // 
@@ -107,6 +109,7 @@
             btnDelete.Text = "Eliminar";
             btnDelete.TextColor = Color.White;
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // panel1
             // 
@@ -116,6 +119,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1000, 60);
             panel1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(12, 19);
+            label1.Name = "label1";
+            label1.Size = new Size(218, 25);
+            label1.TabIndex = 0;
+            label1.Text = "Usuarios Registrados";
             // 
             // panel2
             // 
@@ -127,16 +140,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1000, 60);
             panel2.TabIndex = 5;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(12, 19);
-            label1.Name = "label1";
-            label1.Size = new Size(218, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Usuarios Registrados";
             // 
             // frmUsers
             // 
@@ -150,7 +153,6 @@
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmUsers";
-            StartPosition = FormStartPosition.CenterScreen;
             Text = "Users";
             ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
             panel1.ResumeLayout(false);

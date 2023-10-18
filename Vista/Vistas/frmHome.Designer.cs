@@ -55,6 +55,7 @@
             ItemHelp = new ToolStripMenuItem();
             ItemLogOut = new ToolStripMenuItem();
             ItemExit = new ToolStripMenuItem();
+            niNotification = new NotifyIcon(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             flpSidebar.SuspendLayout();
@@ -472,6 +473,12 @@
             ItemExit.Text = "Salir";
             ItemExit.Click += ItemExit_Click;
             // 
+            // niNotification
+            // 
+            niNotification.Icon = (Icon)resources.GetObject("niNotification.Icon");
+            niNotification.Text = "Notificación";
+            niNotification.Visible = true;
+            // 
             // frmHome
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -522,5 +529,6 @@
         private FontAwesome.Sharp.IconButton SeparadorAjustes;
         private FontAwesome.Sharp.IconButton btnAdmin;
         private FontAwesome.Sharp.IconButton btnHistorial;
+        private NotifyIcon niNotification;
     }
 }
