@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Vistas.Nietos;
 
 namespace Vista.Vistas.Hijos
 {
@@ -15,13 +16,19 @@ namespace Vista.Vistas.Hijos
     {
         private IconButton btnSelection;
         private Panel BordInf;
+
+        private void Inicio()
+        {
+            ActiveButton(btnAllUser);
+            AbrirFormInPanel(new frmUsers());
+        }
         public frmAccountAdmin()
         {
             InitializeComponent();
             BordInf = new Panel();
             BordInf.Size = new Size(150, 5);
             plOptions.Controls.Add(BordInf);
-            ActiveButton(btnAllUser);
+            Inicio();
         }
         private void ActiveButton(object button)
         {
@@ -45,25 +52,42 @@ namespace Vista.Vistas.Hijos
                 btnSelection.IconColor = Color.DimGray;
             }
         }
-
-        private void btnAddUser_Click(object sender, EventArgs e)
+        public void AbrirFormInPanel(object FormNieto)
         {
-            ActiveButton(btnAddUser);
+            if (this.plContenedor.Controls.Count > 0)
+                this.plContenedor.Controls.RemoveAt(0);
+            Form fh = (Form)FormNieto;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.plContenedor.Controls.Add(fh);
+            this.plContenedor.Tag = fh;
+            fh.BringToFront();
+            fh.Show();
         }
 
         private void btnAllUser_Click(object sender, EventArgs e)
         {
-            ActiveButton(btnAllUser);
+            Inicio();
         }
 
-        private void btnEditUser_Click(object sender, EventArgs e)
+        private void btnNoti_Click(object sender, EventArgs e)
         {
-            ActiveButton(btnEditUser);
+            ActiveButton(btnNoti);
         }
 
-        private void btnDeleteUser_Click(object sender, EventArgs e)
+        private void btnCatAndCal_Click(object sender, EventArgs e)
         {
-            ActiveButton(btnDeleteUser);
+            ActiveButton(btnCatAndCal);
+        }
+
+        private void btnUmbStock_Click(object sender, EventArgs e)
+        {
+            ActiveButton(btnUmbStock);
+        }
+
+        private void btnUbicAlma_Click(object sender, EventArgs e)
+        {
+            ActiveButton(btnUbicAlma);
         }
     }
 }

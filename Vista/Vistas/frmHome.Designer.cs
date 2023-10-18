@@ -42,6 +42,9 @@
             btnCatalogue = new FontAwesome.Sharp.IconButton();
             btnInvoice = new FontAwesome.Sharp.IconButton();
             btnInventory = new FontAwesome.Sharp.IconButton();
+            SeparadorAjustes = new FontAwesome.Sharp.IconButton();
+            btnAdmin = new FontAwesome.Sharp.IconButton();
+            btnHistorial = new FontAwesome.Sharp.IconButton();
             plContenedor = new Panel();
             ddmInventory = new CustomControls.RJControls.RJDropdownMenu(components);
             entradasToolStripMenuItem = new ToolStripMenuItem();
@@ -52,9 +55,6 @@
             ItemHelp = new ToolStripMenuItem();
             ItemLogOut = new ToolStripMenuItem();
             ItemExit = new ToolStripMenuItem();
-            SeparadorAjustes = new FontAwesome.Sharp.IconButton();
-            btnAdmin = new FontAwesome.Sharp.IconButton();
-            btnHistorial = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             flpSidebar.SuspendLayout();
@@ -311,6 +311,79 @@
             btnInventory.UseVisualStyleBackColor = false;
             btnInventory.Click += btnInventory_Click;
             // 
+            // SeparadorAjustes
+            // 
+            SeparadorAjustes.BackColor = Color.FromArgb(235, 239, 241);
+            SeparadorAjustes.Dock = DockStyle.Top;
+            SeparadorAjustes.Enabled = false;
+            SeparadorAjustes.FlatAppearance.BorderSize = 0;
+            SeparadorAjustes.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
+            SeparadorAjustes.FlatStyle = FlatStyle.Flat;
+            SeparadorAjustes.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            SeparadorAjustes.ForeColor = Color.Silver;
+            SeparadorAjustes.IconChar = FontAwesome.Sharp.IconChar.None;
+            SeparadorAjustes.IconColor = Color.Gray;
+            SeparadorAjustes.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            SeparadorAjustes.IconSize = 30;
+            SeparadorAjustes.ImageAlign = ContentAlignment.MiddleLeft;
+            SeparadorAjustes.Location = new Point(0, 300);
+            SeparadorAjustes.Margin = new Padding(0, 0, 0, 10);
+            SeparadorAjustes.Name = "SeparadorAjustes";
+            SeparadorAjustes.Size = new Size(200, 50);
+            SeparadorAjustes.TabIndex = 9;
+            SeparadorAjustes.Text = "AJUSTES";
+            SeparadorAjustes.TextAlign = ContentAlignment.BottomLeft;
+            SeparadorAjustes.UseVisualStyleBackColor = false;
+            // 
+            // btnAdmin
+            // 
+            btnAdmin.BackColor = Color.FromArgb(235, 239, 241);
+            btnAdmin.Dock = DockStyle.Top;
+            btnAdmin.FlatAppearance.BorderSize = 0;
+            btnAdmin.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
+            btnAdmin.FlatStyle = FlatStyle.Flat;
+            btnAdmin.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdmin.ForeColor = Color.Gray;
+            btnAdmin.IconChar = FontAwesome.Sharp.IconChar.UserGear;
+            btnAdmin.IconColor = Color.Gray;
+            btnAdmin.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            btnAdmin.IconSize = 25;
+            btnAdmin.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdmin.Location = new Point(0, 360);
+            btnAdmin.Margin = new Padding(0, 0, 0, 10);
+            btnAdmin.Name = "btnAdmin";
+            btnAdmin.Padding = new Padding(15, 0, 30, 0);
+            btnAdmin.Size = new Size(200, 50);
+            btnAdmin.TabIndex = 10;
+            btnAdmin.Text = "Administración";
+            btnAdmin.TextAlign = ContentAlignment.MiddleRight;
+            btnAdmin.UseVisualStyleBackColor = false;
+            btnAdmin.Click += btnManageAdmin_Click;
+            // 
+            // btnHistorial
+            // 
+            btnHistorial.BackColor = Color.FromArgb(235, 239, 241);
+            btnHistorial.Dock = DockStyle.Top;
+            btnHistorial.FlatAppearance.BorderSize = 0;
+            btnHistorial.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
+            btnHistorial.FlatStyle = FlatStyle.Flat;
+            btnHistorial.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnHistorial.ForeColor = Color.Gray;
+            btnHistorial.IconChar = FontAwesome.Sharp.IconChar.Inbox;
+            btnHistorial.IconColor = Color.Gray;
+            btnHistorial.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            btnHistorial.IconSize = 25;
+            btnHistorial.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHistorial.Location = new Point(0, 420);
+            btnHistorial.Margin = new Padding(0, 0, 0, 10);
+            btnHistorial.Name = "btnHistorial";
+            btnHistorial.Padding = new Padding(15, 0, 55, 0);
+            btnHistorial.Size = new Size(200, 50);
+            btnHistorial.TabIndex = 11;
+            btnHistorial.Text = "Historial";
+            btnHistorial.TextAlign = ContentAlignment.MiddleRight;
+            btnHistorial.UseVisualStyleBackColor = false;
+            // 
             // plContenedor
             // 
             plContenedor.BackColor = Color.White;
@@ -398,78 +471,6 @@
             ItemExit.Size = new Size(160, 22);
             ItemExit.Text = "Salir";
             ItemExit.Click += ItemExit_Click;
-            // 
-            // SeparadorAjustes
-            // 
-            SeparadorAjustes.BackColor = Color.FromArgb(235, 239, 241);
-            SeparadorAjustes.Dock = DockStyle.Top;
-            SeparadorAjustes.Enabled = false;
-            SeparadorAjustes.FlatAppearance.BorderSize = 0;
-            SeparadorAjustes.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
-            SeparadorAjustes.FlatStyle = FlatStyle.Flat;
-            SeparadorAjustes.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            SeparadorAjustes.ForeColor = Color.Silver;
-            SeparadorAjustes.IconChar = FontAwesome.Sharp.IconChar.None;
-            SeparadorAjustes.IconColor = Color.Gray;
-            SeparadorAjustes.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            SeparadorAjustes.IconSize = 30;
-            SeparadorAjustes.ImageAlign = ContentAlignment.MiddleLeft;
-            SeparadorAjustes.Location = new Point(0, 300);
-            SeparadorAjustes.Margin = new Padding(0, 0, 0, 10);
-            SeparadorAjustes.Name = "SeparadorAjustes";
-            SeparadorAjustes.Size = new Size(200, 50);
-            SeparadorAjustes.TabIndex = 9;
-            SeparadorAjustes.Text = "AJUSTES";
-            SeparadorAjustes.TextAlign = ContentAlignment.BottomLeft;
-            SeparadorAjustes.UseVisualStyleBackColor = false;
-            // 
-            // btnAdmin
-            // 
-            btnAdmin.BackColor = Color.FromArgb(235, 239, 241);
-            btnAdmin.Dock = DockStyle.Top;
-            btnAdmin.FlatAppearance.BorderSize = 0;
-            btnAdmin.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
-            btnAdmin.FlatStyle = FlatStyle.Flat;
-            btnAdmin.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAdmin.ForeColor = Color.Gray;
-            btnAdmin.IconChar = FontAwesome.Sharp.IconChar.UserGear;
-            btnAdmin.IconColor = Color.Gray;
-            btnAdmin.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnAdmin.IconSize = 25;
-            btnAdmin.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAdmin.Location = new Point(0, 360);
-            btnAdmin.Margin = new Padding(0, 0, 0, 10);
-            btnAdmin.Name = "btnAdmin";
-            btnAdmin.Padding = new Padding(15, 0, 30, 0);
-            btnAdmin.Size = new Size(200, 50);
-            btnAdmin.TabIndex = 10;
-            btnAdmin.Text = "Administración";
-            btnAdmin.TextAlign = ContentAlignment.MiddleRight;
-            btnAdmin.UseVisualStyleBackColor = false;
-            // 
-            // btnHistorial
-            // 
-            btnHistorial.BackColor = Color.FromArgb(235, 239, 241);
-            btnHistorial.Dock = DockStyle.Top;
-            btnHistorial.FlatAppearance.BorderSize = 0;
-            btnHistorial.FlatAppearance.MouseDownBackColor = Color.RoyalBlue;
-            btnHistorial.FlatStyle = FlatStyle.Flat;
-            btnHistorial.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnHistorial.ForeColor = Color.Gray;
-            btnHistorial.IconChar = FontAwesome.Sharp.IconChar.Inbox;
-            btnHistorial.IconColor = Color.Gray;
-            btnHistorial.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnHistorial.IconSize = 25;
-            btnHistorial.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHistorial.Location = new Point(0, 420);
-            btnHistorial.Margin = new Padding(0, 0, 0, 10);
-            btnHistorial.Name = "btnHistorial";
-            btnHistorial.Padding = new Padding(15, 0, 55, 0);
-            btnHistorial.Size = new Size(200, 50);
-            btnHistorial.TabIndex = 11;
-            btnHistorial.Text = "Historial";
-            btnHistorial.TextAlign = ContentAlignment.MiddleRight;
-            btnHistorial.UseVisualStyleBackColor = false;
             // 
             // frmHome
             // 

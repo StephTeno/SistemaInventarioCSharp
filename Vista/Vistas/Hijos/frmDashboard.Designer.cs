@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             flowLayoutPanel2 = new FlowLayoutPanel();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel3 = new Panel();
@@ -156,14 +156,14 @@
             dgvJustRegistered.BackgroundColor = Color.White;
             dgvJustRegistered.BorderStyle = BorderStyle.None;
             dgvJustRegistered.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.MidnightBlue;
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.CornflowerBlue;
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvJustRegistered.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.MidnightBlue;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.CornflowerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvJustRegistered.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvJustRegistered.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvJustRegistered.Dock = DockStyle.Bottom;
             dgvJustRegistered.EnableHeadersVisualStyles = false;
@@ -171,12 +171,12 @@
             dgvJustRegistered.Location = new Point(0, 260);
             dgvJustRegistered.Margin = new Padding(0);
             dgvJustRegistered.Name = "dgvJustRegistered";
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.MidnightBlue;
-            dataGridViewCellStyle2.SelectionBackColor = Color.CornflowerBlue;
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dgvJustRegistered.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.MidnightBlue;
+            dataGridViewCellStyle4.SelectionBackColor = Color.CornflowerBlue;
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dgvJustRegistered.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvJustRegistered.RowTemplate.Height = 25;
             dgvJustRegistered.Size = new Size(1000, 280);
             dgvJustRegistered.TabIndex = 3;
@@ -316,7 +316,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Salida;
+            pictureBox1.Image = Properties.Resources.Compra;
             pictureBox1.Location = new Point(17, 17);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(75, 75);
