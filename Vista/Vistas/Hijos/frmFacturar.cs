@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomControls.RJControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace Vista.Vistas.Hijos
         public frmFacturar()
         {
             InitializeComponent();
+        }
+        public void AgregarNumero(object sender, EventArgs e)
+        {
+            var b = ((RJButton)sender);
+
+            if (txtCantidad.Texts == "0")
+                txtCantidad.Texts = "";
+
+            txtCantidad.Texts += b.Text;
         }
 
         private void label5_Click(object sender, EventArgs e)

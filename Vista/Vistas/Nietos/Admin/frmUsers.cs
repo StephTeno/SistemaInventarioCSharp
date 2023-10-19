@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CONTROLLER;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace Vista.Vistas.Nietos
 {
     public partial class frmUsers : Form
     {
+        ControllerUsers c = new ControllerUsers();
         public frmUsers()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace Vista.Vistas.Nietos
         {
             frmMetUsuarios m = new frmMetUsuarios(btnAdd.Text);
             m.ShowDialog();
+            c.RellenarData(dgvUsers);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -34,6 +37,11 @@ namespace Vista.Vistas.Nietos
         {
             frmMetUsuarios m = new frmMetUsuarios(btnEdit.Text);
             m.ShowDialog();
+        }
+
+        private void frmUsers_Load(object sender, EventArgs e)
+        {
+            c.RellenarData(dgvUsers);
         }
     }
 }

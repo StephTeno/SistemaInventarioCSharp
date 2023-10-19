@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MODELO.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using System.Configuration;
 
 namespace MODELO.Data;
@@ -47,7 +48,7 @@ public partial class ESInventarioContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["constring"].ConnectionString);
+        => optionsBuilder.UseSqlServer("Server=STEPHANIE\\TENORIO;Database=ESInventario;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -168,10 +169,13 @@ public partial class ESInventarioContext : DbContext
             entity.HasKey(e => e.IdProd).HasName("PK__Producto__E40D971D188EB84B");
 
             entity.Property(e => e.IdProd).IsFixedLength();
+            entity.Property(e => e.Proveedor).IsFixedLength();
 
             entity.HasOne(d => d.CategoriaNavigation).WithMany(p => p.Productos)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Productos__Categ__46E78A0C");
+
+            entity.HasOne(d => d.ProveedorNavigation).WithMany(p => p.Productos).HasConstraintName("FK__Productos__Prove__7A672E12");
         });
 
         modelBuilder.Entity<Proveedore>(entity =>

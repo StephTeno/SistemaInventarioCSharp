@@ -40,4 +40,7 @@ public partial class Proveedore
     [ForeignKey("IdLocal")]
     [InverseProperty("Proveedores")]
     public virtual Municipio IdLocalNavigation { get; set; } = null!;
+
+    [InverseProperty("ProveedorNavigation")]
+    public virtual ICollection<Producto> Productos { get; set; } = new List<Producto>();
 }

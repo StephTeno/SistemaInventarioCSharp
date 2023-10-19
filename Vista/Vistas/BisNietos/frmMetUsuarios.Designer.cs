@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            rjTextBox1 = new CustomControls.RJControls.RJTextBox();
-            rjTextBox2 = new CustomControls.RJControls.RJTextBox();
-            rjComboBox1 = new Controles_personalizados.RJComboBox();
+            txtUser = new CustomControls.RJControls.RJTextBox();
+            txtContrasena = new CustomControls.RJControls.RJTextBox();
+            cbCargo = new Controles_personalizados.RJComboBox();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             panel2 = new Panel();
             btnDelete = new CustomControls.RJControls.RJButton();
@@ -40,68 +40,68 @@
             panel2.SuspendLayout();
             SuspendLayout();
             // 
-            // rjTextBox1
+            // txtUser
             // 
-            rjTextBox1.BackColor = SystemColors.Window;
-            rjTextBox1.BorderColor = Color.CornflowerBlue;
-            rjTextBox1.BorderFocusColor = Color.HotPink;
-            rjTextBox1.BorderRadius = 0;
-            rjTextBox1.BorderSize = 2;
-            rjTextBox1.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(28, 125);
-            rjTextBox1.Margin = new Padding(4);
-            rjTextBox1.Multiline = false;
-            rjTextBox1.Name = "rjTextBox1";
-            rjTextBox1.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox1.PasswordChar = false;
-            rjTextBox1.PlaceholderColor = Color.DarkGray;
-            rjTextBox1.PlaceholderText = "Username";
-            rjTextBox1.Size = new Size(250, 31);
-            rjTextBox1.TabIndex = 0;
-            rjTextBox1.Texts = "";
-            rjTextBox1.UnderlinedStyle = true;
+            txtUser.BackColor = SystemColors.Window;
+            txtUser.BorderColor = Color.CornflowerBlue;
+            txtUser.BorderFocusColor = Color.HotPink;
+            txtUser.BorderRadius = 0;
+            txtUser.BorderSize = 2;
+            txtUser.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUser.ForeColor = Color.FromArgb(64, 64, 64);
+            txtUser.Location = new Point(28, 125);
+            txtUser.Margin = new Padding(4);
+            txtUser.Multiline = false;
+            txtUser.Name = "txtUser";
+            txtUser.Padding = new Padding(10, 7, 10, 7);
+            txtUser.PasswordChar = false;
+            txtUser.PlaceholderColor = Color.DarkGray;
+            txtUser.PlaceholderText = "Username";
+            txtUser.Size = new Size(250, 31);
+            txtUser.TabIndex = 0;
+            txtUser.Texts = "";
+            txtUser.UnderlinedStyle = true;
             // 
-            // rjTextBox2
+            // txtContrasena
             // 
-            rjTextBox2.BackColor = SystemColors.Window;
-            rjTextBox2.BorderColor = Color.CornflowerBlue;
-            rjTextBox2.BorderFocusColor = Color.HotPink;
-            rjTextBox2.BorderRadius = 0;
-            rjTextBox2.BorderSize = 2;
-            rjTextBox2.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox2.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox2.Location = new Point(321, 125);
-            rjTextBox2.Margin = new Padding(4);
-            rjTextBox2.Multiline = false;
-            rjTextBox2.Name = "rjTextBox2";
-            rjTextBox2.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox2.PasswordChar = false;
-            rjTextBox2.PlaceholderColor = Color.DarkGray;
-            rjTextBox2.PlaceholderText = "Contraseña";
-            rjTextBox2.Size = new Size(250, 31);
-            rjTextBox2.TabIndex = 1;
-            rjTextBox2.Texts = "";
-            rjTextBox2.UnderlinedStyle = true;
+            txtContrasena.BackColor = SystemColors.Window;
+            txtContrasena.BorderColor = Color.CornflowerBlue;
+            txtContrasena.BorderFocusColor = Color.HotPink;
+            txtContrasena.BorderRadius = 0;
+            txtContrasena.BorderSize = 2;
+            txtContrasena.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            txtContrasena.ForeColor = Color.FromArgb(64, 64, 64);
+            txtContrasena.Location = new Point(321, 125);
+            txtContrasena.Margin = new Padding(4);
+            txtContrasena.Multiline = false;
+            txtContrasena.Name = "txtContrasena";
+            txtContrasena.Padding = new Padding(10, 7, 10, 7);
+            txtContrasena.PasswordChar = false;
+            txtContrasena.PlaceholderColor = Color.DarkGray;
+            txtContrasena.PlaceholderText = "Contraseña";
+            txtContrasena.Size = new Size(250, 31);
+            txtContrasena.TabIndex = 1;
+            txtContrasena.Texts = "";
+            txtContrasena.UnderlinedStyle = true;
             // 
-            // rjComboBox1
+            // cbCargo
             // 
-            rjComboBox1.BackColor = Color.White;
-            rjComboBox1.BorderColor = Color.RoyalBlue;
-            rjComboBox1.BorderSize = 1;
-            rjComboBox1.DropDownStyle = ComboBoxStyle.DropDown;
-            rjComboBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            rjComboBox1.ForeColor = Color.Black;
-            rjComboBox1.IconColor = Color.RoyalBlue;
-            rjComboBox1.ListBackColor = Color.White;
-            rjComboBox1.ListTextColor = Color.DimGray;
-            rjComboBox1.Location = new Point(28, 180);
-            rjComboBox1.MinimumSize = new Size(200, 30);
-            rjComboBox1.Name = "rjComboBox1";
-            rjComboBox1.Padding = new Padding(1);
-            rjComboBox1.Size = new Size(250, 30);
-            rjComboBox1.TabIndex = 2;
-            rjComboBox1.Texts = "Cargo";
+            cbCargo.BackColor = Color.White;
+            cbCargo.BorderColor = Color.RoyalBlue;
+            cbCargo.BorderSize = 1;
+            cbCargo.DropDownStyle = ComboBoxStyle.DropDown;
+            cbCargo.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cbCargo.ForeColor = Color.Black;
+            cbCargo.IconColor = Color.RoyalBlue;
+            cbCargo.ListBackColor = Color.White;
+            cbCargo.ListTextColor = Color.DimGray;
+            cbCargo.Location = new Point(28, 180);
+            cbCargo.MinimumSize = new Size(200, 30);
+            cbCargo.Name = "cbCargo";
+            cbCargo.Padding = new Padding(1);
+            cbCargo.Size = new Size(250, 30);
+            cbCargo.TabIndex = 2;
+            cbCargo.Texts = "Cargo";
             // 
             // iconPictureBox1
             // 
@@ -192,7 +192,7 @@
             btnEdit.Visible = false;
             btnEdit.Click += btnEdit_Click;
             // 
-            // MetUsuarios
+            // frmMetUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -200,12 +200,12 @@
             ClientSize = new Size(600, 300);
             Controls.Add(panel2);
             Controls.Add(iconPictureBox1);
-            Controls.Add(rjComboBox1);
-            Controls.Add(rjTextBox2);
-            Controls.Add(rjTextBox1);
+            Controls.Add(cbCargo);
+            Controls.Add(txtContrasena);
+            Controls.Add(txtUser);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "MetUsuarios";
+            Name = "frmMetUsuarios";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MetUsuarios";
             Load += MetUsuarios_Load;
@@ -216,9 +216,9 @@
 
         #endregion
 
-        private CustomControls.RJControls.RJTextBox rjTextBox1;
-        private CustomControls.RJControls.RJTextBox rjTextBox2;
-        private Controles_personalizados.RJComboBox rjComboBox1;
+        private CustomControls.RJControls.RJTextBox txtUser;
+        private CustomControls.RJControls.RJTextBox txtContrasena;
+        private Controles_personalizados.RJComboBox cbCargo;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Panel panel2;
         private CustomControls.RJControls.RJButton btnAdd;

@@ -32,12 +32,13 @@
             panel1 = new Panel();
             label1 = new Label();
             plOptions = new Panel();
+            btnClientes = new FontAwesome.Sharp.IconButton();
             btnNoti = new FontAwesome.Sharp.IconButton();
-            btnUbicAlma = new FontAwesome.Sharp.IconButton();
             btnUmbStock = new FontAwesome.Sharp.IconButton();
             btnCatAndCal = new FontAwesome.Sharp.IconButton();
             btnAllUser = new FontAwesome.Sharp.IconButton();
             plContenedor = new Panel();
+            btnProveedores = new FontAwesome.Sharp.IconButton();
             plTitle.SuspendLayout();
             panel1.SuspendLayout();
             plOptions.SuspendLayout();
@@ -73,8 +74,9 @@
             // 
             // plOptions
             // 
+            plOptions.Controls.Add(btnProveedores);
+            plOptions.Controls.Add(btnClientes);
             plOptions.Controls.Add(btnNoti);
-            plOptions.Controls.Add(btnUbicAlma);
             plOptions.Controls.Add(btnUmbStock);
             plOptions.Controls.Add(btnCatAndCal);
             plOptions.Controls.Add(btnAllUser);
@@ -83,6 +85,29 @@
             plOptions.Name = "plOptions";
             plOptions.Size = new Size(1000, 57);
             plOptions.TabIndex = 1;
+            // 
+            // btnClientes
+            // 
+            btnClientes.Dock = DockStyle.Left;
+            btnClientes.FlatAppearance.BorderSize = 0;
+            btnClientes.FlatStyle = FlatStyle.Flat;
+            btnClientes.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnClientes.ForeColor = Color.DimGray;
+            btnClientes.IconChar = FontAwesome.Sharp.IconChar.Users;
+            btnClientes.IconColor = Color.DimGray;
+            btnClientes.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            btnClientes.IconSize = 25;
+            btnClientes.ImageAlign = ContentAlignment.MiddleLeft;
+            btnClientes.Location = new Point(600, 0);
+            btnClientes.Margin = new Padding(5, 6, 5, 6);
+            btnClientes.Name = "btnClientes";
+            btnClientes.Padding = new Padding(5, 0, 35, 0);
+            btnClientes.Size = new Size(150, 57);
+            btnClientes.TabIndex = 5;
+            btnClientes.Text = "Clientes";
+            btnClientes.TextAlign = ContentAlignment.MiddleRight;
+            btnClientes.UseVisualStyleBackColor = true;
+            btnClientes.Click += btnClientes_Click;
             // 
             // btnNoti
             // 
@@ -96,7 +121,7 @@
             btnNoti.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnNoti.IconSize = 25;
             btnNoti.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNoti.Location = new Point(600, 0);
+            btnNoti.Location = new Point(450, 0);
             btnNoti.Margin = new Padding(5, 6, 5, 6);
             btnNoti.Name = "btnNoti";
             btnNoti.Padding = new Padding(5, 0, 15, 0);
@@ -106,28 +131,6 @@
             btnNoti.TextAlign = ContentAlignment.MiddleRight;
             btnNoti.UseVisualStyleBackColor = true;
             btnNoti.Click += btnNoti_Click;
-            // 
-            // btnUbicAlma
-            // 
-            btnUbicAlma.Dock = DockStyle.Left;
-            btnUbicAlma.FlatAppearance.BorderSize = 0;
-            btnUbicAlma.FlatStyle = FlatStyle.Flat;
-            btnUbicAlma.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnUbicAlma.ForeColor = Color.DimGray;
-            btnUbicAlma.IconChar = FontAwesome.Sharp.IconChar.Bandcamp;
-            btnUbicAlma.IconColor = Color.DimGray;
-            btnUbicAlma.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnUbicAlma.IconSize = 25;
-            btnUbicAlma.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUbicAlma.Location = new Point(450, 0);
-            btnUbicAlma.Margin = new Padding(5, 6, 5, 6);
-            btnUbicAlma.Name = "btnUbicAlma";
-            btnUbicAlma.Padding = new Padding(5, 0, 0, 0);
-            btnUbicAlma.Size = new Size(150, 57);
-            btnUbicAlma.TabIndex = 3;
-            btnUbicAlma.Text = "Ubicación de Almacenes";
-            btnUbicAlma.UseVisualStyleBackColor = true;
-            btnUbicAlma.Click += btnUbicAlma_Click;
             // 
             // btnUmbStock
             // 
@@ -204,6 +207,29 @@
             plContenedor.Size = new Size(1000, 510);
             plContenedor.TabIndex = 2;
             // 
+            // btnProveedores
+            // 
+            btnProveedores.Dock = DockStyle.Left;
+            btnProveedores.FlatAppearance.BorderSize = 0;
+            btnProveedores.FlatStyle = FlatStyle.Flat;
+            btnProveedores.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnProveedores.ForeColor = Color.DimGray;
+            btnProveedores.IconChar = FontAwesome.Sharp.IconChar.UserShield;
+            btnProveedores.IconColor = Color.DimGray;
+            btnProveedores.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            btnProveedores.IconSize = 25;
+            btnProveedores.ImageAlign = ContentAlignment.MiddleLeft;
+            btnProveedores.Location = new Point(750, 0);
+            btnProveedores.Margin = new Padding(5, 6, 5, 6);
+            btnProveedores.Name = "btnProveedores";
+            btnProveedores.Padding = new Padding(5, 0, 15, 0);
+            btnProveedores.Size = new Size(150, 57);
+            btnProveedores.TabIndex = 6;
+            btnProveedores.Text = "Proveedores";
+            btnProveedores.TextAlign = ContentAlignment.MiddleRight;
+            btnProveedores.UseVisualStyleBackColor = true;
+            btnProveedores.Click += btnProveedores_Click;
+            // 
             // frmAccountAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -231,10 +257,11 @@
         private FontAwesome.Sharp.IconButton btnUmbStock;
         private FontAwesome.Sharp.IconButton btnCatAndCal;
         private FontAwesome.Sharp.IconButton btnAllUser;
-        private FontAwesome.Sharp.IconButton btnUbicAlma;
         private Panel panel1;
         private Label label1;
         private FontAwesome.Sharp.IconButton btnNoti;
         private Panel plContenedor;
+        private FontAwesome.Sharp.IconButton btnClientes;
+        private FontAwesome.Sharp.IconButton btnProveedores;
     }
 }

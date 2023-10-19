@@ -8,18 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Vista.Vistas.Nietos.Inventario
+namespace Vista.Vistas.BisNietos
 {
-    public partial class frmSalidas : Form
+    public partial class frmMetSalidas : Form
     {
-        public frmSalidas()
+        public frmMetSalidas()
         {
             InitializeComponent();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            //Agregar y Salir
+            this.Close();
         }
     }
 }

@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CONTROLLER;
 
 namespace Vista.Vistas.Nietos
 {
-    public partial class frmUbiAlmacenes : Form
+    public partial class frmClientes : Form
     {
-        public frmUbiAlmacenes()
+        ControllerCliente cliente = new ControllerCliente();
+        public frmClientes()
         {
             InitializeComponent();
+        }
+
+        private void frmClientes_Load(object sender, EventArgs e)
+        {
+            cliente.RellenarData(dgvClient);
         }
     }
 }

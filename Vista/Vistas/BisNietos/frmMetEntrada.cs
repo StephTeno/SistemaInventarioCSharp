@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomControls.RJControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,34 +13,25 @@ namespace Vista.Vistas.BisNietos
 {
     public partial class frmMetEntrada : Form
     {
-        string Tipo = String.Empty;
-        public frmMetEntrada(string tipo = "Agregar")
+        public frmMetEntrada()
         {
             InitializeComponent();
-            Tipo = tipo;
         }
-        public void Metodo()
+
+        public void AgregarNumero(object sender, EventArgs e)
         {
-            switch (Tipo)
-            {
-                case "Agregar":
-                    btnAdd.Visible = true;
-                    break;
-                case "Eliminar":
-                    btnDelete.Visible = true;
-                    btnDelete.Location = new Point(243, 18);
-                    break;
-                case "Editar":
-                    btnEdit.Visible = true;
-                    btnEdit.Location = new Point(243, 18);
-                    break;
-                default:
-                    break;
-            }
+            var b = ((RJButton)sender);
+
+            if (txtCant.Texts == "0")
+                txtCant.Texts = "";
+
+            txtCant.Texts += b.Text;
         }
-        private void frmMetEntrada_Load(object sender, EventArgs e)
+
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            Metodo();
+            //Agregar y Salir
+            this.Close();
         }
     }
 }

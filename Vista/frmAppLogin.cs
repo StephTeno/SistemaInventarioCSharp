@@ -1,4 +1,6 @@
-﻿using CustomControls.RJControls;
+﻿using CONTROLLER;
+using CustomControls.RJControls;
+using MODELO.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +16,8 @@ namespace Vista
 {
     public partial class frmAppLogin : Form
     {
+        ControllerUsers u = new ControllerUsers();
+        Usuario us;
         public frmAppLogin()
         {
             InitializeComponent();
@@ -32,18 +36,33 @@ namespace Vista
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUser.Texts != "a" || txtPassword.Texts != "a")
+            if (txtUser.Texts == string.Empty)
             {
-                txtUser.BorderColor = Color.Red; txtPassword.BorderColor = Color.Red;
+                txtUser.BorderColor = Color.Red;
                 lblErrorLogin.Visible = true;
             }
             else
             {
-                frmHome home = new frmHome();
+                if (txtPassword.Texts == string.Empty)
+                { 
+                    txtPassword.BorderColor = Color.Red;
+                    lblErrorLogin.Visible = true;
+                }
+            }
+
+            us = u.Encontrar(txtUser.Texts);
+
+            if(us!= null && us.Contrasena == txtPassword.Texts)
+            {
+                frmHome home = new frmHome(us);
                 VaciarTextbox();
                 home.Show();
                 this.Hide();
                 home.FormClosing += Frm_Closing;
+            }
+            else
+            {
+                lblErrorLogin.Visible = true;
             }
         }
 

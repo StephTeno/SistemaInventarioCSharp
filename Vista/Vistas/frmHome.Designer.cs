@@ -57,6 +57,7 @@
             ItemLogOut = new ToolStripMenuItem();
             ItemExit = new ToolStripMenuItem();
             niNotification = new NotifyIcon(components);
+            ti = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             flpSidebar.SuspendLayout();
@@ -122,7 +123,7 @@
             btnProfile.Padding = new Padding(5, 0, 10, 0);
             btnProfile.Size = new Size(140, 30);
             btnProfile.TabIndex = 25;
-            btnProfile.Text = "Administrador";
+            btnProfile.Text = "User";
             btnProfile.TextAlign = ContentAlignment.MiddleLeft;
             btnProfile.UseVisualStyleBackColor = true;
             btnProfile.Click += btnProfile_Click;
@@ -496,6 +497,10 @@
             niNotification.Text = "Notificación";
             niNotification.Visible = true;
             // 
+            // ti
+            // 
+            ti.Tick += ti_Tick;
+            // 
             // frmHome
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -549,5 +554,6 @@
         private FontAwesome.Sharp.IconButton btnHistorial;
         private NotifyIcon niNotification;
         private Label lblFechaYHora;
+        private System.Windows.Forms.Timer ti;
     }
 }

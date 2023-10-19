@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Vistas.Nietos.Inventario;
 
 namespace Vista.Vistas.Hijos
 {
@@ -60,13 +61,13 @@ namespace Vista.Vistas.Hijos
         private void btnRegEntrada_Click(object sender, EventArgs e)
         {
             ActiveButton(btnRegEntrada);
-            //AbrirFormInPanel(new frmEntrada());
+            AbrirFormInPanel(new frmEntrada());
         }
 
         private void btnRegSalidas_Click(object sender, EventArgs e)
         {
             ActiveButton(btnRegSalidas);
-            //AbrirFormInPanel(new frmEnt());
+            AbrirFormInPanel(new frmSalidas());
         }
     }
 }

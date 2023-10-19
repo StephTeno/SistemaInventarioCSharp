@@ -1,10 +1,6 @@
-﻿using CustomControls.RJControls;
-using FontAwesome.Sharp;
-using Vista.Controles_personalizados;
-
-namespace Vista.Vistas.BisNietos
+﻿namespace Vista.Vistas.BisNietos
 {
-    partial class frmMetEntrada
+    partial class frmMetSalidas
     {
         /// <summary>
         /// Required designer variable.
@@ -33,33 +29,33 @@ namespace Vista.Vistas.BisNietos
         private void InitializeComponent()
         {
             panel2 = new Panel();
-            btnAdd = new RJButton();
+            btnAdd = new CustomControls.RJControls.RJButton();
             tableLayoutPanel1 = new TableLayoutPanel();
             dgvCompras = new DataGridView();
             panel1 = new Panel();
-            txtCant = new RJTextBox();
+            txtCant = new CustomControls.RJControls.RJTextBox();
             label2 = new Label();
             label1 = new Label();
-            txtCodBarra = new RJTextBox();
-            cmbProveedor = new RJComboBox();
+            txtCodBarra = new CustomControls.RJControls.RJTextBox();
+            cmbProveedor = new Controles_personalizados.RJComboBox();
             label3 = new Label();
             label5 = new Label();
-            txtRecibo = new RJTextBox();
+            txtRecibo = new CustomControls.RJControls.RJTextBox();
             panel3 = new Panel();
-            btnAddProducto = new RJButton();
-            txtTotal = new RJTextBox();
+            btnAddProducto = new CustomControls.RJControls.RJButton();
+            txtTotal = new CustomControls.RJControls.RJTextBox();
             label7 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
-            btn0 = new RJButton();
-            btn9 = new RJButton();
-            btn8 = new RJButton();
-            btn7 = new RJButton();
-            btn6 = new RJButton();
-            btn5 = new RJButton();
-            btn4 = new RJButton();
-            btn3 = new RJButton();
-            btn2 = new RJButton();
-            btn1 = new RJButton();
+            btn0 = new CustomControls.RJControls.RJButton();
+            btn9 = new CustomControls.RJControls.RJButton();
+            btn8 = new CustomControls.RJControls.RJButton();
+            btn7 = new CustomControls.RJControls.RJButton();
+            btn6 = new CustomControls.RJControls.RJButton();
+            btn5 = new CustomControls.RJControls.RJButton();
+            btn4 = new CustomControls.RJControls.RJButton();
+            btn3 = new CustomControls.RJControls.RJButton();
+            btn2 = new CustomControls.RJControls.RJButton();
+            btn1 = new CustomControls.RJControls.RJButton();
             panel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCompras).BeginInit();
@@ -72,10 +68,10 @@ namespace Vista.Vistas.BisNietos
             // 
             panel2.Controls.Add(btnAdd);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 540);
+            panel2.Location = new Point(0, 501);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1000, 60);
-            panel2.TabIndex = 7;
+            panel2.Size = new Size(977, 60);
+            panel2.TabIndex = 8;
             // 
             // btnAdd
             // 
@@ -88,11 +84,11 @@ namespace Vista.Vistas.BisNietos
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(425, 6);
+            btnAdd.Location = new Point(382, 7);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(150, 50);
             btnAdd.TabIndex = 2;
-            btnAdd.Text = "Agregar Compra";
+            btnAdd.Text = "Agregar Salida";
             btnAdd.TextColor = Color.White;
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Visible = false;
@@ -114,8 +110,8 @@ namespace Vista.Vistas.BisNietos
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 29.9823627F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 70.01764F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(1000, 540);
-            tableLayoutPanel1.TabIndex = 8;
+            tableLayoutPanel1.Size = new Size(977, 501);
+            tableLayoutPanel1.TabIndex = 9;
             // 
             // dgvCompras
             // 
@@ -123,10 +119,10 @@ namespace Vista.Vistas.BisNietos
             dgvCompras.BorderStyle = BorderStyle.None;
             dgvCompras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCompras.Dock = DockStyle.Fill;
-            dgvCompras.Location = new Point(3, 164);
+            dgvCompras.Location = new Point(3, 153);
             dgvCompras.Name = "dgvCompras";
             dgvCompras.RowTemplate.Height = 25;
-            dgvCompras.Size = new Size(619, 373);
+            dgvCompras.Size = new Size(604, 345);
             dgvCompras.TabIndex = 0;
             // 
             // panel1
@@ -142,7 +138,7 @@ namespace Vista.Vistas.BisNietos
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(619, 155);
+            panel1.Size = new Size(604, 144);
             panel1.TabIndex = 1;
             // 
             // txtCant
@@ -257,7 +253,7 @@ namespace Vista.Vistas.BisNietos
             txtRecibo.BorderSize = 2;
             txtRecibo.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             txtRecibo.ForeColor = Color.FromArgb(64, 64, 64);
-            txtRecibo.Location = new Point(442, 27);
+            txtRecibo.Location = new Point(428, 27);
             txtRecibo.Margin = new Padding(4);
             txtRecibo.Multiline = false;
             txtRecibo.Name = "txtRecibo";
@@ -276,9 +272,9 @@ namespace Vista.Vistas.BisNietos
             panel3.Controls.Add(txtTotal);
             panel3.Controls.Add(label7);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(628, 3);
+            panel3.Location = new Point(613, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(369, 155);
+            panel3.Size = new Size(361, 144);
             panel3.TabIndex = 3;
             // 
             // btnAddProducto
@@ -292,7 +288,7 @@ namespace Vista.Vistas.BisNietos
             btnAddProducto.FlatStyle = FlatStyle.Flat;
             btnAddProducto.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnAddProducto.ForeColor = Color.White;
-            btnAddProducto.Location = new Point(103, 100);
+            btnAddProducto.Location = new Point(103, 81);
             btnAddProducto.Name = "btnAddProducto";
             btnAddProducto.Size = new Size(175, 40);
             btnAddProducto.TabIndex = 9;
@@ -350,14 +346,14 @@ namespace Vista.Vistas.BisNietos
             tableLayoutPanel2.Controls.Add(btn2, 1, 0);
             tableLayoutPanel2.Controls.Add(btn1, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(628, 164);
+            tableLayoutPanel2.Location = new Point(613, 153);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 4;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.Size = new Size(369, 373);
+            tableLayoutPanel2.Size = new Size(361, 345);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // btn0
@@ -372,14 +368,13 @@ namespace Vista.Vistas.BisNietos
             btn0.FlatStyle = FlatStyle.Flat;
             btn0.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn0.ForeColor = Color.White;
-            btn0.Location = new Point(126, 282);
+            btn0.Location = new Point(123, 261);
             btn0.Name = "btn0";
-            btn0.Size = new Size(117, 88);
+            btn0.Size = new Size(114, 81);
             btn0.TabIndex = 21;
             btn0.Text = "0";
             btn0.TextColor = Color.White;
             btn0.UseVisualStyleBackColor = false;
-            btn0.Click += AgregarNumero;
             // 
             // btn9
             // 
@@ -393,14 +388,13 @@ namespace Vista.Vistas.BisNietos
             btn9.FlatStyle = FlatStyle.Flat;
             btn9.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn9.ForeColor = Color.White;
-            btn9.Location = new Point(249, 189);
+            btn9.Location = new Point(243, 175);
             btn9.Name = "btn9";
-            btn9.Size = new Size(117, 87);
+            btn9.Size = new Size(115, 80);
             btn9.TabIndex = 19;
             btn9.Text = "9";
             btn9.TextColor = Color.White;
             btn9.UseVisualStyleBackColor = false;
-            btn9.Click += AgregarNumero;
             // 
             // btn8
             // 
@@ -414,14 +408,13 @@ namespace Vista.Vistas.BisNietos
             btn8.FlatStyle = FlatStyle.Flat;
             btn8.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn8.ForeColor = Color.White;
-            btn8.Location = new Point(126, 189);
+            btn8.Location = new Point(123, 175);
             btn8.Name = "btn8";
-            btn8.Size = new Size(117, 87);
+            btn8.Size = new Size(114, 80);
             btn8.TabIndex = 18;
             btn8.Text = "8";
             btn8.TextColor = Color.White;
             btn8.UseVisualStyleBackColor = false;
-            btn8.Click += AgregarNumero;
             // 
             // btn7
             // 
@@ -435,14 +428,13 @@ namespace Vista.Vistas.BisNietos
             btn7.FlatStyle = FlatStyle.Flat;
             btn7.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn7.ForeColor = Color.White;
-            btn7.Location = new Point(3, 189);
+            btn7.Location = new Point(3, 175);
             btn7.Name = "btn7";
-            btn7.Size = new Size(117, 87);
+            btn7.Size = new Size(114, 80);
             btn7.TabIndex = 17;
             btn7.Text = "7";
             btn7.TextColor = Color.White;
             btn7.UseVisualStyleBackColor = false;
-            btn7.Click += AgregarNumero;
             // 
             // btn6
             // 
@@ -456,14 +448,13 @@ namespace Vista.Vistas.BisNietos
             btn6.FlatStyle = FlatStyle.Flat;
             btn6.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn6.ForeColor = Color.White;
-            btn6.Location = new Point(249, 96);
+            btn6.Location = new Point(243, 89);
             btn6.Name = "btn6";
-            btn6.Size = new Size(117, 87);
+            btn6.Size = new Size(115, 80);
             btn6.TabIndex = 16;
             btn6.Text = "6";
             btn6.TextColor = Color.White;
             btn6.UseVisualStyleBackColor = false;
-            btn6.Click += AgregarNumero;
             // 
             // btn5
             // 
@@ -477,14 +468,13 @@ namespace Vista.Vistas.BisNietos
             btn5.FlatStyle = FlatStyle.Flat;
             btn5.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn5.ForeColor = Color.White;
-            btn5.Location = new Point(126, 96);
+            btn5.Location = new Point(123, 89);
             btn5.Name = "btn5";
-            btn5.Size = new Size(117, 87);
+            btn5.Size = new Size(114, 80);
             btn5.TabIndex = 15;
             btn5.Text = "5";
             btn5.TextColor = Color.White;
             btn5.UseVisualStyleBackColor = false;
-            btn5.Click += AgregarNumero;
             // 
             // btn4
             // 
@@ -498,14 +488,13 @@ namespace Vista.Vistas.BisNietos
             btn4.FlatStyle = FlatStyle.Flat;
             btn4.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn4.ForeColor = Color.White;
-            btn4.Location = new Point(3, 96);
+            btn4.Location = new Point(3, 89);
             btn4.Name = "btn4";
-            btn4.Size = new Size(117, 87);
+            btn4.Size = new Size(114, 80);
             btn4.TabIndex = 14;
             btn4.Text = "4";
             btn4.TextColor = Color.White;
             btn4.UseVisualStyleBackColor = false;
-            btn4.Click += AgregarNumero;
             // 
             // btn3
             // 
@@ -519,14 +508,13 @@ namespace Vista.Vistas.BisNietos
             btn3.FlatStyle = FlatStyle.Flat;
             btn3.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn3.ForeColor = Color.White;
-            btn3.Location = new Point(249, 3);
+            btn3.Location = new Point(243, 3);
             btn3.Name = "btn3";
-            btn3.Size = new Size(117, 87);
+            btn3.Size = new Size(115, 80);
             btn3.TabIndex = 13;
             btn3.Text = "3";
             btn3.TextColor = Color.White;
             btn3.UseVisualStyleBackColor = false;
-            btn3.Click += AgregarNumero;
             // 
             // btn2
             // 
@@ -540,14 +528,13 @@ namespace Vista.Vistas.BisNietos
             btn2.FlatStyle = FlatStyle.Flat;
             btn2.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn2.ForeColor = Color.White;
-            btn2.Location = new Point(126, 3);
+            btn2.Location = new Point(123, 3);
             btn2.Name = "btn2";
-            btn2.Size = new Size(117, 87);
+            btn2.Size = new Size(114, 80);
             btn2.TabIndex = 12;
             btn2.Text = "2";
             btn2.TextColor = Color.White;
             btn2.UseVisualStyleBackColor = false;
-            btn2.Click += AgregarNumero;
             // 
             // btn1
             // 
@@ -563,26 +550,24 @@ namespace Vista.Vistas.BisNietos
             btn1.ForeColor = Color.White;
             btn1.Location = new Point(3, 3);
             btn1.Name = "btn1";
-            btn1.Size = new Size(117, 87);
+            btn1.Size = new Size(114, 80);
             btn1.TabIndex = 11;
             btn1.Text = "1";
             btn1.TextColor = Color.White;
             btn1.UseVisualStyleBackColor = false;
-            btn1.Click += AgregarNumero;
             // 
-            // frmMetEntrada
+            // frmMetSalidas
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1000, 600);
+            ClientSize = new Size(977, 561);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(panel2);
-            Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "frmMetEntrada";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmMetEntrada";
+            Name = "frmMetSalidas";
+            Text = "frmMetSalidas";
             panel2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvCompras).EndInit();
@@ -597,32 +582,32 @@ namespace Vista.Vistas.BisNietos
         #endregion
 
         private Panel panel2;
-        private RJButton btnAdd;
+        private CustomControls.RJControls.RJButton btnAdd;
         private TableLayoutPanel tableLayoutPanel1;
         private DataGridView dgvCompras;
         private Panel panel1;
-        private RJButton btnAddProducto;
-        private RJTextBox txtCodBarra;
-        private RJComboBox cmbProveedor;
+        private CustomControls.RJControls.RJTextBox txtCant;
+        private Label label2;
+        private Label label1;
+        private CustomControls.RJControls.RJTextBox txtCodBarra;
+        private Controles_personalizados.RJComboBox cmbProveedor;
         private Label label3;
         private Label label5;
-        private RJTextBox txtRecibo;
+        private CustomControls.RJControls.RJTextBox txtRecibo;
         private Panel panel3;
+        private CustomControls.RJControls.RJButton btnAddProducto;
+        private CustomControls.RJControls.RJTextBox txtTotal;
         private Label label7;
-        private RJTextBox txtTotal;
         private TableLayoutPanel tableLayoutPanel2;
-        private RJButton btn0;
-        private RJButton btn9;
-        private RJButton btn8;
-        private RJButton btn7;
-        private RJButton btn6;
-        private RJButton btn5;
-        private RJButton btn4;
-        private RJButton btn3;
-        private RJButton btn2;
-        private RJButton btn1;
-        private Label label1;
-        private RJTextBox txtCant;
-        private Label label2;
+        private CustomControls.RJControls.RJButton btn0;
+        private CustomControls.RJControls.RJButton btn9;
+        private CustomControls.RJControls.RJButton btn8;
+        private CustomControls.RJControls.RJButton btn7;
+        private CustomControls.RJControls.RJButton btn6;
+        private CustomControls.RJControls.RJButton btn5;
+        private CustomControls.RJControls.RJButton btn4;
+        private CustomControls.RJControls.RJButton btn3;
+        private CustomControls.RJControls.RJButton btn2;
+        private CustomControls.RJControls.RJButton btn1;
     }
 }

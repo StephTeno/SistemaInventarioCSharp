@@ -28,46 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             flowLayoutPanel2 = new FlowLayoutPanel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            panel3 = new Panel();
-            label2 = new Label();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            btnSig = new FontAwesome.Sharp.IconButton();
-            dgvJustRegistered = new DataGridView();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            panel1 = new Panel();
-            label1 = new Label();
-            crdEntradas = new MaterialSkin.Controls.MaterialCard();
-            pbEntrada = new PictureBox();
-            lblEntrada = new Label();
-            lblCordEnt = new Label();
-            lblCantEnt = new Label();
             materialCard1 = new MaterialSkin.Controls.MaterialCard();
             lblCantSal = new Label();
             lblCordSal = new Label();
             lblSalida = new Label();
             pictureBox1 = new PictureBox();
+            crdEntradas = new MaterialSkin.Controls.MaterialCard();
+            lblCantEnt = new Label();
+            lblCordEnt = new Label();
+            lblEntrada = new Label();
+            pbEntrada = new PictureBox();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            panel1 = new Panel();
+            label1 = new Label();
             flowLayoutPanel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
-            panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvJustRegistered).BeginInit();
-            flowLayoutPanel1.SuspendLayout();
-            panel1.SuspendLayout();
-            crdEntradas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbEntrada).BeginInit();
             materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            crdEntradas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbEntrada).BeginInit();
+            flowLayoutPanel1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.BackColor = Color.White;
             flowLayoutPanel2.Controls.Add(tableLayoutPanel1);
-            flowLayoutPanel2.Controls.Add(panel3);
-            flowLayoutPanel2.Controls.Add(dgvJustRegistered);
             flowLayoutPanel2.Dock = DockStyle.Fill;
             flowLayoutPanel2.Location = new Point(0, 64);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -90,182 +79,6 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Size = new Size(900, 150);
             tableLayoutPanel1.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(label2);
-            panel3.Controls.Add(iconButton1);
-            panel3.Controls.Add(btnSig);
-            panel3.Location = new Point(0, 210);
-            panel3.Margin = new Padding(0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1000, 50);
-            panel3.TabIndex = 5;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(0, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(264, 33);
-            label2.TabIndex = 6;
-            label2.Text = "Recién Registrados";
-            // 
-            // iconButton1
-            // 
-            iconButton1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatAppearance.MouseDownBackColor = Color.LightSteelBlue;
-            iconButton1.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.ForeColor = Color.White;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
-            iconButton1.IconColor = Color.RoyalBlue;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconButton1.IconSize = 25;
-            iconButton1.Location = new Point(865, 0);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(50, 50);
-            iconButton1.TabIndex = 5;
-            iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // btnSig
-            // 
-            btnSig.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnSig.FlatAppearance.BorderSize = 0;
-            btnSig.FlatAppearance.MouseDownBackColor = Color.LightSteelBlue;
-            btnSig.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue;
-            btnSig.FlatStyle = FlatStyle.Flat;
-            btnSig.ForeColor = Color.White;
-            btnSig.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleRight;
-            btnSig.IconColor = Color.RoyalBlue;
-            btnSig.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnSig.IconSize = 25;
-            btnSig.Location = new Point(950, 0);
-            btnSig.Name = "btnSig";
-            btnSig.Size = new Size(50, 50);
-            btnSig.TabIndex = 4;
-            btnSig.UseVisualStyleBackColor = true;
-            // 
-            // dgvJustRegistered
-            // 
-            dgvJustRegistered.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgvJustRegistered.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvJustRegistered.BackgroundColor = Color.White;
-            dgvJustRegistered.BorderStyle = BorderStyle.None;
-            dgvJustRegistered.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.MidnightBlue;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.CornflowerBlue;
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvJustRegistered.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dgvJustRegistered.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvJustRegistered.Dock = DockStyle.Bottom;
-            dgvJustRegistered.EnableHeadersVisualStyles = false;
-            dgvJustRegistered.GridColor = Color.CornflowerBlue;
-            dgvJustRegistered.Location = new Point(0, 260);
-            dgvJustRegistered.Margin = new Padding(0);
-            dgvJustRegistered.Name = "dgvJustRegistered";
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.MidnightBlue;
-            dataGridViewCellStyle4.SelectionBackColor = Color.CornflowerBlue;
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dgvJustRegistered.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            dgvJustRegistered.RowTemplate.Height = 25;
-            dgvJustRegistered.Size = new Size(1000, 280);
-            dgvJustRegistered.TabIndex = 3;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.BackColor = Color.White;
-            flowLayoutPanel1.Controls.Add(panel1);
-            flowLayoutPanel1.Dock = DockStyle.Top;
-            flowLayoutPanel1.Location = new Point(0, 0);
-            flowLayoutPanel1.Margin = new Padding(0);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1000, 64);
-            flowLayoutPanel1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(3, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(180, 58);
-            panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(9, 6);
-            label1.Name = "label1";
-            label1.Size = new Size(160, 33);
-            label1.TabIndex = 0;
-            label1.Text = "Dashboard";
-            // 
-            // crdEntradas
-            // 
-            crdEntradas.BackColor = Color.FromArgb(255, 255, 255);
-            crdEntradas.Controls.Add(lblCantEnt);
-            crdEntradas.Controls.Add(lblCordEnt);
-            crdEntradas.Controls.Add(lblEntrada);
-            crdEntradas.Controls.Add(pbEntrada);
-            crdEntradas.Depth = 0;
-            crdEntradas.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            crdEntradas.Location = new Point(19, 19);
-            crdEntradas.Margin = new Padding(14);
-            crdEntradas.MouseState = MaterialSkin.MouseState.HOVER;
-            crdEntradas.Name = "crdEntradas";
-            crdEntradas.Padding = new Padding(14);
-            crdEntradas.Size = new Size(417, 112);
-            crdEntradas.TabIndex = 0;
-            // 
-            // pbEntrada
-            // 
-            pbEntrada.Image = Properties.Resources.Compra;
-            pbEntrada.Location = new Point(17, 17);
-            pbEntrada.Name = "pbEntrada";
-            pbEntrada.Size = new Size(75, 75);
-            pbEntrada.SizeMode = PictureBoxSizeMode.Zoom;
-            pbEntrada.TabIndex = 0;
-            pbEntrada.TabStop = false;
-            // 
-            // lblEntrada
-            // 
-            lblEntrada.AutoSize = true;
-            lblEntrada.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblEntrada.Location = new Point(113, 17);
-            lblEntrada.Name = "lblEntrada";
-            lblEntrada.Size = new Size(118, 25);
-            lblEntrada.TabIndex = 1;
-            lblEntrada.Text = "ENTRADAS";
-            // 
-            // lblCordEnt
-            // 
-            lblCordEnt.AutoSize = true;
-            lblCordEnt.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblCordEnt.Location = new Point(113, 67);
-            lblCordEnt.Name = "lblCordEnt";
-            lblCordEnt.Size = new Size(40, 25);
-            lblCordEnt.TabIndex = 2;
-            lblCordEnt.Text = "C$";
-            // 
-            // lblCantEnt
-            // 
-            lblCantEnt.AutoSize = true;
-            lblCantEnt.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblCantEnt.Location = new Point(159, 67);
-            lblCantEnt.Name = "lblCantEnt";
-            lblCantEnt.Size = new Size(66, 25);
-            lblCantEnt.TabIndex = 3;
-            lblCantEnt.Text = "00.00";
             // 
             // materialCard1
             // 
@@ -324,6 +137,92 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // crdEntradas
+            // 
+            crdEntradas.BackColor = Color.FromArgb(255, 255, 255);
+            crdEntradas.Controls.Add(lblCantEnt);
+            crdEntradas.Controls.Add(lblCordEnt);
+            crdEntradas.Controls.Add(lblEntrada);
+            crdEntradas.Controls.Add(pbEntrada);
+            crdEntradas.Depth = 0;
+            crdEntradas.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            crdEntradas.Location = new Point(19, 19);
+            crdEntradas.Margin = new Padding(14);
+            crdEntradas.MouseState = MaterialSkin.MouseState.HOVER;
+            crdEntradas.Name = "crdEntradas";
+            crdEntradas.Padding = new Padding(14);
+            crdEntradas.Size = new Size(417, 112);
+            crdEntradas.TabIndex = 0;
+            // 
+            // lblCantEnt
+            // 
+            lblCantEnt.AutoSize = true;
+            lblCantEnt.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCantEnt.Location = new Point(159, 67);
+            lblCantEnt.Name = "lblCantEnt";
+            lblCantEnt.Size = new Size(66, 25);
+            lblCantEnt.TabIndex = 3;
+            lblCantEnt.Text = "00.00";
+            // 
+            // lblCordEnt
+            // 
+            lblCordEnt.AutoSize = true;
+            lblCordEnt.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCordEnt.Location = new Point(113, 67);
+            lblCordEnt.Name = "lblCordEnt";
+            lblCordEnt.Size = new Size(40, 25);
+            lblCordEnt.TabIndex = 2;
+            lblCordEnt.Text = "C$";
+            // 
+            // lblEntrada
+            // 
+            lblEntrada.AutoSize = true;
+            lblEntrada.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblEntrada.Location = new Point(113, 17);
+            lblEntrada.Name = "lblEntrada";
+            lblEntrada.Size = new Size(118, 25);
+            lblEntrada.TabIndex = 1;
+            lblEntrada.Text = "ENTRADAS";
+            // 
+            // pbEntrada
+            // 
+            pbEntrada.Image = Properties.Resources.Compra;
+            pbEntrada.Location = new Point(17, 17);
+            pbEntrada.Name = "pbEntrada";
+            pbEntrada.Size = new Size(75, 75);
+            pbEntrada.SizeMode = PictureBoxSizeMode.Zoom;
+            pbEntrada.TabIndex = 0;
+            pbEntrada.TabStop = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.White;
+            flowLayoutPanel1.Controls.Add(panel1);
+            flowLayoutPanel1.Dock = DockStyle.Top;
+            flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Margin = new Padding(0);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1000, 64);
+            flowLayoutPanel1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(180, 58);
+            panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(9, 6);
+            label1.Name = "label1";
+            label1.Size = new Size(160, 33);
+            label1.TabIndex = 0;
+            label1.Text = "Dashboard";
+            // 
             // frmDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -337,18 +236,15 @@
             Text = "frmConfiguration";
             flowLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvJustRegistered).EndInit();
-            flowLayoutPanel1.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            crdEntradas.ResumeLayout(false);
-            crdEntradas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pbEntrada).EndInit();
             materialCard1.ResumeLayout(false);
             materialCard1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            crdEntradas.ResumeLayout(false);
+            crdEntradas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbEntrada).EndInit();
+            flowLayoutPanel1.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -359,11 +255,6 @@
         private Panel panel1;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
-        private DataGridView dgvJustRegistered;
-        private FontAwesome.Sharp.IconButton btnSig;
-        private Panel panel3;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private Label label2;
         private MaterialSkin.Controls.MaterialCard crdEntradas;
         private PictureBox pbEntrada;
         private MaterialSkin.Controls.MaterialCard materialCard1;

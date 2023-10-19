@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vista.Vistas.Nietos;
+using Vista.Vistas.Nietos.Admin;
 
 namespace Vista.Vistas.Hijos
 {
@@ -88,10 +89,16 @@ namespace Vista.Vistas.Hijos
             AbrirFormInPanel(new frmUmbStock());
         }
 
-        private void btnUbicAlma_Click(object sender, EventArgs e)
+        private void btnClientes_Click(object sender, EventArgs e)
         {
-            ActiveButton(btnUbicAlma);
-            AbrirFormInPanel(new frmUbiAlmacenes());
+            ActiveButton(btnClientes);
+            AbrirFormInPanel(new frmClientes());
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            ActiveButton(btnProveedores);
+            AbrirFormInPanel(new frmProveedores());
         }
     }
 }

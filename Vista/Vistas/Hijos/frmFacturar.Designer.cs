@@ -415,6 +415,7 @@
             btn0.Text = "0";
             btn0.TextColor = Color.White;
             btn0.UseVisualStyleBackColor = false;
+            btn0.Click += AgregarNumero;
             // 
             // btn9
             // 
@@ -435,6 +436,7 @@
             btn9.Text = "9";
             btn9.TextColor = Color.White;
             btn9.UseVisualStyleBackColor = false;
+            btn9.Click += AgregarNumero;
             // 
             // btn8
             // 
@@ -455,6 +457,7 @@
             btn8.Text = "8";
             btn8.TextColor = Color.White;
             btn8.UseVisualStyleBackColor = false;
+            btn8.Click += AgregarNumero;
             // 
             // btn7
             // 
@@ -475,6 +478,7 @@
             btn7.Text = "7";
             btn7.TextColor = Color.White;
             btn7.UseVisualStyleBackColor = false;
+            btn7.Click += AgregarNumero;
             // 
             // btn6
             // 
@@ -495,6 +499,7 @@
             btn6.Text = "6";
             btn6.TextColor = Color.White;
             btn6.UseVisualStyleBackColor = false;
+            btn6.Click += AgregarNumero;
             // 
             // btn5
             // 
@@ -515,6 +520,7 @@
             btn5.Text = "5";
             btn5.TextColor = Color.White;
             btn5.UseVisualStyleBackColor = false;
+            btn5.Click += AgregarNumero;
             // 
             // btn4
             // 
@@ -535,6 +541,7 @@
             btn4.Text = "4";
             btn4.TextColor = Color.White;
             btn4.UseVisualStyleBackColor = false;
+            btn4.Click += AgregarNumero;
             // 
             // btn3
             // 
@@ -555,6 +562,7 @@
             btn3.Text = "3";
             btn3.TextColor = Color.White;
             btn3.UseVisualStyleBackColor = false;
+            btn3.Click += AgregarNumero;
             // 
             // btn2
             // 
@@ -575,6 +583,7 @@
             btn2.Text = "2";
             btn2.TextColor = Color.White;
             btn2.UseVisualStyleBackColor = false;
+            btn2.Click += AgregarNumero;
             // 
             // btn1
             // 
@@ -595,6 +604,7 @@
             btn1.Text = "1";
             btn1.TextColor = Color.White;
             btn1.UseVisualStyleBackColor = false;
+            btn1.Click += AgregarNumero;
             // 
             // frmFacturar
             // 

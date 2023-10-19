@@ -27,6 +27,10 @@ public partial class Producto
     [Column(TypeName = "numeric(6, 2)")]
     public decimal PreVenta { get; set; }
 
+    [StringLength(14)]
+    [Unicode(false)]
+    public string? Proveedor { get; set; }
+
     [ForeignKey("Categoria")]
     [InverseProperty("Productos")]
     public virtual CategoriaProd CategoriaNavigation { get; set; } = null!;
@@ -42,6 +46,10 @@ public partial class Producto
 
     [InverseProperty("IdProdNavigation")]
     public virtual ICollection<Inventario> Inventarios { get; set; } = new List<Inventario>();
+
+    [ForeignKey("Proveedor")]
+    [InverseProperty("Productos")]
+    public virtual Proveedore? ProveedorNavigation { get; set; }
 
     [InverseProperty("IdProdNavigation")]
     public virtual ICollection<Salida> Salida { get; set; } = new List<Salida>();

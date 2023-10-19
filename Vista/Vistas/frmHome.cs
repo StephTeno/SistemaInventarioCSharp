@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using MODELO.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +16,39 @@ namespace Vista.HOME
     public partial class frmHome : Form
     {
         IconButton btnSelection;
-        public frmHome()
+        Usuario u;
+        public frmHome(Usuario us)
         {
             InitializeComponent();
+            u = us;
+            btnProfile.Text = us.Username;
+        }
+
+        private void ManagePermissions()
+        {
+            if (u.Tipo == Positions.Administrador)
+            {
+                btnInvoice.Enabled = false;
+                btnInvoice.Visible = false;
+            }
+            if (u.Tipo == Positions.Bodeguero)
+            {
+                btnInvoice.Enabled = false;
+                btnAdmin.Enabled = false;
+                btnHistorial.Enabled = false;
+                btnInvoice.Visible = false;
+                btnAdmin.Visible = false;
+                btnHistorial.Visible = false;
+            }
+            if (u.Tipo == Positions.Cajero)
+            {
+                btnInventory.Enabled = false;
+                btnAdmin.Enabled = false;
+                btnHistorial.Enabled = false;
+                btnInventory.Visible = false;
+                btnAdmin.Visible = false;
+                btnHistorial.Visible = false;
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -52,10 +83,11 @@ namespace Vista.HOME
 
         private void frmHome_Load(object sender, EventArgs e)
         {
+            ManagePermissions();
+            ti.Enabled = true;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             AbrirFormInPanel(new frmDashboard());
-
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -79,11 +111,6 @@ namespace Vista.HOME
         {
             ddmProfile.Show(btnProfile, 0, btnProfile.Height);
         }
-
-        /*private void btnCloseSesion_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }*/
 
         public void AbrirFormInPanel(object FormHijo)
         {
@@ -133,8 +160,8 @@ namespace Vista.HOME
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
+            AbrirFormInPanel(new frmInventario());
             ActiveButton(btnInventory);
-            ddmInventory.Show(btnInventory, btnInventory.Width, 0);
         }
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -174,5 +201,19 @@ namespace Vista.HOME
             ActiveButton(btnHistorial);
             AbrirFormInPanel(new frmHistory());
         }
+
+        private void ti_Tick(object sender, EventArgs e)
+        {
+            DateTime hoy = DateTime.Now;
+            lblFechaYHora.Text = hoy.ToString("f");
+        }
     }
+
+    public struct Positions
+    {
+        public const int Administrador = 1;
+        public const int Bodeguero = 2;
+        public const int Cajero = 3;
+    }
+
 }

@@ -31,7 +31,6 @@
             panel2 = new Panel();
             btnAdd = new CustomControls.RJControls.RJButton();
             btnDelete = new CustomControls.RJControls.RJButton();
-            btnEdit = new CustomControls.RJControls.RJButton();
             panel1 = new Panel();
             label1 = new Label();
             dgvEntradas = new DataGridView();
@@ -44,7 +43,6 @@
             // 
             panel2.Controls.Add(btnAdd);
             panel2.Controls.Add(btnDelete);
-            panel2.Controls.Add(btnEdit);
             panel2.Dock = DockStyle.Bottom;
             panel2.Location = new Point(0, 464);
             panel2.Name = "panel2";
@@ -62,13 +60,14 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(237, 18);
+            btnAdd.Location = new Point(355, 18);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(100, 30);
             btnAdd.TabIndex = 2;
             btnAdd.Text = "Agregar";
             btnAdd.TextColor = Color.White;
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnDelete
             // 
@@ -81,32 +80,13 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(435, 18);
+            btnDelete.Location = new Point(553, 18);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(100, 30);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Eliminar";
             btnDelete.TextColor = Color.White;
             btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // btnEdit
-            // 
-            btnEdit.BackColor = Color.RoyalBlue;
-            btnEdit.BackgroundColor = Color.RoyalBlue;
-            btnEdit.BorderColor = Color.PaleVioletRed;
-            btnEdit.BorderRadius = 10;
-            btnEdit.BorderSize = 0;
-            btnEdit.FlatAppearance.BorderSize = 0;
-            btnEdit.FlatStyle = FlatStyle.Flat;
-            btnEdit.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEdit.ForeColor = Color.White;
-            btnEdit.Location = new Point(633, 18);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(100, 30);
-            btnEdit.TabIndex = 1;
-            btnEdit.Text = "Editar";
-            btnEdit.TextColor = Color.White;
-            btnEdit.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -164,7 +144,6 @@
         private Panel panel2;
         private CustomControls.RJControls.RJButton btnAdd;
         private CustomControls.RJControls.RJButton btnDelete;
-        private CustomControls.RJControls.RJButton btnEdit;
         private Panel panel1;
         private Label label1;
         private DataGridView dgvEntradas;
