@@ -16,5 +16,14 @@ namespace Vista.Vistas.Hijos
         {
             InitializeComponent();
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rjTextBox2__TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

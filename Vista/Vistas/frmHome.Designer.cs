@@ -56,6 +56,7 @@
             ItemLogOut = new ToolStripMenuItem();
             ItemExit = new ToolStripMenuItem();
             niNotification = new NotifyIcon(components);
+            lblFechaYHora = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             flpSidebar.SuspendLayout();
@@ -66,6 +67,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(40, 86, 160);
+            panel1.Controls.Add(lblFechaYHora);
             panel1.Controls.Add(iconPictureBox1);
             panel1.Controls.Add(btnProfile);
             panel1.Controls.Add(btnExit);
@@ -480,6 +482,17 @@
             niNotification.Text = "Notificación";
             niNotification.Visible = true;
             // 
+            // lblFechaYHora
+            // 
+            lblFechaYHora.AutoSize = true;
+            lblFechaYHora.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblFechaYHora.ForeColor = Color.White;
+            lblFechaYHora.Location = new Point(413, 15);
+            lblFechaYHora.Name = "lblFechaYHora";
+            lblFechaYHora.Size = new Size(53, 19);
+            lblFechaYHora.TabIndex = 27;
+            lblFechaYHora.Text = "Fecha";
+            // 
             // frmHome
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -496,6 +509,7 @@
             Text = "frmHome";
             Load += frmHome_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             flpSidebar.ResumeLayout(false);
             ddmInventory.ResumeLayout(false);
@@ -531,5 +545,6 @@
         private FontAwesome.Sharp.IconButton btnAdmin;
         private FontAwesome.Sharp.IconButton btnHistorial;
         private NotifyIcon niNotification;
+        private Label lblFechaYHora;
     }
 }

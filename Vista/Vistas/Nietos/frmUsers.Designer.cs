@@ -43,6 +43,7 @@
             // dgvUsers
             // 
             dgvUsers.BackgroundColor = Color.White;
+            dgvUsers.BorderStyle = BorderStyle.None;
             dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsers.Dock = DockStyle.Fill;
             dgvUsers.Location = new Point(0, 0);

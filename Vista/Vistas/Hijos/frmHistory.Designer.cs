@@ -32,10 +32,10 @@
             plTitles = new Panel();
             label1 = new Label();
             plBotones = new Panel();
-            dgvHistory = new DataGridView();
+            btnBack = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             btnSig = new FontAwesome.Sharp.IconButton();
-            btnBack = new FontAwesome.Sharp.IconButton();
+            dgvHistory = new DataGridView();
             plTitle.SuspendLayout();
             plTitles.SuspendLayout();
             plBotones.SuspendLayout();
@@ -81,16 +81,24 @@
             plBotones.Size = new Size(1000, 35);
             plBotones.TabIndex = 1;
             // 
-            // dgvHistory
+            // btnBack
             // 
-            dgvHistory.BackgroundColor = Color.White;
-            dgvHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvHistory.Dock = DockStyle.Fill;
-            dgvHistory.Location = new Point(0, 92);
-            dgvHistory.Name = "dgvHistory";
-            dgvHistory.RowTemplate.Height = 25;
-            dgvHistory.Size = new Size(1000, 532);
-            dgvHistory.TabIndex = 2;
+            btnBack.Dock = DockStyle.Right;
+            btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatAppearance.MouseDownBackColor = Color.LightSteelBlue;
+            btnBack.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.ForeColor = Color.White;
+            btnBack.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
+            btnBack.IconColor = Color.RoyalBlue;
+            btnBack.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            btnBack.IconSize = 25;
+            btnBack.Location = new Point(895, 0);
+            btnBack.Margin = new Padding(3, 3, 10, 3);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(35, 35);
+            btnBack.TabIndex = 8;
+            btnBack.UseVisualStyleBackColor = true;
             // 
             // iconButton1
             // 
@@ -131,24 +139,17 @@
             btnSig.TabIndex = 6;
             btnSig.UseVisualStyleBackColor = true;
             // 
-            // btnBack
+            // dgvHistory
             // 
-            btnBack.Dock = DockStyle.Right;
-            btnBack.FlatAppearance.BorderSize = 0;
-            btnBack.FlatAppearance.MouseDownBackColor = Color.LightSteelBlue;
-            btnBack.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue;
-            btnBack.FlatStyle = FlatStyle.Flat;
-            btnBack.ForeColor = Color.White;
-            btnBack.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
-            btnBack.IconColor = Color.RoyalBlue;
-            btnBack.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnBack.IconSize = 25;
-            btnBack.Location = new Point(895, 0);
-            btnBack.Margin = new Padding(3, 3, 10, 3);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(35, 35);
-            btnBack.TabIndex = 8;
-            btnBack.UseVisualStyleBackColor = true;
+            dgvHistory.BackgroundColor = Color.White;
+            dgvHistory.BorderStyle = BorderStyle.None;
+            dgvHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvHistory.Dock = DockStyle.Fill;
+            dgvHistory.Location = new Point(0, 92);
+            dgvHistory.Name = "dgvHistory";
+            dgvHistory.RowTemplate.Height = 25;
+            dgvHistory.Size = new Size(1000, 532);
+            dgvHistory.TabIndex = 2;
             // 
             // frmHistory
             // 
