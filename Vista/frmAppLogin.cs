@@ -50,7 +50,7 @@ namespace Vista
                 }
             }
 
-            us = u.Encontrar(txtUser.Texts);
+            us = u.EncontrarUsername(txtUser.Texts);
 
             if(us!= null && us.Contrasena == txtPassword.Texts)
             {

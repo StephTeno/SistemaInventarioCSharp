@@ -688,43 +688,7 @@ namespace CONTROLLER.Repositorios
             }
         }
 
-        public void Save()
-        {
-            using (ESInventarioContext context = new ESInventarioContext())
-            {
-                context.SaveChanges();
-            }
-        }
-        public void Registrar(Usuario c)
-        {
-            using (ESInventarioContext context = new ESInventarioContext())
-            {
-                context.Usuarios.Add(c);
-                Save();
-            }
-        }
 
-        public void Remove(Usuario c)
-        {
-            using (ESInventarioContext context = new ESInventarioContext())
-            {
-                if (c != null)
-                {
-                    context.Usuarios.Remove(c);
-                    Save();
-                }
-                else { return; }
-            }
-        }
-
-        public void Update(Usuario c)
-        {
-            using (ESInventarioContext context = new ESInventarioContext())
-            {
-                context.Usuarios.Update(c);
-                Save();
-            }
-        }
     }
 
     public class RepoTipos

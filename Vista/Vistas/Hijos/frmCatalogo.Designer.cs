@@ -36,23 +36,21 @@
             btnSearch = new CustomControls.RJControls.RJButton();
             rjTextBox1 = new CustomControls.RJControls.RJTextBox();
             tableLayoutPanel1 = new TableLayoutPanel();
-            dataGridView1 = new DataGridView();
+            dgvProductos = new DataGridView();
             panel2 = new Panel();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            rjTextBox2 = new CustomControls.RJControls.RJTextBox();
-            rjTextBox3 = new CustomControls.RJControls.RJTextBox();
-            rjTextBox4 = new CustomControls.RJControls.RJTextBox();
-            rjTextBox5 = new CustomControls.RJControls.RJTextBox();
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            txtpre = new CustomControls.RJControls.RJTextBox();
+            txtPro = new CustomControls.RJControls.RJTextBox();
+            txtCodigo = new CustomControls.RJControls.RJTextBox();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
             plTitle.SuspendLayout();
             plTitles.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             SuspendLayout();
@@ -109,6 +107,7 @@
             iconPictureBox1.Size = new Size(25, 25);
             iconPictureBox1.TabIndex = 3;
             iconPictureBox1.TabStop = false;
+            iconPictureBox1.Click += iconPictureBox1_Click;
             // 
             // btnSearch
             // 
@@ -126,6 +125,7 @@
             btnSearch.TabIndex = 4;
             btnSearch.TextColor = Color.White;
             btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
             // 
             // rjTextBox1
             // 
@@ -154,7 +154,7 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(dataGridView1, 0, 0);
+            tableLayoutPanel1.Controls.Add(dgvProductos, 0, 0);
             tableLayoutPanel1.Controls.Add(panel2, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 107);
@@ -164,26 +164,25 @@
             tableLayoutPanel1.Size = new Size(1000, 517);
             tableLayoutPanel1.TabIndex = 3;
             // 
-            // dataGridView1
+            // dgvProductos
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(494, 511);
-            dataGridView1.TabIndex = 0;
+            dgvProductos.BackgroundColor = Color.White;
+            dgvProductos.BorderStyle = BorderStyle.None;
+            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProductos.Dock = DockStyle.Fill;
+            dgvProductos.Location = new Point(3, 3);
+            dgvProductos.Name = "dgvProductos";
+            dgvProductos.RowTemplate.Height = 25;
+            dgvProductos.Size = new Size(494, 511);
+            dgvProductos.TabIndex = 0;
+            dgvProductos.CellClick += dgvProductos_CellClick;
             // 
             // panel2
             // 
             panel2.Controls.Add(iconPictureBox2);
-            panel2.Controls.Add(rjTextBox5);
-            panel2.Controls.Add(rjTextBox4);
-            panel2.Controls.Add(rjTextBox3);
-            panel2.Controls.Add(rjTextBox2);
-            panel2.Controls.Add(label5);
+            panel2.Controls.Add(txtpre);
+            panel2.Controls.Add(txtPro);
+            panel2.Controls.Add(txtCodigo);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
@@ -192,134 +191,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(494, 511);
             panel2.TabIndex = 1;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(67, 202);
-            label2.Name = "label2";
-            label2.Size = new Size(68, 21);
-            label2.TabIndex = 0;
-            label2.Text = "Codigo";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(67, 268);
-            label3.Name = "label3";
-            label3.Size = new Size(82, 21);
-            label3.TabIndex = 1;
-            label3.Text = "Producto";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(67, 334);
-            label4.Name = "label4";
-            label4.Size = new Size(57, 21);
-            label4.TabIndex = 2;
-            label4.Text = "Precio";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(67, 400);
-            label5.Name = "label5";
-            label5.Size = new Size(93, 21);
-            label5.TabIndex = 3;
-            label5.Text = "Existencias";
-            // 
-            // rjTextBox2
-            // 
-            rjTextBox2.BackColor = SystemColors.Window;
-            rjTextBox2.BorderColor = Color.CornflowerBlue;
-            rjTextBox2.BorderFocusColor = Color.HotPink;
-            rjTextBox2.BorderRadius = 0;
-            rjTextBox2.BorderSize = 2;
-            rjTextBox2.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox2.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox2.Location = new Point(178, 197);
-            rjTextBox2.Margin = new Padding(4);
-            rjTextBox2.Multiline = false;
-            rjTextBox2.Name = "rjTextBox2";
-            rjTextBox2.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox2.PasswordChar = false;
-            rjTextBox2.PlaceholderColor = Color.DarkGray;
-            rjTextBox2.PlaceholderText = "";
-            rjTextBox2.Size = new Size(250, 31);
-            rjTextBox2.TabIndex = 4;
-            rjTextBox2.Texts = "";
-            rjTextBox2.UnderlinedStyle = true;
-            // 
-            // rjTextBox3
-            // 
-            rjTextBox3.BackColor = SystemColors.Window;
-            rjTextBox3.BorderColor = Color.CornflowerBlue;
-            rjTextBox3.BorderFocusColor = Color.HotPink;
-            rjTextBox3.BorderRadius = 0;
-            rjTextBox3.BorderSize = 2;
-            rjTextBox3.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox3.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox3.Location = new Point(178, 263);
-            rjTextBox3.Margin = new Padding(4);
-            rjTextBox3.Multiline = false;
-            rjTextBox3.Name = "rjTextBox3";
-            rjTextBox3.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox3.PasswordChar = false;
-            rjTextBox3.PlaceholderColor = Color.DarkGray;
-            rjTextBox3.PlaceholderText = "";
-            rjTextBox3.Size = new Size(250, 31);
-            rjTextBox3.TabIndex = 5;
-            rjTextBox3.Texts = "";
-            rjTextBox3.UnderlinedStyle = true;
-            // 
-            // rjTextBox4
-            // 
-            rjTextBox4.BackColor = SystemColors.Window;
-            rjTextBox4.BorderColor = Color.CornflowerBlue;
-            rjTextBox4.BorderFocusColor = Color.HotPink;
-            rjTextBox4.BorderRadius = 0;
-            rjTextBox4.BorderSize = 2;
-            rjTextBox4.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox4.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox4.Location = new Point(178, 329);
-            rjTextBox4.Margin = new Padding(4);
-            rjTextBox4.Multiline = false;
-            rjTextBox4.Name = "rjTextBox4";
-            rjTextBox4.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox4.PasswordChar = false;
-            rjTextBox4.PlaceholderColor = Color.DarkGray;
-            rjTextBox4.PlaceholderText = "";
-            rjTextBox4.Size = new Size(250, 31);
-            rjTextBox4.TabIndex = 6;
-            rjTextBox4.Texts = "";
-            rjTextBox4.UnderlinedStyle = true;
-            // 
-            // rjTextBox5
-            // 
-            rjTextBox5.BackColor = SystemColors.Window;
-            rjTextBox5.BorderColor = Color.CornflowerBlue;
-            rjTextBox5.BorderFocusColor = Color.HotPink;
-            rjTextBox5.BorderRadius = 0;
-            rjTextBox5.BorderSize = 2;
-            rjTextBox5.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox5.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox5.Location = new Point(178, 395);
-            rjTextBox5.Margin = new Padding(4);
-            rjTextBox5.Multiline = false;
-            rjTextBox5.Name = "rjTextBox5";
-            rjTextBox5.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox5.PasswordChar = false;
-            rjTextBox5.PlaceholderColor = Color.DarkGray;
-            rjTextBox5.PlaceholderText = "";
-            rjTextBox5.Size = new Size(250, 31);
-            rjTextBox5.TabIndex = 7;
-            rjTextBox5.Texts = "";
-            rjTextBox5.UnderlinedStyle = true;
             // 
             // iconPictureBox2
             // 
@@ -335,6 +206,102 @@
             iconPictureBox2.TabIndex = 8;
             iconPictureBox2.TabStop = false;
             // 
+            // txtpre
+            // 
+            txtpre.BackColor = SystemColors.Window;
+            txtpre.BorderColor = Color.CornflowerBlue;
+            txtpre.BorderFocusColor = Color.HotPink;
+            txtpre.BorderRadius = 0;
+            txtpre.BorderSize = 2;
+            txtpre.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            txtpre.ForeColor = Color.FromArgb(64, 64, 64);
+            txtpre.Location = new Point(178, 329);
+            txtpre.Margin = new Padding(4);
+            txtpre.Multiline = false;
+            txtpre.Name = "txtpre";
+            txtpre.Padding = new Padding(10, 7, 10, 7);
+            txtpre.PasswordChar = false;
+            txtpre.PlaceholderColor = Color.DarkGray;
+            txtpre.PlaceholderText = "";
+            txtpre.Size = new Size(250, 31);
+            txtpre.TabIndex = 6;
+            txtpre.Texts = "";
+            txtpre.UnderlinedStyle = true;
+            // 
+            // txtPro
+            // 
+            txtPro.BackColor = SystemColors.Window;
+            txtPro.BorderColor = Color.CornflowerBlue;
+            txtPro.BorderFocusColor = Color.HotPink;
+            txtPro.BorderRadius = 0;
+            txtPro.BorderSize = 2;
+            txtPro.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPro.ForeColor = Color.FromArgb(64, 64, 64);
+            txtPro.Location = new Point(178, 263);
+            txtPro.Margin = new Padding(4);
+            txtPro.Multiline = false;
+            txtPro.Name = "txtPro";
+            txtPro.Padding = new Padding(10, 7, 10, 7);
+            txtPro.PasswordChar = false;
+            txtPro.PlaceholderColor = Color.DarkGray;
+            txtPro.PlaceholderText = "";
+            txtPro.Size = new Size(250, 31);
+            txtPro.TabIndex = 5;
+            txtPro.Texts = "";
+            txtPro.UnderlinedStyle = true;
+            // 
+            // txtCodigo
+            // 
+            txtCodigo.BackColor = SystemColors.Window;
+            txtCodigo.BorderColor = Color.CornflowerBlue;
+            txtCodigo.BorderFocusColor = Color.HotPink;
+            txtCodigo.BorderRadius = 0;
+            txtCodigo.BorderSize = 2;
+            txtCodigo.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCodigo.ForeColor = Color.FromArgb(64, 64, 64);
+            txtCodigo.Location = new Point(178, 197);
+            txtCodigo.Margin = new Padding(4);
+            txtCodigo.Multiline = false;
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Padding = new Padding(10, 7, 10, 7);
+            txtCodigo.PasswordChar = false;
+            txtCodigo.PlaceholderColor = Color.DarkGray;
+            txtCodigo.PlaceholderText = "";
+            txtCodigo.Size = new Size(250, 31);
+            txtCodigo.TabIndex = 4;
+            txtCodigo.Texts = "";
+            txtCodigo.UnderlinedStyle = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(67, 334);
+            label4.Name = "label4";
+            label4.Size = new Size(57, 21);
+            label4.TabIndex = 2;
+            label4.Text = "Precio";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(67, 268);
+            label3.Name = "label3";
+            label3.Size = new Size(82, 21);
+            label3.TabIndex = 1;
+            label3.Text = "Producto";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(67, 202);
+            label2.Name = "label2";
+            label2.Size = new Size(68, 21);
+            label2.TabIndex = 0;
+            label2.Text = "Codigo";
+            // 
             // frmCatalogo
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -348,13 +315,14 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmCatalogo";
             Text = "frmCatalogo";
+            Load += frmCatalogo_Load;
             plTitle.ResumeLayout(false);
             plTitles.ResumeLayout(false);
             plTitles.PerformLayout();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
@@ -371,14 +339,12 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private CustomControls.RJControls.RJButton btnSearch;
         private TableLayoutPanel tableLayoutPanel1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvProductos;
         private Panel panel2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private CustomControls.RJControls.RJTextBox rjTextBox5;
-        private CustomControls.RJControls.RJTextBox rjTextBox4;
-        private CustomControls.RJControls.RJTextBox rjTextBox3;
-        private CustomControls.RJControls.RJTextBox rjTextBox2;
-        private Label label5;
+        private CustomControls.RJControls.RJTextBox txtpre;
+        private CustomControls.RJControls.RJTextBox txtPro;
+        private CustomControls.RJControls.RJTextBox txtCodigo;
         private Label label4;
         private Label label3;
         private Label label2;

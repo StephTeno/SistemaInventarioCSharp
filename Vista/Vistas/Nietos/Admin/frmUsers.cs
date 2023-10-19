@@ -43,5 +43,10 @@ namespace Vista.Vistas.Nietos
         {
             c.RellenarData(dgvUsers);
         }
+
+        private void dgvUsers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

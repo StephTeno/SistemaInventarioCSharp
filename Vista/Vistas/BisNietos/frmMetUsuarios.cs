@@ -18,7 +18,9 @@ namespace Vista.Vistas.BisNietos
 {
     public partial class frmMetUsuarios : Form
     {
+        Usuario us = new Usuario();
         string Tipo = String.Empty;
+        int ti = 0;
         ControllerUsers u = new ControllerUsers();
         public frmMetUsuarios(string tipo = "Agregar")
         {
@@ -84,10 +86,9 @@ namespace Vista.Vistas.BisNietos
         {
             if (TodosLosTextBoxLlenos())
             {
-                Usuario us = new Usuario();
                 us.Username = txtUser.Texts;
-                us.Tipo = cbCargo.SelectedIndex;
                 us.Contrasena = txtContrasena.Texts;
+                us.Tipo = ti;
                 u.AgregarDatos(us);
                 this.Close();
             }
@@ -99,8 +100,18 @@ namespace Vista.Vistas.BisNietos
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //Metodo para modificar
-            this.Close();
+            if (TodosLosTextBoxLlenos())
+            {
+                us.Username = txtUser.Texts;
+                us.Contrasena = txtContrasena.Texts;
+                us.Tipo = ti;
+                u.ActualizarDatos(us);
+                this.Close();
+            }
+            else
+            {
+                RJMessageBox.Show("Llene todos los datos por favor", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -109,9 +120,11 @@ namespace Vista.Vistas.BisNietos
             this.Close();
         }
 
-        private void rjComboBox1_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
 
+        private void cbCargo_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            ti = 1+cbCargo.SelectedIndex;
+            label1.Text = ti.ToString();
         }
     }
 }

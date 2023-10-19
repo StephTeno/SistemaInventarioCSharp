@@ -5,17 +5,73 @@ using MODELO.Models;
 
 namespace CONTROLLER
 {
+    public class ControllerProd
+    {
+        string id;
+        Producto prod = new Producto();
+        RepoProducto r = new RepoProducto();
+        public ControllerProd() { }
+        public void RellenarData(DataGridView dgvDatos)
+        {
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = r.GetAll();
+        }
+
+
+        public Producto Encontrar(string id)
+        {
+            Producto c = r.Get(s => s.IdProd == id, tracked: false);
+            return c;
+        }
+
+    }
+
 
     public class ControllerUsers
     {
+        string id;
         RepoUsuario r = new RepoUsuario();
         RepoTipos t = new RepoTipos();
 
         public ControllerUsers() { }
 
+        public void Eliminar( DataGridView dgvDatos, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvDatos.Rows)
+            {
+                if (row.Index == e.RowIndex)
+                {
+                    id = row.Cells[0].Value.ToString();
+                    Usuario c = EncontrarUsername(id);
+                    using (ESInventarioContext context = new ESInventarioContext())
+                    {
+                        if (c != null)
+                        {
+                            context.Usuarios.Remove(c);
+                            context.SaveChanges();
+                        }
+                        else { return; }
+                    }
+                }
+            }
+        }
+
+        public void ActualizarDatos(Usuario c)
+        {
+            using (ESInventarioContext context = new ESInventarioContext())
+            {
+                context.Usuarios.Update(c);
+                context.SaveChanges();
+            }
+        }
+
         public void AgregarDatos(Usuario c)
         {
-            r.Registrar(c);
+            using (ESInventarioContext context = new ESInventarioContext())
+            {
+                context.Usuarios.Add(c);
+                context.SaveChanges();
+            }
         }
         public List<TipoUsuario> RellenarCombobox()
         {
@@ -26,7 +82,7 @@ namespace CONTROLLER
             dgvDatos.DataSource = null;
             dgvDatos.DataSource = r.GetAll();
         }
-        public Usuario Encontrar(string username)
+        public Usuario EncontrarUsername(string username)
         {
             Usuario c = r.Get(s => s.Username == username, tracked: false);
             return c;

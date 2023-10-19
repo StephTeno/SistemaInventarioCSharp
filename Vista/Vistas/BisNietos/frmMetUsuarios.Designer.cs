@@ -36,6 +36,7 @@
             btnDelete = new CustomControls.RJControls.RJButton();
             btnAdd = new CustomControls.RJControls.RJButton();
             btnEdit = new CustomControls.RJControls.RJButton();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -102,6 +103,7 @@
             cbCargo.Size = new Size(250, 30);
             cbCargo.TabIndex = 2;
             cbCargo.Texts = "Cargo";
+            cbCargo.OnSelectedIndexChanged += cbCargo_OnSelectedIndexChanged;
             // 
             // iconPictureBox1
             // 
@@ -192,12 +194,22 @@
             btnEdit.Visible = false;
             btnEdit.Click += btnEdit_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(383, 193);
+            label1.Name = "label1";
+            label1.Size = new Size(45, 17);
+            label1.TabIndex = 7;
+            label1.Text = "label1";
+            // 
             // frmMetUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(600, 300);
+            Controls.Add(label1);
             Controls.Add(panel2);
             Controls.Add(iconPictureBox1);
             Controls.Add(cbCargo);
@@ -212,6 +224,7 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel2.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -224,5 +237,6 @@
         private CustomControls.RJControls.RJButton btnAdd;
         private CustomControls.RJControls.RJButton btnEdit;
         private CustomControls.RJControls.RJButton btnDelete;
+        private Label label1;
     }
 }
