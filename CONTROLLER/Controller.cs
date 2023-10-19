@@ -29,8 +29,9 @@ namespace CONTROLLER
             //dgvDatos.DataSource = repo.GetAll();
         }
 
-        public void AgregarDatos(Cliente c)
+        public void AgregarDatos(string nombre ...)
         {
+            Cliente c = new Cliente();
             repo.Registrar(c);
         }
         public void ActualizarDatos(Cliente c)

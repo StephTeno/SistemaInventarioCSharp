@@ -607,6 +607,7 @@
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmFacturar";
+            RightToLeftLayout = true;
             Text = "frmFacturar";
             plTitle.ResumeLayout(false);
             plTitles.ResumeLayout(false);

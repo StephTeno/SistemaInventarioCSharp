@@ -91,14 +91,26 @@ namespace CONTROLLER.Repositorios
         }
     }
 
-    public class RepoLocalizacion : Repositorio<Localizacion>
+    public class RepoDepartamento : Repositorio<Departamento>
     {
         private readonly ESInventarioContext _db;
-        public RepoLocalizacion(ESInventarioContext db) : base(db) { _db = db; }
+        public RepoDepartamento(ESInventarioContext db) : base(db) { _db = db; }
 
-        public void Update(Localizacion c)
+        public void Update(Departamento c)
         {
-            _db.Localizacions.Update(c);
+            _db.Departamentos.Update(c);
+            Save();
+        }
+    }
+
+    public class RepoMunicipio : Repositorio<Municipio>
+    {
+        private readonly ESInventarioContext _db;
+        public RepoMunicipio(ESInventarioContext db) : base(db) { _db = db; }
+
+        public void Update(Municipio c)
+        {
+            _db.Municipios.Update(c);
             Save();
         }
     }
@@ -135,6 +147,18 @@ namespace CONTROLLER.Repositorios
         public void Update(Usuario c)
         {
             _db.Usuarios.Update(c);
+            Save();
+        }
+    }
+
+    public class RepoDetalleFactura : Repositorio<DetalleEntradum>
+    {
+        private readonly ESInventarioContext _db;
+        public RepoDetalleFactura(ESInventarioContext db) : base(db) { _db = db; }
+
+        public void Update(DetalleEntradum c)
+        {
+            _db.DetalleEntrada.Update(c);
             Save();
         }
     }
