@@ -156,5 +156,23 @@ namespace Vista.HOME
         {
             this.Close();
         }
+
+        private void btnCatalogue_Click(object sender, EventArgs e)
+        {
+            ActiveButton(btnCatalogue);
+            AbrirFormInPanel(new frmCatalogo());
+        }
+
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+            ActiveButton(btnInvoice);
+            AbrirFormInPanel(new frmFacturar());
+        }
+
+        private void btnHistorial_Click(object sender, EventArgs e)
+        {
+            ActiveButton(btnHistorial);
+            AbrirFormInPanel(new frmHistory());
+        }
     }
 }

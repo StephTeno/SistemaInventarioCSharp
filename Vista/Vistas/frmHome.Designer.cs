@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             panel1 = new Panel();
+            lblFechaYHora = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             btnProfile = new FontAwesome.Sharp.IconButton();
             btnExit = new FontAwesome.Sharp.IconButton();
@@ -56,7 +57,6 @@
             ItemLogOut = new ToolStripMenuItem();
             ItemExit = new ToolStripMenuItem();
             niNotification = new NotifyIcon(components);
-            lblFechaYHora = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             flpSidebar.SuspendLayout();
@@ -79,6 +79,17 @@
             panel1.Size = new Size(1000, 50);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
+            // 
+            // lblFechaYHora
+            // 
+            lblFechaYHora.AutoSize = true;
+            lblFechaYHora.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblFechaYHora.ForeColor = Color.White;
+            lblFechaYHora.Location = new Point(413, 15);
+            lblFechaYHora.Name = "lblFechaYHora";
+            lblFechaYHora.Size = new Size(53, 19);
+            lblFechaYHora.TabIndex = 27;
+            lblFechaYHora.Text = "Fecha";
             // 
             // iconPictureBox1
             // 
@@ -265,6 +276,7 @@
             btnCatalogue.Text = "Catálogo";
             btnCatalogue.TextAlign = ContentAlignment.MiddleRight;
             btnCatalogue.UseVisualStyleBackColor = false;
+            btnCatalogue.Click += btnCatalogue_Click;
             // 
             // btnInvoice
             // 
@@ -289,6 +301,7 @@
             btnInvoice.Text = "Facturar";
             btnInvoice.TextAlign = ContentAlignment.MiddleRight;
             btnInvoice.UseVisualStyleBackColor = false;
+            btnInvoice.Click += btnInvoice_Click;
             // 
             // btnInventory
             // 
@@ -387,6 +400,7 @@
             btnHistorial.Text = "Historial";
             btnHistorial.TextAlign = ContentAlignment.MiddleRight;
             btnHistorial.UseVisualStyleBackColor = false;
+            btnHistorial.Click += btnHistorial_Click;
             // 
             // plContenedor
             // 
@@ -481,17 +495,6 @@
             niNotification.Icon = (Icon)resources.GetObject("niNotification.Icon");
             niNotification.Text = "Notificación";
             niNotification.Visible = true;
-            // 
-            // lblFechaYHora
-            // 
-            lblFechaYHora.AutoSize = true;
-            lblFechaYHora.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFechaYHora.ForeColor = Color.White;
-            lblFechaYHora.Location = new Point(413, 15);
-            lblFechaYHora.Name = "lblFechaYHora";
-            lblFechaYHora.Size = new Size(53, 19);
-            lblFechaYHora.TabIndex = 27;
-            lblFechaYHora.Text = "Fecha";
             // 
             // frmHome
             // 

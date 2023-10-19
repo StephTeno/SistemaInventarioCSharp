@@ -9,6 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CONTROLLER", "CONTROLLER\CO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vista", "Vista\Vista.csproj", "{D0899AD8-7EBE-4B80-B3A0-296629328C7B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{EA12C0D8-5EFB-4AD3-8661-EE182359BEFC}"
+	ProjectSection(SolutionItems) = preProject
+		ESInventario.sql = ESInventario.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
