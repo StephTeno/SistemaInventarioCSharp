@@ -17,7 +17,7 @@ namespace CONTROLLER.Repositorios
 
         public Cliente Get(Expression<Func<Cliente, bool>>? filter = null, bool tracked = true)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 IQueryable<Cliente> query = context.Clientes;
                 if (!tracked)
@@ -34,7 +34,7 @@ namespace CONTROLLER.Repositorios
 
         public ArrayList GetAll()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 var ls = from p in context.Clientes
                            select new { p.IdCliente, p.Pnomb, p.Snomb, p.Pape, p.Sape, p.Celular};
@@ -50,14 +50,14 @@ namespace CONTROLLER.Repositorios
 
         public void Save()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.SaveChanges();
             }
         }
         public void Registrar(Cliente c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Clientes.Add(c);
                 Save();
@@ -66,7 +66,7 @@ namespace CONTROLLER.Repositorios
 
         public void Remove(Cliente c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 if (c != null)
                 {
@@ -79,7 +79,7 @@ namespace CONTROLLER.Repositorios
 
         public void Update(Cliente c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Clientes.Update(c);
                 Save();
@@ -91,7 +91,7 @@ namespace CONTROLLER.Repositorios
         public RepoProve(){}
         public Proveedore Get(Expression<Func<Proveedore, bool>>? filter = null, bool tracked = true)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 IQueryable<Proveedore> query = context.Proveedores;
                 if (!tracked)
@@ -108,7 +108,7 @@ namespace CONTROLLER.Repositorios
 
         public ArrayList GetAll()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 var ls = from p in context.Proveedores
                          select new { p.Ruc, p.Empresa, p.Representante, p.CargoPro, p.Telefono, p.Correo};
@@ -124,14 +124,14 @@ namespace CONTROLLER.Repositorios
 
         public void Save()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.SaveChanges();
             }
         }
         public void Registrar(Proveedore c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Proveedores.Add(c);
                 Save();
@@ -140,7 +140,7 @@ namespace CONTROLLER.Repositorios
 
         public void Remove(Proveedore c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 if (c != null)
                 {
@@ -154,7 +154,7 @@ namespace CONTROLLER.Repositorios
 
         public void Update(Proveedore c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Proveedores.Update(c);
                 Save();
@@ -165,7 +165,7 @@ namespace CONTROLLER.Repositorios
     {
         public Entrada Get(Expression<Func<Entrada, bool>>? filter = null, bool tracked = true)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 IQueryable<Entrada> query = context.Entradas;
                 if (!tracked)
@@ -182,7 +182,7 @@ namespace CONTROLLER.Repositorios
 
         public List<Entrada> GetAll()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 var lst = (from p in context.Entradas
                            select p).ToList();
@@ -192,14 +192,14 @@ namespace CONTROLLER.Repositorios
 
         public void Save()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.SaveChanges();
             }
         }
         public void Registrar(Entrada c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Entradas.Add(c);
                 Save();
@@ -208,7 +208,7 @@ namespace CONTROLLER.Repositorios
 
         public void Remove(Entrada c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 if (c != null)
                 {
@@ -222,7 +222,7 @@ namespace CONTROLLER.Repositorios
 
         public void Update(Entrada c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Entradas.Update(c);
                 Save();
@@ -234,7 +234,7 @@ namespace CONTROLLER.Repositorios
         public RepoCategoriaProd() { }
         public CategoriaProd Get(Expression<Func<CategoriaProd, bool>>? filter = null, bool tracked = true)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 IQueryable<CategoriaProd> query = context.CategoriaProds;
                 if (!tracked)
@@ -251,7 +251,7 @@ namespace CONTROLLER.Repositorios
 
         public List<CategoriaProd> GetAll()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 var lst = (from p in context.CategoriaProds
                            select p).ToList();
@@ -261,7 +261,7 @@ namespace CONTROLLER.Repositorios
 
         public void Save()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.SaveChanges();
             }
@@ -271,7 +271,7 @@ namespace CONTROLLER.Repositorios
     {
         public DetalleEntradum Get(Expression<Func<DetalleEntradum, bool>>? filter = null, bool tracked = true)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 IQueryable<DetalleEntradum> query = context.DetalleEntrada;
                 if (!tracked)
@@ -288,7 +288,7 @@ namespace CONTROLLER.Repositorios
 
         public List<DetalleEntradum> GetAll()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 var lst = (from p in context.DetalleEntrada
                            select p).ToList();
@@ -298,14 +298,14 @@ namespace CONTROLLER.Repositorios
 
         public void Save()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.SaveChanges();
             }
         }
         public void Registrar(DetalleEntradum c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.DetalleEntrada.Add(c);
                 Save();
@@ -314,7 +314,7 @@ namespace CONTROLLER.Repositorios
 
         public void Remove(DetalleEntradum c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 if (c != null)
                 {
@@ -328,7 +328,7 @@ namespace CONTROLLER.Repositorios
 
         public void Update(DetalleEntradum c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.DetalleEntrada.Update(c);
                 Save();
@@ -340,7 +340,7 @@ namespace CONTROLLER.Repositorios
         public RepoFactura() { }
         public Factura Get(Expression<Func<Factura, bool>>? filter = null, bool tracked = true)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 IQueryable<Factura> query = context.Facturas;
                 if (!tracked)
@@ -357,7 +357,7 @@ namespace CONTROLLER.Repositorios
 
         public List<Factura> GetAll()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 var lst = (from p in context.Facturas
                            select p).ToList();
@@ -367,14 +367,14 @@ namespace CONTROLLER.Repositorios
 
         public void Save()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.SaveChanges();
             }
         }
         public void Registrar(Factura c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Facturas.Add(c);
                 Save();
@@ -383,7 +383,7 @@ namespace CONTROLLER.Repositorios
 
         public void Remove(Factura c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 if (c != null)
                 {
@@ -396,7 +396,7 @@ namespace CONTROLLER.Repositorios
 
         public void Update(Factura c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Facturas.Update(c);
                 Save();
@@ -409,7 +409,7 @@ namespace CONTROLLER.Repositorios
         public RepoInventario() { }
         public Inventario Get(Expression<Func<Inventario, bool>>? filter = null, bool tracked = true)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 IQueryable<Inventario> query = context.Inventarios;
                 if (!tracked)
@@ -426,7 +426,7 @@ namespace CONTROLLER.Repositorios
 
         public List<Inventario> GetAll()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 var lst = (from p in context.Inventarios
                            select p).ToList();
@@ -436,14 +436,14 @@ namespace CONTROLLER.Repositorios
 
         public void Save()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.SaveChanges();
             }
         }
         public void Registrar(Inventario c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Inventarios.Add(c);
                 Save();
@@ -452,7 +452,7 @@ namespace CONTROLLER.Repositorios
 
         public void Remove(Inventario c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 if (c != null)
                 {
@@ -465,7 +465,7 @@ namespace CONTROLLER.Repositorios
 
         public void Update(Inventario c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Inventarios.Update(c);
                 Save();
@@ -478,7 +478,7 @@ namespace CONTROLLER.Repositorios
         public RepoMunicipio() { }
         public Municipio Get(Expression<Func<Municipio, bool>>? filter = null, bool tracked = true)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 IQueryable<Municipio> query = context.Municipios;
                 if (!tracked)
@@ -495,7 +495,7 @@ namespace CONTROLLER.Repositorios
 
         public List<Municipio> GetAll()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 var lst = (from p in context.Municipios
                            select p).ToList();
@@ -505,7 +505,7 @@ namespace CONTROLLER.Repositorios
 
         public void Save()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.SaveChanges();
             }
@@ -518,7 +518,7 @@ namespace CONTROLLER.Repositorios
 
         public Producto Get(Expression<Func<Producto, bool>>? filter = null, bool tracked = true)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 IQueryable<Producto> query = context.Productos;
                 if (!tracked)
@@ -535,7 +535,7 @@ namespace CONTROLLER.Repositorios
 
         public List<Producto> GetAll()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 var lst = (from p in context.Productos
                            select p).ToList();
@@ -545,14 +545,14 @@ namespace CONTROLLER.Repositorios
 
         public void Save()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.SaveChanges();
             }
         }
         public void Registrar(Producto c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Productos.Add(c);
                 Save();
@@ -561,7 +561,7 @@ namespace CONTROLLER.Repositorios
 
         public void Remove(Producto c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 if (c != null)
                 {
@@ -574,7 +574,7 @@ namespace CONTROLLER.Repositorios
 
         public void Update(Producto c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Productos.Update(c);
                 Save();
@@ -587,7 +587,7 @@ namespace CONTROLLER.Repositorios
         public RepoSalida() { }
         public Salida Get(Expression<Func<Salida, bool>>? filter = null, bool tracked = true)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 IQueryable<Salida> query = context.Salidas;
                 if (!tracked)
@@ -604,7 +604,7 @@ namespace CONTROLLER.Repositorios
 
         public List<Salida> GetAll()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 var lst = (from p in context.Salidas
                            select p).ToList();
@@ -614,14 +614,14 @@ namespace CONTROLLER.Repositorios
 
         public void Save()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.SaveChanges();
             }
         }
         public void Registrar(Salida c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Salidas.Add(c);
                 Save();
@@ -630,7 +630,7 @@ namespace CONTROLLER.Repositorios
 
         public void Remove(Salida c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 if (c != null)
                 {
@@ -643,7 +643,7 @@ namespace CONTROLLER.Repositorios
 
         public void Update(Salida c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Salidas.Update(c);
                 Save();
@@ -657,7 +657,7 @@ namespace CONTROLLER.Repositorios
 
         public Usuario Get(Expression<Func<Usuario, bool>>? filter = null, bool tracked = true)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 IQueryable<Usuario> query = context.Usuarios;
                 if (!tracked)
@@ -674,7 +674,7 @@ namespace CONTROLLER.Repositorios
 
         public ArrayList GetAll()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 var ls = from p in context.Usuarios
                          select new { p.Username, p.Tipo };
@@ -690,14 +690,14 @@ namespace CONTROLLER.Repositorios
 
         public void Save()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.SaveChanges();
             }
         }
         public void Registrar(Usuario c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Usuarios.Add(c);
                 Save();
@@ -706,7 +706,7 @@ namespace CONTROLLER.Repositorios
 
         public void Remove(Usuario c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 if (c != null)
                 {
@@ -719,7 +719,7 @@ namespace CONTROLLER.Repositorios
 
         public void Update(Usuario c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.Usuarios.Update(c);
                 Save();
@@ -732,7 +732,7 @@ namespace CONTROLLER.Repositorios
         public RepoTipos() { }
         public List<TipoUsuario> GetTypesUsers()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 return context.TipoUsuarios.ToList();
             }
@@ -744,7 +744,7 @@ namespace CONTROLLER.Repositorios
         public RepoDetalleFactura() { }
         public DetalleFactura Get(Expression<Func<DetalleFactura, bool>>? filter = null, bool tracked = true)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 IQueryable<DetalleFactura> query = context.DetalleFacturas;
                 if (!tracked)
@@ -761,7 +761,7 @@ namespace CONTROLLER.Repositorios
 
         public List<DetalleFactura> GetAll()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 var lst = (from p in context.DetalleFacturas
                            select p).ToList();
@@ -771,14 +771,14 @@ namespace CONTROLLER.Repositorios
 
         public void Save()
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.SaveChanges();
             }
         }
         public void Registrar(DetalleFactura c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.DetalleFacturas.Add(c);
                 Save();
@@ -787,7 +787,7 @@ namespace CONTROLLER.Repositorios
 
         public void Remove(DetalleFactura c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 if (c != null)
                 {
@@ -799,7 +799,7 @@ namespace CONTROLLER.Repositorios
         }
         public void Update(DetalleFactura c)
         {
-            using (var context = new ESInventarioContext())
+            using (ESInventarioContext context = new ESInventarioContext())
             {
                 context.DetalleFacturas.Update(c);
                 Save();
