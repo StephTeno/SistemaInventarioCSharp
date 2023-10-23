@@ -318,11 +318,11 @@ namespace CONTROLLER.Repositorios
                 context.SaveChanges();
             }
         }
-        public void Registrar(DetalleEntradum c)
+        public void Registrar(List<DetalleEntradum> c)
         {
             using (ESInventarioContext context = new ESInventarioContext())
             {
-                context.DetalleEntrada.Add(c);
+                context.DetalleEntrada.AddRange(c);
                 Save();
             }
         }

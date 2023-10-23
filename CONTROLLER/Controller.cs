@@ -6,6 +6,31 @@ using System.Collections;
 
 namespace CONTROLLER
 {
+
+    public class ControllerEntrada
+    {
+        RepoEntrada r = new RepoEntrada();
+        RepoDetalleEntrada d = new RepoDetalleEntrada();
+        RepoProducto pd = new RepoProducto();
+        public ControllerEntrada() { }
+
+
+        public void AgregarProducto(Producto c)
+        {
+            pd.Registrar(c);
+        }
+
+        public void AgregarDatos(Entrada c)
+        {
+            r.Registrar(c);
+        }
+        public void AgregarDetalles(List<DetalleEntradum> c)
+        {
+            d.Registrar(c);
+        }
+
+
+    }
     public class ControllerFactura
     {
         RepoFactura r = new RepoFactura();

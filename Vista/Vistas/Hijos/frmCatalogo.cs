@@ -54,13 +54,13 @@ namespace Vista.Vistas.Hijos
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var p = c.Encontrar(rjTextBox1.Texts);
+            p = c.Encontrar(rjTextBox1.Texts);
             LlenarTextBox();
         }
 
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
-            var p = c.Encontrar(rjTextBox1.Texts);
+            p = c.Encontrar(rjTextBox1.Texts);
             LlenarTextBox();
         }
     }
