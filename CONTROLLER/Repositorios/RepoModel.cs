@@ -48,6 +48,14 @@ namespace CONTROLLER.Repositorios
             }
         }
 
+        public List<Cliente> GetClientes()
+        {
+            using (ESInventarioContext context = new ESInventarioContext())
+            {
+                return context.Clientes.ToList();
+            }
+        }
+
         public void Save()
         {
             using (ESInventarioContext context = new ESInventarioContext())
@@ -89,6 +97,13 @@ namespace CONTROLLER.Repositorios
     public class RepoProve
     {
         public RepoProve(){}
+        public List<Proveedore> GetProveedores()
+        {
+            using (ESInventarioContext context = new ESInventarioContext())
+            {
+                return context.Proveedores.ToList();
+            }
+        }
         public Proveedore Get(Expression<Func<Proveedore, bool>>? filter = null, bool tracked = true)
         {
             using (ESInventarioContext context = new ESInventarioContext())
@@ -476,38 +491,12 @@ namespace CONTROLLER.Repositorios
     public class RepoMunicipio
     {
         public RepoMunicipio() { }
-        public Municipio Get(Expression<Func<Municipio, bool>>? filter = null, bool tracked = true)
-        {
-            using (ESInventarioContext context = new ESInventarioContext())
-            {
-                IQueryable<Municipio> query = context.Municipios;
-                if (!tracked)
-                {
-                    query = query.AsNoTracking();
-                }
-                if (filter != null)
-                {
-                    query = query.Where(filter);
-                }
-                return query.FirstOrDefault();
-            }
-        }
 
         public List<Municipio> GetAll()
         {
             using (ESInventarioContext context = new ESInventarioContext())
             {
-                var lst = (from p in context.Municipios
-                           select p).ToList();
-                return lst;
-            }
-        }
-
-        public void Save()
-        {
-            using (ESInventarioContext context = new ESInventarioContext())
-            {
-                context.SaveChanges();
+                return context.Municipios.ToList();
             }
         }
     }
@@ -669,6 +658,27 @@ namespace CONTROLLER.Repositorios
                     query = query.Where(filter);
                 }
                 return query.FirstOrDefault();
+            }
+        }
+
+        public void Remove(Usuario c)
+        {
+            using (ESInventarioContext context = new ESInventarioContext())
+            {
+                if (c != null)
+                {
+                    context.Usuarios.Remove(c);
+                    Save();
+                }
+                else { return; }
+            }
+        }
+
+        public void Save()
+        {
+            using (ESInventarioContext context = new ESInventarioContext())
+            {
+                context.SaveChanges();
             }
         }
 

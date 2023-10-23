@@ -45,7 +45,6 @@
             btnInventory = new FontAwesome.Sharp.IconButton();
             SeparadorAjustes = new FontAwesome.Sharp.IconButton();
             btnAdmin = new FontAwesome.Sharp.IconButton();
-            btnHistorial = new FontAwesome.Sharp.IconButton();
             plContenedor = new Panel();
             ddmInventory = new CustomControls.RJControls.RJDropdownMenu(components);
             entradasToolStripMenuItem = new ToolStripMenuItem();
@@ -197,7 +196,6 @@
             flpSidebar.Controls.Add(btnInventory);
             flpSidebar.Controls.Add(SeparadorAjustes);
             flpSidebar.Controls.Add(btnAdmin);
-            flpSidebar.Controls.Add(btnHistorial);
             flpSidebar.Dock = DockStyle.Left;
             flpSidebar.Location = new Point(0, 50);
             flpSidebar.Name = "flpSidebar";
@@ -378,31 +376,6 @@
             btnAdmin.UseVisualStyleBackColor = false;
             btnAdmin.Click += btnAdmin_Click;
             // 
-            // btnHistorial
-            // 
-            btnHistorial.BackColor = Color.FromArgb(235, 239, 241);
-            btnHistorial.Dock = DockStyle.Top;
-            btnHistorial.FlatAppearance.BorderSize = 0;
-            btnHistorial.FlatAppearance.MouseDownBackColor = Color.White;
-            btnHistorial.FlatStyle = FlatStyle.Flat;
-            btnHistorial.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnHistorial.ForeColor = Color.Gray;
-            btnHistorial.IconChar = FontAwesome.Sharp.IconChar.Inbox;
-            btnHistorial.IconColor = Color.Gray;
-            btnHistorial.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnHistorial.IconSize = 25;
-            btnHistorial.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHistorial.Location = new Point(0, 420);
-            btnHistorial.Margin = new Padding(0, 0, 0, 10);
-            btnHistorial.Name = "btnHistorial";
-            btnHistorial.Padding = new Padding(15, 0, 55, 0);
-            btnHistorial.Size = new Size(200, 50);
-            btnHistorial.TabIndex = 11;
-            btnHistorial.Text = "Historial";
-            btnHistorial.TextAlign = ContentAlignment.MiddleRight;
-            btnHistorial.UseVisualStyleBackColor = false;
-            btnHistorial.Click += btnHistorial_Click;
-            // 
             // plContenedor
             // 
             plContenedor.BackColor = Color.White;
@@ -551,7 +524,6 @@
         private ToolStripMenuItem ItemExit;
         private FontAwesome.Sharp.IconButton SeparadorAjustes;
         private FontAwesome.Sharp.IconButton btnAdmin;
-        private FontAwesome.Sharp.IconButton btnHistorial;
         private NotifyIcon niNotification;
         private Label lblFechaYHora;
         private System.Windows.Forms.Timer ti;

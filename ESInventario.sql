@@ -19,7 +19,8 @@ Nombre nvarchar(25) not null
 )
 
 Create table Municipio(
-IdMun char(6) primary key not null,
+IdMun int identity(1,1) primary key not null,
+Municipio nvarchar(25)not null,
 Dept char(5) foreign key references Departamento(IdDept) not null
 )
 
@@ -29,7 +30,7 @@ PNomb nvarchar(25) not null,
 SNomb nvarchar(25),
 PApe nvarchar(25) not null,
 SApe nvarchar(25),
-IdLocal char(6) foreign key references Municipio(IdMun) not null,
+Municipio int foreign key references Municipio(IdMun) not null,
 Cedula char(16) not null,
 Celular char(8) check(Celular like '[2|5|7|8][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
 Estado bit default 1,
@@ -41,7 +42,7 @@ RUC char(14) primary key not null,
 Empresa nvarchar(50) not null,
 Representante nvarchar(60) not null,
 CargoPro nvarchar(60) not null,
-IdLocal char(6) foreign key references Municipio(IdMun) not null,
+Municipio int foreign key references Municipio(IdMun) not null,
 Correo nvarchar(45),
 Telefono char(8) check(Telefono like '[2|5|7|8][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
 )
@@ -59,6 +60,9 @@ Especificaciones nvarchar(50) not null,
 CUnitario numeric(6,2) not null,
 PreVenta numeric(6,2) not null
 )
+
+alter table Productos add Proveedor char(14) foreign key references Proveedores(RUC) not null
+
 
 create table Entradas(
 IdEntrada int identity(1,1) primary key not null,

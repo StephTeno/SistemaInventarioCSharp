@@ -77,7 +77,7 @@
             txtContrasena.Multiline = false;
             txtContrasena.Name = "txtContrasena";
             txtContrasena.Padding = new Padding(10, 7, 10, 7);
-            txtContrasena.PasswordChar = false;
+            txtContrasena.PasswordChar = true;
             txtContrasena.PlaceholderColor = Color.DarkGray;
             txtContrasena.PlaceholderText = "Contraseña";
             txtContrasena.Size = new Size(250, 31);
@@ -216,7 +216,9 @@
             Controls.Add(txtContrasena);
             Controls.Add(txtUser);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            MaximumSize = new Size(616, 339);
+            MinimumSize = new Size(616, 339);
             Name = "frmMetUsuarios";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MetUsuarios";
@@ -236,7 +238,7 @@
         private Panel panel2;
         private CustomControls.RJControls.RJButton btnAdd;
         private CustomControls.RJControls.RJButton btnEdit;
-        private CustomControls.RJControls.RJButton btnDelete;
         private Label label1;
+        private CustomControls.RJControls.RJButton btnDelete;
     }
 }

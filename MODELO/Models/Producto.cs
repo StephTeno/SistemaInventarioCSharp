@@ -29,7 +29,7 @@ public partial class Producto
 
     [StringLength(14)]
     [Unicode(false)]
-    public string? Proveedor { get; set; }
+    public string Proveedor { get; set; } = null!;
 
     [ForeignKey("Categoria")]
     [InverseProperty("Productos")]
@@ -49,7 +49,7 @@ public partial class Producto
 
     [ForeignKey("Proveedor")]
     [InverseProperty("Productos")]
-    public virtual Proveedore? ProveedorNavigation { get; set; }
+    public virtual Proveedore ProveedorNavigation { get; set; } = null!;
 
     [InverseProperty("IdProdNavigation")]
     public virtual ICollection<Salida> Salida { get; set; } = new List<Salida>();

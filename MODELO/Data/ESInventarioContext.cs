@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using MODELO.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Data;
-using System.Configuration;
 
 namespace MODELO.Data;
 
@@ -54,64 +52,63 @@ public partial class ESInventarioContext : DbContext
     {
         modelBuilder.Entity<CategoriaProd>(entity =>
         {
-            entity.HasKey(e => e.IdCat).HasName("PK__Categori__0FA7805E6B97BC2A");
+            entity.HasKey(e => e.IdCat).HasName("PK__Categori__0FA7805EA723A4FD");
         });
 
         modelBuilder.Entity<Cliente>(entity =>
         {
-            entity.HasKey(e => e.IdCliente).HasName("PK__Clientes__D5946642BA2CF6D9");
+            entity.HasKey(e => e.IdCliente).HasName("PK__Clientes__D594664206845368");
 
             entity.Property(e => e.Cedula).IsFixedLength();
             entity.Property(e => e.Celular).IsFixedLength();
             entity.Property(e => e.Estado).HasDefaultValueSql("((1))");
-            entity.Property(e => e.IdLocal).IsFixedLength();
 
-            entity.HasOne(d => d.IdLocalNavigation).WithMany(p => p.Clientes)
+            entity.HasOne(d => d.MunicipioNavigation).WithMany(p => p.Clientes)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Clientes__IdLoca__3C69FB99");
+                .HasConstraintName("FK__Clientes__Munici__412EB0B6");
         });
 
         modelBuilder.Entity<Departamento>(entity =>
         {
-            entity.HasKey(e => e.IdDept).HasName("PK__Departam__F0682C9B51E04831");
+            entity.HasKey(e => e.IdDept).HasName("PK__Departam__F0682C9B53EEDDC3");
 
             entity.Property(e => e.IdDept).IsFixedLength();
         });
 
         modelBuilder.Entity<DetalleEntradum>(entity =>
         {
-            entity.HasKey(e => new { e.IdEntrada, e.IdProd }).HasName("PK__DetalleE__7556949B78DE793D");
+            entity.HasKey(e => new { e.IdEntrada, e.IdProd }).HasName("PK__DetalleE__7556949BA51239C3");
 
             entity.Property(e => e.IdProd).IsFixedLength();
 
             entity.HasOne(d => d.IdEntradaNavigation).WithMany(p => p.DetalleEntrada)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__DetalleEn__IdEnt__4D94879B");
+                .HasConstraintName("FK__DetalleEn__IdEnt__52593CB8");
 
             entity.HasOne(d => d.IdProdNavigation).WithMany(p => p.DetalleEntrada)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__DetalleEn__IdPro__4E88ABD4");
+                .HasConstraintName("FK__DetalleEn__IdPro__534D60F1");
         });
 
         modelBuilder.Entity<DetalleFactura>(entity =>
         {
-            entity.HasKey(e => new { e.IdFactura, e.IdProd }).HasName("PK__DetalleF__9EA7638041C14F9E");
+            entity.HasKey(e => new { e.IdFactura, e.IdProd }).HasName("PK__DetalleF__9EA76380F8E45E58");
 
             entity.Property(e => e.IdFactura).IsFixedLength();
             entity.Property(e => e.IdProd).IsFixedLength();
 
             entity.HasOne(d => d.IdFacturaNavigation).WithMany(p => p.DetalleFacturas)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__DetalleFa__IdFac__6754599E");
+                .HasConstraintName("FK__DetalleFa__IdFac__59FA5E80");
 
             entity.HasOne(d => d.IdProdNavigation).WithMany(p => p.DetalleFacturas)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__DetalleFa__IdPro__68487DD7");
+                .HasConstraintName("FK__DetalleFa__IdPro__5AEE82B9");
         });
 
         modelBuilder.Entity<Entrada>(entity =>
         {
-            entity.HasKey(e => e.IdEntrada).HasName("PK__Entradas__BB164DEA2284083F");
+            entity.HasKey(e => e.IdEntrada).HasName("PK__Entradas__BB164DEAAE59566C");
 
             entity.Property(e => e.Producto).IsFixedLength();
             entity.Property(e => e.Proveedor).IsFixedLength();
@@ -119,101 +116,101 @@ public partial class ESInventarioContext : DbContext
 
             entity.HasOne(d => d.ProductoNavigation).WithMany(p => p.Entrada)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Entradas__Produc__4AB81AF0");
+                .HasConstraintName("FK__Entradas__Produc__4F7CD00D");
 
             entity.HasOne(d => d.ProveedorNavigation).WithMany(p => p.Entrada)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Entradas__Provee__49C3F6B7");
+                .HasConstraintName("FK__Entradas__Provee__4E88ABD4");
         });
 
         modelBuilder.Entity<Factura>(entity =>
         {
-            entity.HasKey(e => e.IdFactura).HasName("PK__Facturas__50E7BAF11D4DFFE7");
+            entity.HasKey(e => e.IdFactura).HasName("PK__Facturas__50E7BAF18B6CA3E3");
 
             entity.Property(e => e.IdFactura).IsFixedLength();
 
             entity.HasOne(d => d.IdClienteNavigation).WithMany(p => p.Facturas)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Facturas__IdClie__6383C8BA");
+                .HasConstraintName("FK__Facturas__IdClie__5629CD9C");
 
             entity.HasOne(d => d.IdEmpleadoNavigation).WithMany(p => p.Facturas)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Facturas__IdEmpl__6477ECF3");
+                .HasConstraintName("FK__Facturas__IdEmpl__571DF1D5");
         });
 
         modelBuilder.Entity<Inventario>(entity =>
         {
-            entity.HasKey(e => e.Idi).HasName("PK__Inventar__C4971C351481C6B8");
+            entity.HasKey(e => e.Idi).HasName("PK__Inventar__C4971C357ADCADAE");
 
             entity.Property(e => e.IdProd).IsFixedLength();
 
             entity.HasOne(d => d.IdProdNavigation).WithMany(p => p.Inventarios)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Inventari__IdPro__6E01572D");
+                .HasConstraintName("FK__Inventari__IdPro__60A75C0F");
         });
 
         modelBuilder.Entity<Municipio>(entity =>
         {
-            entity.HasKey(e => e.IdMun).HasName("PK__Municipi__0D12D9D3044D735D");
+            entity.HasKey(e => e.IdMun).HasName("PK__Municipi__0D12D9D32EF3B4CB");
 
-            entity.Property(e => e.IdMun).IsFixedLength();
             entity.Property(e => e.Dept).IsFixedLength();
 
             entity.HasOne(d => d.DeptNavigation).WithMany(p => p.Municipios)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Municipio__Dept__398D8EEE");
+                .HasConstraintName("FK__Municipio__Dept__3E52440B");
         });
 
         modelBuilder.Entity<Producto>(entity =>
         {
-            entity.HasKey(e => e.IdProd).HasName("PK__Producto__E40D971D188EB84B");
+            entity.HasKey(e => e.IdProd).HasName("PK__Producto__E40D971DD2121959");
 
             entity.Property(e => e.IdProd).IsFixedLength();
             entity.Property(e => e.Proveedor).IsFixedLength();
 
             entity.HasOne(d => d.CategoriaNavigation).WithMany(p => p.Productos)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Productos__Categ__46E78A0C");
+                .HasConstraintName("FK__Productos__Categ__4BAC3F29");
 
-            entity.HasOne(d => d.ProveedorNavigation).WithMany(p => p.Productos).HasConstraintName("FK__Productos__Prove__7A672E12");
+            entity.HasOne(d => d.ProveedorNavigation).WithMany(p => p.Productos)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Productos__Prove__619B8048");
         });
 
         modelBuilder.Entity<Proveedore>(entity =>
         {
-            entity.HasKey(e => e.Ruc).HasName("PK__Proveedo__CAF3326AB0B544F0");
+            entity.HasKey(e => e.Ruc).HasName("PK__Proveedo__CAF3326A749BA95A");
 
             entity.Property(e => e.Ruc).IsFixedLength();
-            entity.Property(e => e.IdLocal).IsFixedLength();
             entity.Property(e => e.Telefono).IsFixedLength();
 
-            entity.HasOne(d => d.IdLocalNavigation).WithMany(p => p.Proveedores)
+            entity.HasOne(d => d.MunicipioNavigation).WithMany(p => p.Proveedores)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Proveedor__IdLoc__412EB0B6");
+                .HasConstraintName("FK__Proveedor__Munic__45F365D3");
         });
 
         modelBuilder.Entity<Salida>(entity =>
         {
-            entity.HasKey(e => e.IdSalida).HasName("PK__Salidas__5D69EC725F7525AA");
+            entity.HasKey(e => e.IdSalida).HasName("PK__Salidas__5D69EC72C64F14B1");
 
             entity.Property(e => e.IdProd).IsFixedLength();
 
             entity.HasOne(d => d.IdProdNavigation).WithMany(p => p.Salida)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Salidas__IdProd__6B24EA82");
+                .HasConstraintName("FK__Salidas__IdProd__5DCAEF64");
         });
 
         modelBuilder.Entity<TipoUsuario>(entity =>
         {
-            entity.HasKey(e => e.IdTipoUser).HasName("PK__TipoUsua__276DE6F8B2C84226");
+            entity.HasKey(e => e.IdTipoUser).HasName("PK__TipoUsua__276DE6F8DEE7B8D5");
         });
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Username).HasName("PK__Usuario__536C85E51D2C3EBA");
+            entity.HasKey(e => e.Username).HasName("PK__Usuario__536C85E5CE58BA86");
 
             entity.HasOne(d => d.TipoNavigation).WithMany(p => p.Usuarios)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Usuario__Tipo__571DF1D5");
+                .HasConstraintName("FK__Usuario__Tipo__398D8EEE");
         });
 
         OnModelCreatingPartial(modelBuilder);

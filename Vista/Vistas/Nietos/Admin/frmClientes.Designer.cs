@@ -71,6 +71,7 @@
             btnAdd.Text = "Agregar";
             btnAdd.TextColor = Color.White;
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnDelete
             // 
@@ -90,6 +91,7 @@
             btnDelete.Text = "Eliminar";
             btnDelete.TextColor = Color.White;
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -109,6 +111,7 @@
             btnEdit.Text = "Editar";
             btnEdit.TextColor = Color.White;
             btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // panel1
             // 
@@ -140,6 +143,7 @@
             dgvClient.RowTemplate.Height = 25;
             dgvClient.Size = new Size(1000, 404);
             dgvClient.TabIndex = 6;
+            dgvClient.CellClick += dgvClient_CellClick;
             // 
             // panel3
             // 

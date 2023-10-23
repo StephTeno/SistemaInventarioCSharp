@@ -18,8 +18,8 @@ namespace Vista.Vistas.BisNietos
 {
     public partial class frmMetUsuarios : Form
     {
-        Usuario us = new Usuario();
-        string Tipo = String.Empty;
+        public Usuario us = new Usuario();
+        string Tipo = string.Empty;
         int ti = 0;
         ControllerUsers u = new ControllerUsers();
         public frmMetUsuarios(string tipo = "Agregar")
@@ -38,10 +38,12 @@ namespace Vista.Vistas.BisNietos
                 case "Eliminar":
                     btnDelete.Visible = true;
                     btnDelete.Location = new Point(243, 18);
+                    LlenarTextBoxs();
                     break;
                 case "Editar":
                     btnEdit.Visible = true;
                     btnEdit.Location = new Point(243, 18);
+                    LlenarTextBoxs();
                     break;
                 default:
                     break;
@@ -66,6 +68,11 @@ namespace Vista.Vistas.BisNietos
             }
         }
 
+        public void LlenarTextBoxs()
+        {
+            txtUser.Texts = us.Username;
+            txtContrasena.Texts = us.Contrasena;
+        }
         public bool TodosLosTextBoxLlenos()
         {
             foreach (Control control in this.Controls)
@@ -116,14 +123,19 @@ namespace Vista.Vistas.BisNietos
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //Metodo para eliminar
-            this.Close();
+            DialogResult d = RJMessageBox.Show("¿Estas seguro en eliminar el Usuario?", "Eliminar", MessageBoxButtons.YesNo);
+            if (d == DialogResult.Yes)
+            {
+                u.Eliminar(us);
+                this.Close();
+            }
+            else if (d == DialogResult.No) { this.Close(); }
         }
 
 
         private void cbCargo_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            ti = 1+cbCargo.SelectedIndex;
+            ti = 1 + cbCargo.SelectedIndex;
             label1.Text = ti.ToString();
         }
     }

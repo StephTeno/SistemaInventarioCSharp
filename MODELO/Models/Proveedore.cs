@@ -23,9 +23,7 @@ public partial class Proveedore
     [StringLength(60)]
     public string CargoPro { get; set; } = null!;
 
-    [StringLength(6)]
-    [Unicode(false)]
-    public string IdLocal { get; set; } = null!;
+    public int Municipio { get; set; }
 
     [StringLength(45)]
     public string? Correo { get; set; }
@@ -37,9 +35,9 @@ public partial class Proveedore
     [InverseProperty("ProveedorNavigation")]
     public virtual ICollection<Entrada> Entrada { get; set; } = new List<Entrada>();
 
-    [ForeignKey("IdLocal")]
+    [ForeignKey("Municipio")]
     [InverseProperty("Proveedores")]
-    public virtual Municipio IdLocalNavigation { get; set; } = null!;
+    public virtual Municipio MunicipioNavigation { get; set; } = null!;
 
     [InverseProperty("ProveedorNavigation")]
     public virtual ICollection<Producto> Productos { get; set; } = new List<Producto>();

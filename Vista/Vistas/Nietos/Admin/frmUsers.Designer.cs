@@ -53,7 +53,7 @@
             dgvUsers.RowTemplate.Height = 25;
             dgvUsers.Size = new Size(1000, 404);
             dgvUsers.TabIndex = 0;
-            dgvUsers.CellDoubleClick += dgvUsers_CellDoubleClick;
+            dgvUsers.CellClick += dgvUsers_CellClick;
             // 
             // btnEdit
             // 

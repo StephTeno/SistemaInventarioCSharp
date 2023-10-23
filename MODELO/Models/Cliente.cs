@@ -27,9 +27,7 @@ public partial class Cliente
     [StringLength(25)]
     public string? Sape { get; set; }
 
-    [StringLength(6)]
-    [Unicode(false)]
-    public string IdLocal { get; set; } = null!;
+    public int Municipio { get; set; }
 
     [StringLength(16)]
     [Unicode(false)]
@@ -47,7 +45,7 @@ public partial class Cliente
     [InverseProperty("IdClienteNavigation")]
     public virtual ICollection<Factura> Facturas { get; set; } = new List<Factura>();
 
-    [ForeignKey("IdLocal")]
+    [ForeignKey("Municipio")]
     [InverseProperty("Clientes")]
-    public virtual Municipio IdLocalNavigation { get; set; } = null!;
+    public virtual Municipio MunicipioNavigation { get; set; } = null!;
 }

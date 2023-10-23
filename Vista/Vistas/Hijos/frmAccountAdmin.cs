@@ -71,24 +71,6 @@ namespace Vista.Vistas.Hijos
             Inicio();
         }
 
-        private void btnNoti_Click(object sender, EventArgs e)
-        {
-            ActiveButton(btnNoti);
-            AbrirFormInPanel(new frmNotification());
-        }
-
-        private void btnCatAndCal_Click(object sender, EventArgs e)
-        {
-            ActiveButton(btnCatAndCal);
-            AbrirFormInPanel(new frmOrgProduct());
-        }
-
-        private void btnUmbStock_Click(object sender, EventArgs e)
-        {
-            ActiveButton(btnUmbStock);
-            AbrirFormInPanel(new frmUmbStock());
-        }
-
         private void btnClientes_Click(object sender, EventArgs e)
         {
             ActiveButton(btnClientes);

@@ -1,4 +1,5 @@
 ﻿using CONTROLLER;
+using MODELO.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace Vista.Vistas.Nietos
     public partial class frmUsers : Form
     {
         ControllerUsers c = new ControllerUsers();
+        Usuario u = new Usuario();
         public frmUsers()
         {
             InitializeComponent();
@@ -30,13 +32,17 @@ namespace Vista.Vistas.Nietos
         private void btnDelete_Click(object sender, EventArgs e)
         {
             frmMetUsuarios m = new frmMetUsuarios(btnDelete.Text);
+            m.us = u;
             m.ShowDialog();
+            c.RellenarData(dgvUsers);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             frmMetUsuarios m = new frmMetUsuarios(btnEdit.Text);
+            m.us = u;
             m.ShowDialog();
+            c.RellenarData(dgvUsers);
         }
 
         private void frmUsers_Load(object sender, EventArgs e)
@@ -44,9 +50,16 @@ namespace Vista.Vistas.Nietos
             c.RellenarData(dgvUsers);
         }
 
-        private void dgvUsers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvUsers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            foreach (DataGridViewRow row in dgvUsers.Rows)
+            {
+                if (row.Index == e.RowIndex)
+                {
+                    string id = row.Cells[0].Value.ToString();
+                    u=c.EncontrarUsername(id);
+                }
+            }
         }
     }
 }

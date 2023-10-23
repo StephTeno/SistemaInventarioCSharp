@@ -2,9 +2,43 @@
 using Microsoft.EntityFrameworkCore;
 using MODELO.Data;
 using MODELO.Models;
+using System.Collections;
 
 namespace CONTROLLER
 {
+    public class ControllerFactura
+    {
+        RepoFactura r = new RepoFactura();
+        public ControllerFactura() { }
+
+        public void AgregarDatos(Factura c)
+        {
+            using (ESInventarioContext context = new ESInventarioContext())
+            {
+                context.Facturas.Add(c);
+                context.SaveChanges();
+            }
+        }
+        public string EncontrarUltima()
+        {
+            List<Factura> f = r.GetAll();
+            var i = (from p in f
+                     orderby p.IdFactura descending
+                     select p.IdFactura).FirstOrDefault();
+            if (i == null)
+                return "0";
+            return i.ToString();
+        }
+        public void AgregarDetalles(List<DetalleFactura> c)
+        {
+            using (ESInventarioContext context = new ESInventarioContext())
+            {
+                context.DetalleFacturas.AddRange(c);
+                context.SaveChanges();
+            }
+        }
+
+    }
     public class ControllerProd
     {
         string id;
@@ -35,25 +69,9 @@ namespace CONTROLLER
 
         public ControllerUsers() { }
 
-        public void Eliminar( DataGridView dgvDatos, DataGridViewCellEventArgs e)
+        public void Eliminar(Usuario c)
         {
-            foreach (DataGridViewRow row in dgvDatos.Rows)
-            {
-                if (row.Index == e.RowIndex)
-                {
-                    id = row.Cells[0].Value.ToString();
-                    Usuario c = EncontrarUsername(id);
-                    using (ESInventarioContext context = new ESInventarioContext())
-                    {
-                        if (c != null)
-                        {
-                            context.Usuarios.Remove(c);
-                            context.SaveChanges();
-                        }
-                        else { return; }
-                    }
-                }
-            }
+            r.Remove(c);
         }
 
         public void ActualizarDatos(Usuario c)
@@ -89,15 +107,50 @@ namespace CONTROLLER
         }
     }
 
+    public class ControllerLocalidad
+    {
+        RepoMunicipio repo = new RepoMunicipio();
+        public ControllerLocalidad() { }
+        public List<Municipio> RellenarCombobox()
+        {
+            return repo.GetAll();
+        }
+    }
+
     public class ControllerProveedor
     {
         RepoProve repo = new RepoProve();
-        int id;
+        string id;
         public ControllerProveedor() { }
         public void RellenarData(DataGridView dgvDatos)
         {
             dgvDatos.DataSource = null;
             dgvDatos.DataSource = repo.GetAll();
+        }
+
+        public void Eliminar(Proveedore c)
+        {
+            repo.Remove(c);
+        }
+
+        public List<Proveedore> RellenarCombobox()
+        {
+            return repo.GetProveedores();
+        }
+
+        public void AgregarDatos(Proveedore c)
+        {
+            repo.Registrar(c);
+        }
+        public void ActualizarDatos(Proveedore c)
+        {
+            repo.Update(c);
+        }
+
+        public Proveedore Encontrar(string id)
+        {
+            Proveedore c = repo.Get(s => s.Ruc == id, tracked: false);
+            return c;
         }
     }
 
@@ -107,19 +160,15 @@ namespace CONTROLLER
         RepoCliente repo = new RepoCliente();
         int id;
 
-        public void Eliminar(int pos, DataGridView dgvDatos, DataGridViewCellEventArgs e)
+        public void Eliminar(Cliente c)
         {
-            foreach (DataGridViewRow row in dgvDatos.Rows)
-            {
-                if (row.Index == e.RowIndex)
-                {
-                    id = int.Parse(row.Cells[0].Value.ToString());
-                    Cliente c = Encontrar(id);
-                    repo.Remove(c);
-                }
-            }
+            repo.Remove(c);
         }
 
+        public List<Cliente>RellenarCombobox()
+        {
+            return repo.GetClientes();
+        }
         public void RellenarData(DataGridView dgvDatos)
         {
             dgvDatos.DataSource = null;

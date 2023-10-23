@@ -10,21 +10,23 @@ namespace MODELO.Models;
 public partial class Municipio
 {
     [Key]
-    [StringLength(6)]
-    [Unicode(false)]
-    public string IdMun { get; set; } = null!;
+    public int IdMun { get; set; }
+
+    [Column("Municipio")]
+    [StringLength(25)]
+    public string Municipio1 { get; set; } = null!;
 
     [StringLength(5)]
     [Unicode(false)]
     public string Dept { get; set; } = null!;
 
-    [InverseProperty("IdLocalNavigation")]
+    [InverseProperty("MunicipioNavigation")]
     public virtual ICollection<Cliente> Clientes { get; set; } = new List<Cliente>();
 
     [ForeignKey("Dept")]
     [InverseProperty("Municipios")]
     public virtual Departamento DeptNavigation { get; set; } = null!;
 
-    [InverseProperty("IdLocalNavigation")]
+    [InverseProperty("MunicipioNavigation")]
     public virtual ICollection<Proveedore> Proveedores { get; set; } = new List<Proveedore>();
 }

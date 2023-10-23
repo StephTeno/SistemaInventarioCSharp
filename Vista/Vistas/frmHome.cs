@@ -35,19 +35,15 @@ namespace Vista.HOME
             {
                 btnInvoice.Enabled = false;
                 btnAdmin.Enabled = false;
-                btnHistorial.Enabled = false;
                 btnInvoice.Visible = false;
                 btnAdmin.Visible = false;
-                btnHistorial.Visible = false;
             }
             if (u.Tipo == Positions.Cajero)
             {
                 btnInventory.Enabled = false;
                 btnAdmin.Enabled = false;
-                btnHistorial.Enabled = false;
                 btnInventory.Visible = false;
                 btnAdmin.Visible = false;
-                btnHistorial.Visible = false;
             }
         }
 
@@ -193,13 +189,7 @@ namespace Vista.HOME
         private void btnInvoice_Click(object sender, EventArgs e)
         {
             ActiveButton(btnInvoice);
-            AbrirFormInPanel(new frmFacturar());
-        }
-
-        private void btnHistorial_Click(object sender, EventArgs e)
-        {
-            ActiveButton(btnHistorial);
-            AbrirFormInPanel(new frmHistory());
+            AbrirFormInPanel(new frmFacturar(u));
         }
 
         private void ti_Tick(object sender, EventArgs e)

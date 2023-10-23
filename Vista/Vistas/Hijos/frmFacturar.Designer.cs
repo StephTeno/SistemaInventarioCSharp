@@ -34,6 +34,9 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             dgvVentas = new DataGridView();
             panel1 = new Panel();
+            lblPrecio = new Label();
+            label8 = new Label();
+            lblConfi = new Label();
             btnFacturar = new CustomControls.RJControls.RJButton();
             label4 = new Label();
             txtCantidad = new CustomControls.RJControls.RJTextBox();
@@ -49,6 +52,7 @@
             label5 = new Label();
             txtSubTotal = new CustomControls.RJControls.RJTextBox();
             tableLayoutPanel2 = new TableLayoutPanel();
+            btnEnter = new CustomControls.RJControls.RJButton();
             btn0 = new CustomControls.RJControls.RJButton();
             btn9 = new CustomControls.RJControls.RJButton();
             btn8 = new CustomControls.RJControls.RJButton();
@@ -129,6 +133,9 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(lblPrecio);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(lblConfi);
             panel1.Controls.Add(btnFacturar);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(txtCantidad);
@@ -142,6 +149,36 @@
             panel1.Size = new Size(649, 164);
             panel1.TabIndex = 1;
             // 
+            // lblPrecio
+            // 
+            lblPrecio.AutoSize = true;
+            lblPrecio.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPrecio.Location = new Point(427, 100);
+            lblPrecio.Name = "lblPrecio";
+            lblPrecio.Size = new Size(37, 19);
+            lblPrecio.TabIndex = 12;
+            lblPrecio.Text = "0.00";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(335, 100);
+            label8.Name = "label8";
+            label8.Size = new Size(74, 19);
+            label8.TabIndex = 11;
+            label8.Text = "Precio C$";
+            // 
+            // lblConfi
+            // 
+            lblConfi.AutoSize = true;
+            lblConfi.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblConfi.Location = new Point(335, 42);
+            lblConfi.Name = "lblConfi";
+            lblConfi.Size = new Size(60, 19);
+            lblConfi.TabIndex = 10;
+            lblConfi.Text = "Codigo";
+            // 
             // btnFacturar
             // 
             btnFacturar.BackColor = Color.CornflowerBlue;
@@ -153,13 +190,14 @@
             btnFacturar.FlatStyle = FlatStyle.Flat;
             btnFacturar.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnFacturar.ForeColor = Color.White;
-            btnFacturar.Location = new Point(463, 100);
+            btnFacturar.Location = new Point(540, 104);
             btnFacturar.Name = "btnFacturar";
-            btnFacturar.Size = new Size(150, 40);
+            btnFacturar.Size = new Size(100, 40);
             btnFacturar.TabIndex = 9;
             btnFacturar.Text = "Facturar";
             btnFacturar.TextColor = Color.White;
             btnFacturar.UseVisualStyleBackColor = false;
+            btnFacturar.Click += btnFacturar_Click;
             // 
             // label4
             // 
@@ -192,6 +230,7 @@
             txtCantidad.TabIndex = 7;
             txtCantidad.Texts = "";
             txtCantidad.UnderlinedStyle = true;
+            txtCantidad.KeyPress += txtCantidad_KeyPress;
             // 
             // cmbClientes
             // 
@@ -211,6 +250,7 @@
             cmbClientes.Size = new Size(200, 30);
             cmbClientes.TabIndex = 4;
             cmbClientes.Texts = "";
+            cmbClientes.OnSelectedIndexChanged += cmbClientes_OnSelectedIndexChanged;
             // 
             // label3
             // 
@@ -253,6 +293,7 @@
             txtCodBarra.TabIndex = 0;
             txtCodBarra.Texts = "";
             txtCodBarra.UnderlinedStyle = true;
+            txtCodBarra.KeyPress += txtCodBarra_KeyPress;
             // 
             // panel2
             // 
@@ -343,7 +384,6 @@
             label5.Size = new Size(67, 19);
             label5.TabIndex = 8;
             label5.Text = "SubTotal";
-            label5.Click += label5_Click;
             // 
             // txtSubTotal
             // 
@@ -367,7 +407,6 @@
             txtSubTotal.TabIndex = 7;
             txtSubTotal.Texts = "";
             txtSubTotal.UnderlinedStyle = true;
-            txtSubTotal._TextChanged += rjTextBox2__TextChanged;
             // 
             // tableLayoutPanel2
             // 
@@ -375,6 +414,7 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel2.Controls.Add(btnEnter, 2, 3);
             tableLayoutPanel2.Controls.Add(btn0, 1, 3);
             tableLayoutPanel2.Controls.Add(btn9, 2, 2);
             tableLayoutPanel2.Controls.Add(btn8, 1, 2);
@@ -395,6 +435,26 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.Size = new Size(339, 391);
             tableLayoutPanel2.TabIndex = 4;
+            // 
+            // btnEnter
+            // 
+            btnEnter.BackColor = Color.MidnightBlue;
+            btnEnter.BackgroundColor = Color.MidnightBlue;
+            btnEnter.BorderColor = Color.PaleVioletRed;
+            btnEnter.BorderRadius = 10;
+            btnEnter.BorderSize = 0;
+            btnEnter.FlatAppearance.BorderSize = 0;
+            btnEnter.FlatStyle = FlatStyle.Flat;
+            btnEnter.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEnter.ForeColor = Color.White;
+            btnEnter.Location = new Point(229, 294);
+            btnEnter.Name = "btnEnter";
+            btnEnter.Size = new Size(107, 94);
+            btnEnter.TabIndex = 22;
+            btnEnter.Text = "Enter";
+            btnEnter.TextColor = Color.White;
+            btnEnter.UseVisualStyleBackColor = false;
+            btnEnter.Click += btnEnter_Click;
             // 
             // btn0
             // 
@@ -619,6 +679,7 @@
             Name = "frmFacturar";
             RightToLeftLayout = true;
             Text = "frmFacturar";
+            Load += frmFacturar_Load;
             plTitle.ResumeLayout(false);
             plTitles.ResumeLayout(false);
             plTitles.PerformLayout();
@@ -651,7 +712,6 @@
         private CustomControls.RJControls.RJButton rjButton7;
         private CustomControls.RJControls.RJButton rjButton6;
         private CustomControls.RJControls.RJButton rjButton5;
-        private CustomControls.RJControls.RJButton rjButton2;
         private Label label4;
         private CustomControls.RJControls.RJTextBox txtCantidad;
         private Panel panel2;
@@ -663,7 +723,6 @@
         private CustomControls.RJControls.RJTextBox txtTotal;
         private CustomControls.RJControls.RJButton btnFacturar;
         private TableLayoutPanel tableLayoutPanel2;
-        private CustomControls.RJControls.RJButton btn0;
         private CustomControls.RJControls.RJButton btn9;
         private CustomControls.RJControls.RJButton btn8;
         private CustomControls.RJControls.RJButton btn7;
@@ -673,5 +732,10 @@
         private CustomControls.RJControls.RJButton btn3;
         private CustomControls.RJControls.RJButton btn2;
         private CustomControls.RJControls.RJButton btn1;
+        private Label lblConfi;
+        private CustomControls.RJControls.RJButton btnEnter;
+        private CustomControls.RJControls.RJButton btn0;
+        private Label lblPrecio;
+        private Label label8;
     }
 }
