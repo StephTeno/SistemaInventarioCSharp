@@ -44,6 +44,7 @@
             txtTotal = new CustomControls.RJControls.RJTextBox();
             label7 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
+            btnEnter = new CustomControls.RJControls.RJButton();
             btn0 = new CustomControls.RJControls.RJButton();
             btn9 = new CustomControls.RJControls.RJButton();
             btn8 = new CustomControls.RJControls.RJButton();
@@ -57,8 +58,6 @@
             plTitle = new Panel();
             plTitles = new Panel();
             label4 = new Label();
-            panel2 = new Panel();
-            btnAdd = new CustomControls.RJControls.RJButton();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSalidas).BeginInit();
             panel1.SuspendLayout();
@@ -66,7 +65,6 @@
             tableLayoutPanel2.SuspendLayout();
             plTitle.SuspendLayout();
             plTitles.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -85,7 +83,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 30.63063F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 69.36937F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(977, 444);
+            tableLayoutPanel1.Size = new Size(977, 608);
             tableLayoutPanel1.TabIndex = 11;
             // 
             // dgvSalidas
@@ -94,10 +92,10 @@
             dgvSalidas.BorderStyle = BorderStyle.None;
             dgvSalidas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSalidas.Dock = DockStyle.Fill;
-            dgvSalidas.Location = new Point(3, 139);
+            dgvSalidas.Location = new Point(3, 189);
             dgvSalidas.Name = "dgvSalidas";
             dgvSalidas.RowTemplate.Height = 25;
-            dgvSalidas.Size = new Size(604, 302);
+            dgvSalidas.Size = new Size(604, 416);
             dgvSalidas.TabIndex = 0;
             // 
             // panel1
@@ -113,7 +111,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(604, 130);
+            panel1.Size = new Size(604, 180);
             panel1.TabIndex = 1;
             // 
             // txtCosto
@@ -253,7 +251,7 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(613, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(361, 130);
+            panel3.Size = new Size(361, 180);
             panel3.TabIndex = 3;
             // 
             // btnAddProducto
@@ -283,7 +281,6 @@
             txtTotal.BorderFocusColor = Color.HotPink;
             txtTotal.BorderRadius = 0;
             txtTotal.BorderSize = 2;
-            txtTotal.Enabled = false;
             txtTotal.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             txtTotal.ForeColor = Color.FromArgb(64, 64, 64);
             txtTotal.Location = new Point(151, 17);
@@ -315,6 +312,7 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel2.Controls.Add(btnEnter, 2, 3);
             tableLayoutPanel2.Controls.Add(btn0, 1, 3);
             tableLayoutPanel2.Controls.Add(btn9, 2, 2);
             tableLayoutPanel2.Controls.Add(btn8, 1, 2);
@@ -326,15 +324,36 @@
             tableLayoutPanel2.Controls.Add(btn2, 1, 0);
             tableLayoutPanel2.Controls.Add(btn1, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(613, 139);
+            tableLayoutPanel2.Location = new Point(613, 189);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 4;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.Size = new Size(361, 302);
+            tableLayoutPanel2.Size = new Size(361, 416);
             tableLayoutPanel2.TabIndex = 4;
+            // 
+            // btnEnter
+            // 
+            btnEnter.BackColor = Color.MidnightBlue;
+            btnEnter.BackgroundColor = Color.MidnightBlue;
+            btnEnter.BorderColor = Color.PaleVioletRed;
+            btnEnter.BorderRadius = 10;
+            btnEnter.BorderSize = 0;
+            btnEnter.Dock = DockStyle.Fill;
+            btnEnter.FlatAppearance.BorderSize = 0;
+            btnEnter.FlatStyle = FlatStyle.Flat;
+            btnEnter.Font = new Font("Century Gothic", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEnter.ForeColor = Color.White;
+            btnEnter.Location = new Point(243, 315);
+            btnEnter.Name = "btnEnter";
+            btnEnter.Size = new Size(115, 98);
+            btnEnter.TabIndex = 23;
+            btnEnter.Text = "Agregar";
+            btnEnter.TextColor = Color.White;
+            btnEnter.UseVisualStyleBackColor = false;
+            btnEnter.Click += btnAdd_Click;
             // 
             // btn0
             // 
@@ -348,9 +367,9 @@
             btn0.FlatStyle = FlatStyle.Flat;
             btn0.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn0.ForeColor = Color.White;
-            btn0.Location = new Point(123, 228);
+            btn0.Location = new Point(123, 315);
             btn0.Name = "btn0";
-            btn0.Size = new Size(114, 71);
+            btn0.Size = new Size(114, 98);
             btn0.TabIndex = 21;
             btn0.Text = "0";
             btn0.TextColor = Color.White;
@@ -369,9 +388,9 @@
             btn9.FlatStyle = FlatStyle.Flat;
             btn9.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn9.ForeColor = Color.White;
-            btn9.Location = new Point(243, 153);
+            btn9.Location = new Point(243, 211);
             btn9.Name = "btn9";
-            btn9.Size = new Size(115, 69);
+            btn9.Size = new Size(115, 98);
             btn9.TabIndex = 19;
             btn9.Text = "9";
             btn9.TextColor = Color.White;
@@ -390,9 +409,9 @@
             btn8.FlatStyle = FlatStyle.Flat;
             btn8.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn8.ForeColor = Color.White;
-            btn8.Location = new Point(123, 153);
+            btn8.Location = new Point(123, 211);
             btn8.Name = "btn8";
-            btn8.Size = new Size(114, 69);
+            btn8.Size = new Size(114, 98);
             btn8.TabIndex = 18;
             btn8.Text = "8";
             btn8.TextColor = Color.White;
@@ -411,9 +430,9 @@
             btn7.FlatStyle = FlatStyle.Flat;
             btn7.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn7.ForeColor = Color.White;
-            btn7.Location = new Point(3, 153);
+            btn7.Location = new Point(3, 211);
             btn7.Name = "btn7";
-            btn7.Size = new Size(114, 69);
+            btn7.Size = new Size(114, 98);
             btn7.TabIndex = 17;
             btn7.Text = "7";
             btn7.TextColor = Color.White;
@@ -432,9 +451,9 @@
             btn6.FlatStyle = FlatStyle.Flat;
             btn6.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn6.ForeColor = Color.White;
-            btn6.Location = new Point(243, 78);
+            btn6.Location = new Point(243, 107);
             btn6.Name = "btn6";
-            btn6.Size = new Size(115, 69);
+            btn6.Size = new Size(115, 98);
             btn6.TabIndex = 16;
             btn6.Text = "6";
             btn6.TextColor = Color.White;
@@ -453,9 +472,9 @@
             btn5.FlatStyle = FlatStyle.Flat;
             btn5.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn5.ForeColor = Color.White;
-            btn5.Location = new Point(123, 78);
+            btn5.Location = new Point(123, 107);
             btn5.Name = "btn5";
-            btn5.Size = new Size(114, 69);
+            btn5.Size = new Size(114, 98);
             btn5.TabIndex = 15;
             btn5.Text = "5";
             btn5.TextColor = Color.White;
@@ -474,9 +493,9 @@
             btn4.FlatStyle = FlatStyle.Flat;
             btn4.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn4.ForeColor = Color.White;
-            btn4.Location = new Point(3, 78);
+            btn4.Location = new Point(3, 107);
             btn4.Name = "btn4";
-            btn4.Size = new Size(114, 69);
+            btn4.Size = new Size(114, 98);
             btn4.TabIndex = 14;
             btn4.Text = "4";
             btn4.TextColor = Color.White;
@@ -497,7 +516,7 @@
             btn3.ForeColor = Color.White;
             btn3.Location = new Point(243, 3);
             btn3.Name = "btn3";
-            btn3.Size = new Size(115, 69);
+            btn3.Size = new Size(115, 98);
             btn3.TabIndex = 13;
             btn3.Text = "3";
             btn3.TextColor = Color.White;
@@ -518,7 +537,7 @@
             btn2.ForeColor = Color.White;
             btn2.Location = new Point(123, 3);
             btn2.Name = "btn2";
-            btn2.Size = new Size(114, 69);
+            btn2.Size = new Size(114, 98);
             btn2.TabIndex = 12;
             btn2.Text = "2";
             btn2.TextColor = Color.White;
@@ -539,7 +558,7 @@
             btn1.ForeColor = Color.White;
             btn1.Location = new Point(3, 3);
             btn1.Name = "btn1";
-            btn1.Size = new Size(114, 69);
+            btn1.Size = new Size(114, 98);
             btn1.TabIndex = 11;
             btn1.Text = "1";
             btn1.TextColor = Color.White;
@@ -574,48 +593,18 @@
             label4.TabIndex = 0;
             label4.Text = "Salida de Producto";
             // 
-            // panel2
-            // 
-            panel2.Controls.Add(btnAdd);
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 501);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(977, 60);
-            panel2.TabIndex = 10;
-            // 
-            // btnAdd
-            // 
-            btnAdd.BackColor = Color.MediumAquamarine;
-            btnAdd.BackgroundColor = Color.MediumAquamarine;
-            btnAdd.BorderColor = Color.PaleVioletRed;
-            btnAdd.BorderRadius = 10;
-            btnAdd.BorderSize = 0;
-            btnAdd.FlatAppearance.BorderSize = 0;
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(425, 6);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(150, 50);
-            btnAdd.TabIndex = 2;
-            btnAdd.Text = "Agregar Salida";
-            btnAdd.TextColor = Color.White;
-            btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Visible = false;
-            btnAdd.Click += btnAdd_Click;
-            // 
             // frmMetSalidas
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(977, 561);
+            ClientSize = new Size(977, 665);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(plTitle);
-            Controls.Add(panel2);
             Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmMetSalidas";
+            Load += frmMetSalidas_Load;
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvSalidas).EndInit();
             panel1.ResumeLayout(false);
@@ -626,7 +615,6 @@
             plTitle.ResumeLayout(false);
             plTitles.ResumeLayout(false);
             plTitles.PerformLayout();
-            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -661,7 +649,8 @@
         private Panel plTitle;
         private Panel plTitles;
         private Label label4;
-        private Panel panel2;
+        private Panel plContenedor;
         private CustomControls.RJControls.RJButton btnAdd;
+        private CustomControls.RJControls.RJButton btnEnter;
     }
 }

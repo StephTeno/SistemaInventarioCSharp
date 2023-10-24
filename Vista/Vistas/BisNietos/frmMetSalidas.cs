@@ -23,6 +23,7 @@ namespace Vista.Vistas.BisNietos
         Producto pr = new Producto();
         Salida s = new Salida();
         List<Salida> sa = new List<Salida>();
+        int total;
         public frmMetSalidas()
         {
             InitializeComponent();
@@ -65,16 +66,13 @@ namespace Vista.Vistas.BisNietos
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            salida.AgregarDatos(sa);
+            this.Close();
         }
 
         private void txtCodBarra_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                pr = p.Encontrar(txtCodBarra.Text);
-                txtNomProd.Texts = pr.NombreProd;
-                btnAddProducto_Click(sender, e);
             }
         }
 
@@ -85,9 +83,11 @@ namespace Vista.Vistas.BisNietos
                 if (TodosLosTextBoxLlenos())
                 {
                     s.Cantidad = Convert.ToInt32(txtCant.Texts);
-                    s.IdProd = txtCodBarra.Text;
+                    s.IdProd = txtCodBarra.Texts;
                     s.Total = Convert.ToInt32(txtCant.Texts) * Convert.ToInt32(txtCosto.Texts);
                     inv.SacarProducto(txtCodBarra.Texts, Convert.ToInt32(txtCant.Texts));
+                    total += s.Total;
+                    salida.AgregarDatos(s);
                     sa.Add(s);
                     dgvSalidas.DataSource = null;
                     dgvSalidas.DataSource = sa;
@@ -101,6 +101,10 @@ namespace Vista.Vistas.BisNietos
             {
                 RJMessageBox.Show("Ingrese el Codigo de Barra de un producto ya registrado por favor", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void frmMetSalidas_Load(object sender, EventArgs e)
+        {
         }
     }
 }

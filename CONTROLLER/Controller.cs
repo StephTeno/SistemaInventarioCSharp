@@ -13,15 +13,30 @@ namespace CONTROLLER
         public ControllerSalida() { }
         RepoSalida r = new RepoSalida();
         RepoProducto pd = new RepoProducto();
-
-        public void AgregarDatos(List<Salida> c)
+        public int EncontrarUltima()
         {
-            r.Registrar(c);
+            List<Salida> f = r.GetAll();
+            int i = (from p in f
+                     orderby p.IdSalida descending
+                     select p.IdSalida).FirstOrDefault();
+            if (i == null)
+                return 1;
+            return i;
+        }
+
+        public void AgregarDatos(Salida c)
+        {
+            using (ESInventarioContext context = new ESInventarioContext())
+            {
+                context.Salidas.Add(c);
+                context.SaveChanges();
+            }
         }
         public void RellenarData(DataGridView dgvDatos)
         {
+            List<Salida> f = r.GetAll();
             dgvDatos.DataSource = null;
-            dgvDatos.DataSource = r.GetAll();
+            dgvDatos.DataSource = f;
         }
     }
 
@@ -30,6 +45,29 @@ namespace CONTROLLER
         RepoInventario r = new RepoInventario();
         ControllerProd p = new ControllerProd();
         public ControllerInv() { }
+        public void Save()
+        {
+            using (ESInventarioContext context = new ESInventarioContext())
+            {
+                context.SaveChanges();
+            }
+        }
+        public void Registrar(Inventario c)
+        {
+            using (ESInventarioContext context = new ESInventarioContext())
+            {
+                context.Inventarios.Add(c);
+                Save();
+            }
+        }
+        public void ActualizarDatos(Inventario c)
+        {
+            using (ESInventarioContext context = new ESInventarioContext())
+            {
+                context.Inventarios.Update(c);
+                context.SaveChanges();
+            }
+        }
 
         public Inventario Encontrar(string id)
         {
@@ -52,7 +90,7 @@ namespace CONTROLLER
             i.CantRet = 0;
             i.Tegresos = 0;
             i.Tingresos= 0;
-            r.Registrar(i);
+            Registrar(i);
         }
         public void SacarProducto(string id, int cant)
         {
@@ -62,6 +100,7 @@ namespace CONTROLLER
             a.CantRet += cant;
             a.Existencia -= cant;
             a.Tegresos += total;
+            ActualizarDatos(a);
         }
         public void EntradaProducto(string id, int cant)
         {
@@ -71,7 +110,9 @@ namespace CONTROLLER
             a.CantIng += cant;
             a.Existencia += cant;
             a.Tingresos += total;
+            ActualizarDatos(a);
         }
+
     }
 
     public class ControllerEntrada
@@ -90,21 +131,29 @@ namespace CONTROLLER
         public int EncontrarUltima()
         {
             List<Entrada> f = r.GetAll();
-            var i = (from p in f
+            int i = (from p in f
                      orderby p.IdEntrada descending
                      select p.IdEntrada).FirstOrDefault();
             if (i == null)
-                return 0;
+                return 1;
             return i;
         }
 
         public void AgregarDatos(Entrada c)
         {
-            r.Registrar(c);
+            using (ESInventarioContext context = new ESInventarioContext())
+            {
+                context.Entradas.Add(c);
+                context.SaveChanges();
+            }
         }
         public void AgregarDetalles(List<DetalleEntradum> c)
         {
-            d.Registrar(c);
+            using (ESInventarioContext context = new ESInventarioContext())
+            {
+                context.DetalleEntrada.AddRange(c);
+                context.SaveChanges();
+            }
         }
 
 
@@ -249,7 +298,11 @@ namespace CONTROLLER
         {
             repo.Update(c);
         }
-
+        public Proveedore EncontrarNom(string id)
+        {
+            Proveedore c = repo.Get(s => s.Empresa == id, tracked: false);
+            return c;
+        }
         public Proveedore Encontrar(string id)
         {
             Proveedore c = repo.Get(s => s.Ruc == id, tracked: false);

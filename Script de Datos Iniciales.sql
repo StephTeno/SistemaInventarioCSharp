@@ -6,9 +6,9 @@ Insert into TipoUsuario Values('Cajero')
 
 Select * from TipoUsuario
 
-Insert into Usuario Values ('TenoTeno',1,'190205')
-Insert into Usuario Values ('Ferd0508',2,'Nando')
-Insert into Usuario Values ('Axa1278',3,'Steferaxto')
+Insert into Usuario Values ('admin',1,'admin')
+Insert into Usuario Values ('bodega',2,'bodega')
+Insert into Usuario Values ('venta',3,'venta')
 
 Select * from Usuario
 

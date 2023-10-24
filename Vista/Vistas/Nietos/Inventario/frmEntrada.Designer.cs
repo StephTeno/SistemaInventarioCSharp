@@ -111,6 +111,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmEntrada";
             Text = "frmEntrada";
+            Load += frmEntrada_Load;
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

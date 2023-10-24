@@ -26,5 +26,10 @@ namespace Vista.Vistas.Nietos.Inventario
             m.ShowDialog();
             s.RellenarData(dgvSalidas);
         }
+
+        private void frmSalidas_Load(object sender, EventArgs e)
+        {
+            s.RellenarData(dgvSalidas);
+        }
     }
 }

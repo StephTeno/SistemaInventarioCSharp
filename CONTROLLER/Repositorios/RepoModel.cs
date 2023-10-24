@@ -199,9 +199,7 @@ namespace CONTROLLER.Repositorios
         {
             using (ESInventarioContext context = new ESInventarioContext())
             {
-                var lst = (from p in context.Entradas
-                           select p).ToList();
-                return lst;
+                return context.Entradas.ToList();
             }
         }
 
@@ -595,9 +593,7 @@ namespace CONTROLLER.Repositorios
         {
             using (ESInventarioContext context = new ESInventarioContext())
             {
-                var lst = (from p in context.Salidas
-                           select p).ToList();
-                return lst;
+                return context.Salidas.ToList();
             }
         }
 
@@ -608,7 +604,7 @@ namespace CONTROLLER.Repositorios
                 context.SaveChanges();
             }
         }
-        public void Registrar(List<Salida> c)
+        public void Registrar(Salida c)
         {
             using (ESInventarioContext context = new ESInventarioContext())
             {

@@ -326,7 +326,6 @@
             txtTotal.BorderFocusColor = Color.HotPink;
             txtTotal.BorderRadius = 0;
             txtTotal.BorderSize = 2;
-            txtTotal.Enabled = false;
             txtTotal.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             txtTotal.ForeColor = Color.FromArgb(64, 64, 64);
             txtTotal.Location = new Point(158, 97);
@@ -359,7 +358,6 @@
             txtIVA.BorderFocusColor = Color.HotPink;
             txtIVA.BorderRadius = 0;
             txtIVA.BorderSize = 2;
-            txtIVA.Enabled = false;
             txtIVA.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             txtIVA.ForeColor = Color.FromArgb(64, 64, 64);
             txtIVA.Location = new Point(159, 60);
@@ -392,7 +390,6 @@
             txtSubTotal.BorderFocusColor = Color.HotPink;
             txtSubTotal.BorderRadius = 0;
             txtSubTotal.BorderSize = 2;
-            txtSubTotal.Enabled = false;
             txtSubTotal.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             txtSubTotal.ForeColor = Color.FromArgb(64, 64, 64);
             txtSubTotal.Location = new Point(158, 23);

@@ -32,8 +32,6 @@ namespace Vista.Vistas.BisNietos
         /// </summary>
         private void InitializeComponent()
         {
-            panel2 = new Panel();
-            btnAdd = new RJButton();
             tableLayoutPanel1 = new TableLayoutPanel();
             dgvCompras = new DataGridView();
             panel1 = new Panel();
@@ -55,6 +53,7 @@ namespace Vista.Vistas.BisNietos
             txtTotal = new RJTextBox();
             label7 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
+            btnEnter = new RJButton();
             btn0 = new RJButton();
             btn9 = new RJButton();
             btn8 = new RJButton();
@@ -68,7 +67,6 @@ namespace Vista.Vistas.BisNietos
             plTitle = new Panel();
             plTitles = new Panel();
             label4 = new Label();
-            panel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCompras).BeginInit();
             panel1.SuspendLayout();
@@ -77,36 +75,6 @@ namespace Vista.Vistas.BisNietos
             plTitle.SuspendLayout();
             plTitles.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(btnAdd);
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 637);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1000, 60);
-            panel2.TabIndex = 7;
-            // 
-            // btnAdd
-            // 
-            btnAdd.BackColor = Color.MediumAquamarine;
-            btnAdd.BackgroundColor = Color.MediumAquamarine;
-            btnAdd.BorderColor = Color.PaleVioletRed;
-            btnAdd.BorderRadius = 10;
-            btnAdd.BorderSize = 0;
-            btnAdd.FlatAppearance.BorderSize = 0;
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(425, 6);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(150, 50);
-            btnAdd.TabIndex = 2;
-            btnAdd.Text = "Agregar Compra";
-            btnAdd.TextColor = Color.White;
-            btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Visible = false;
-            btnAdd.Click += btnAdd_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -117,7 +85,7 @@ namespace Vista.Vistas.BisNietos
             tableLayoutPanel1.Controls.Add(panel1, 0, 0);
             tableLayoutPanel1.Controls.Add(panel3, 1, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 1);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Dock = DockStyle.Top;
             tableLayoutPanel1.Location = new Point(0, 57);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
@@ -399,7 +367,6 @@ namespace Vista.Vistas.BisNietos
             txtTotal.BorderFocusColor = Color.HotPink;
             txtTotal.BorderRadius = 0;
             txtTotal.BorderSize = 2;
-            txtTotal.Enabled = false;
             txtTotal.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             txtTotal.ForeColor = Color.FromArgb(64, 64, 64);
             txtTotal.Location = new Point(151, 27);
@@ -431,6 +398,7 @@ namespace Vista.Vistas.BisNietos
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel2.Controls.Add(btnEnter, 2, 3);
             tableLayoutPanel2.Controls.Add(btn0, 1, 3);
             tableLayoutPanel2.Controls.Add(btn9, 2, 2);
             tableLayoutPanel2.Controls.Add(btn8, 1, 2);
@@ -451,6 +419,27 @@ namespace Vista.Vistas.BisNietos
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.Size = new Size(369, 401);
             tableLayoutPanel2.TabIndex = 4;
+            // 
+            // btnEnter
+            // 
+            btnEnter.BackColor = Color.MidnightBlue;
+            btnEnter.BackgroundColor = Color.MidnightBlue;
+            btnEnter.BorderColor = Color.PaleVioletRed;
+            btnEnter.BorderRadius = 10;
+            btnEnter.BorderSize = 0;
+            btnEnter.Dock = DockStyle.Fill;
+            btnEnter.FlatAppearance.BorderSize = 0;
+            btnEnter.FlatStyle = FlatStyle.Flat;
+            btnEnter.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEnter.ForeColor = Color.White;
+            btnEnter.Location = new Point(249, 303);
+            btnEnter.Name = "btnEnter";
+            btnEnter.Size = new Size(117, 95);
+            btnEnter.TabIndex = 23;
+            btnEnter.Text = "Agregar";
+            btnEnter.TextColor = Color.White;
+            btnEnter.UseVisualStyleBackColor = false;
+            btnEnter.Click += btnAdd_Click;
             // 
             // btn0
             // 
@@ -695,16 +684,14 @@ namespace Vista.Vistas.BisNietos
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1000, 697);
+            ClientSize = new Size(1000, 637);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(plTitle);
-            Controls.Add(panel2);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmMetEntrada";
             StartPosition = FormStartPosition.CenterScreen;
             Load += frmMetEntrada_Load;
-            panel2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvCompras).EndInit();
             panel1.ResumeLayout(false);
@@ -719,9 +706,6 @@ namespace Vista.Vistas.BisNietos
         }
 
         #endregion
-
-        private Panel panel2;
-        private RJButton btnAdd;
         private TableLayoutPanel tableLayoutPanel1;
         private DataGridView dgvCompras;
         private Panel panel1;
@@ -756,5 +740,6 @@ namespace Vista.Vistas.BisNietos
         private RJComboBox cmbProveedor;
         private Label label3;
         private RJTextBox txtRecibo;
+        private RJButton btnEnter;
     }
 }

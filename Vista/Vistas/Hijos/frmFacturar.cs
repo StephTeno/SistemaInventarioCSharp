@@ -102,6 +102,7 @@ namespace Vista.Vistas.Hijos
             f.Total = Convert.ToDecimal(txtTotal.Texts);
             cf.AgregarDatos(f);
             cf.AgregarDetalles(df);
+            this.Close();
 
         }
 

@@ -20,7 +20,8 @@ namespace Vista.Vistas.BisNietos
     {
         ControllerProveedor c = new ControllerProveedor();
         string ti = string.Empty;
-        int cant, subtotal, total, ultima;
+        int ultima;
+        decimal total;
         Producto pr = new Producto();
         Entrada en = new Entrada();
         List<DetalleEntradum> de = new List<DetalleEntradum>();
@@ -84,10 +85,14 @@ namespace Vista.Vistas.BisNietos
             if (TodosLosTextBoxLlenos())
             {
                 Entrada a = new Entrada();
+                Proveedore p = new Proveedore();
+                p = c.EncontrarNom(cmbProveedor.Texts);
                 a.TotalCompra = Convert.ToDecimal(txtTotal.Texts);
                 a.FechaCompra = DateTime.Now;
-                a.Proveedor = cmbProveedor.Texts;
-                a.Recibo = txtRecibo.Text;
+                a.Proveedor = p.Ruc;
+                a.Recibo = txtRecibo.Texts;
+                ed.AgregarDatos(a);
+                ed.AgregarDetalles(de);
                 this.Close();
             }
             else
@@ -116,10 +121,12 @@ namespace Vista.Vistas.BisNietos
                 {
                     DetalleEntradum me = new DetalleEntradum();
                     me.Cantidad = Convert.ToInt32(txtCant.Texts);
-                    me.IdProd = txtCodBarra.Text;
+                    me.IdProd = txtCodBarra.Texts;
                     me.SubTotal = Convert.ToInt32(txtCant.Texts) * Convert.ToDecimal(txtCosto.Texts);
                     me.PreCompra = Convert.ToDecimal(txtCosto.Texts);
                     me.IdEntrada = ultima;
+                    total += me.SubTotal;
+                    txtTotal.Texts = total.ToString();
                     iv.EntradaProducto(txtCodBarra.Texts, Convert.ToInt32(txtCant.Texts));
                     de.Add(me);
                     dgvCompras.DataSource = null;
@@ -135,6 +142,7 @@ namespace Vista.Vistas.BisNietos
                 RJMessageBox.Show("Ingrese el Codigo de Barra de un producto ya registrado por favor", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
 
         private void txtCodBarra_KeyPress(object sender, KeyPressEventArgs e)
         {

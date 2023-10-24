@@ -67,9 +67,7 @@ alter table Productos add Proveedor char(14) foreign key references Proveedores(
 create table Entradas(
 IdEntrada int identity(1,1) primary key not null,
 Proveedor char(14) foreign key references Proveedores(RUC) not null,
-Producto char(5) foreign key references Productos(IdProd) not null,
 Recibo char(10) not null,
-PreCompra numeric(6,2) not null,
 FechaCompra date not null,
 TotalCompra numeric(6,2) not null
 )
@@ -79,6 +77,7 @@ IdEntrada int foreign key references Entradas(IdEntrada) not null,
 IdProd char(5) foreign key references Productos(IdProd) not null,
 Cantidad int not null,
 SubTotal numeric(6,2) not null,
+PreCompra numeric(6,2) not null,
 primary key(IdEntrada, IdProd)
 )
 
