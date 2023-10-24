@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CONTROLLER;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace Vista.Vistas.Nietos.Inventario
 {
     public partial class frmEntrada : Form
     {
+        ControllerEntrada i = new ControllerEntrada();
         public frmEntrada()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace Vista.Vistas.Nietos.Inventario
         {
             frmMetEntrada m = new frmMetEntrada();
             m.ShowDialog();
+            i.RellenarData(dgvEntradas);
         }
     }
 }

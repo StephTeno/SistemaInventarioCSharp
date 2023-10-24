@@ -19,6 +19,7 @@ namespace Vista.Vistas.Hijos
         Factura f = new Factura();
         Producto pd = new Producto();
         DetalleFactura d = new DetalleFactura();
+        ControllerInv inv = new ControllerInv();
         decimal sub, iva, total;
         int cant;
         ControllerCliente c = new ControllerCliente();
@@ -134,6 +135,7 @@ namespace Vista.Vistas.Hijos
             txtIVA.Texts = iva.ToString();
             txtSubTotal.Texts = sub.ToString();
             txtTotal.Texts = total.ToString();
+            inv.SacarProducto(txtCodBarra.Texts, Convert.ToInt32(txtCantidad.Texts));
             df.Add(d);
             dgvVentas.DataSource = null;
             dgvVentas.DataSource = df;

@@ -1,5 +1,6 @@
 ﻿using CONTROLLER;
 using CustomControls.RJControls;
+using CustomMessageBox;
 using MODELO.Models;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,13 @@ namespace Vista.Vistas.BisNietos
     {
         ControllerProveedor c = new ControllerProveedor();
         string ti = string.Empty;
-        int cant, subtotal, total;
+        int cant, subtotal, total, ultima;
         Producto pr = new Producto();
         Entrada en = new Entrada();
         List<DetalleEntradum> de = new List<DetalleEntradum>();
         ControllerProd p = new ControllerProd();
         ControllerEntrada ed = new ControllerEntrada();
+        ControllerInv iv = new ControllerInv();
         public frmMetEntrada()
         {
             InitializeComponent();
@@ -79,13 +81,19 @@ namespace Vista.Vistas.BisNietos
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Entrada a = new Entrada();
-            a.TotalCompra = Convert.ToDecimal(txtTotal.Texts);
-            a.PreCompra = Convert.ToDecimal(txtCosto.Texts);
-            a.FechaCompra = DateTime.Now;
-            a.Proveedor = cmbProveedor.Texts;
-            a.
-            this.Close();
+            if (TodosLosTextBoxLlenos())
+            {
+                Entrada a = new Entrada();
+                a.TotalCompra = Convert.ToDecimal(txtTotal.Texts);
+                a.FechaCompra = DateTime.Now;
+                a.Proveedor = cmbProveedor.Texts;
+                a.Recibo = txtRecibo.Text;
+                this.Close();
+            }
+            else
+            {
+                RJMessageBox.Show("Llene todos los datos por favor", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void cmbProveedor_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -97,16 +105,42 @@ namespace Vista.Vistas.BisNietos
         private void frmMetEntrada_Load(object sender, EventArgs e)
         {
             Combo(cmbProveedor);
+            ultima = 1+ed.EncontrarUltima();
         }
 
         private void btnAddProducto_Click(object sender, EventArgs e)
         {
             if (VerificarProducto(txtCodBarra.Texts))
             {
-                DetalleEntradum me = new DetalleEntradum();
-                me.Cantidad = Convert.ToInt32(txtCant.Texts);
-                me.IdProd = txtCodBarra.Text;
-                me.SubTotal = Convert.ToInt32(txtCant.Texts) * Convert.ToDecimal(txtCosto.Texts);
+                if(TodosLosTextBoxLlenos())
+                {
+                    DetalleEntradum me = new DetalleEntradum();
+                    me.Cantidad = Convert.ToInt32(txtCant.Texts);
+                    me.IdProd = txtCodBarra.Text;
+                    me.SubTotal = Convert.ToInt32(txtCant.Texts) * Convert.ToDecimal(txtCosto.Texts);
+                    me.PreCompra = Convert.ToDecimal(txtCosto.Texts);
+                    me.IdEntrada = ultima;
+                    iv.EntradaProducto(txtCodBarra.Texts, Convert.ToInt32(txtCant.Texts));
+                    de.Add(me);
+                    dgvCompras.DataSource = null;
+                    dgvCompras.DataSource = de;
+                }
+                else
+                {
+                    RJMessageBox.Show("Ingrese todos los datos por favor", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                RJMessageBox.Show("Ingrese el Codigo de Barra de un producto ya registrado por favor", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void txtCodBarra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                btnAddProducto.Focus();
             }
         }
     }

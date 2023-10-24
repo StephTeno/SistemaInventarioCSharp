@@ -41,9 +41,6 @@ public partial class Producto
     [InverseProperty("IdProdNavigation")]
     public virtual ICollection<DetalleFactura> DetalleFacturas { get; set; } = new List<DetalleFactura>();
 
-    [InverseProperty("ProductoNavigation")]
-    public virtual ICollection<Entrada> Entrada { get; set; } = new List<Entrada>();
-
     [InverseProperty("IdProdNavigation")]
     public virtual ICollection<Inventario> Inventarios { get; set; } = new List<Inventario>();
 

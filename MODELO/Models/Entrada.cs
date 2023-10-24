@@ -15,16 +15,9 @@ public partial class Entrada
     [Unicode(false)]
     public string Proveedor { get; set; } = null!;
 
-    [StringLength(5)]
-    [Unicode(false)]
-    public string Producto { get; set; } = null!;
-
     [StringLength(10)]
     [Unicode(false)]
     public string Recibo { get; set; } = null!;
-
-    [Column(TypeName = "numeric(6, 2)")]
-    public decimal PreCompra { get; set; }
 
     [Column(TypeName = "date")]
     public DateTime FechaCompra { get; set; }
@@ -34,10 +27,6 @@ public partial class Entrada
 
     [InverseProperty("IdEntradaNavigation")]
     public virtual ICollection<DetalleEntradum> DetalleEntrada { get; set; } = new List<DetalleEntradum>();
-
-    [ForeignKey("Producto")]
-    [InverseProperty("Entrada")]
-    public virtual Producto ProductoNavigation { get; set; } = null!;
 
     [ForeignKey("Proveedor")]
     [InverseProperty("Entrada")]

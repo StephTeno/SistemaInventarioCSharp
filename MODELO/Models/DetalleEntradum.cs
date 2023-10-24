@@ -22,6 +22,9 @@ public partial class DetalleEntradum
     [Column(TypeName = "numeric(6, 2)")]
     public decimal SubTotal { get; set; }
 
+    [Column(TypeName = "numeric(6, 2)")]
+    public decimal PreCompra { get; set; }
+
     [ForeignKey("IdEntrada")]
     [InverseProperty("DetalleEntrada")]
     public virtual Entrada IdEntradaNavigation { get; set; } = null!;

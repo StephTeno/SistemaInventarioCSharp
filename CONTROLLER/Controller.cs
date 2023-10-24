@@ -3,9 +3,76 @@ using Microsoft.EntityFrameworkCore;
 using MODELO.Data;
 using MODELO.Models;
 using System.Collections;
+using System.Runtime.Intrinsics.X86;
 
 namespace CONTROLLER
 {
+
+    public class ControllerSalida
+    {
+        public ControllerSalida() { }
+        RepoSalida r = new RepoSalida();
+        RepoProducto pd = new RepoProducto();
+
+        public void AgregarDatos(List<Salida> c)
+        {
+            r.Registrar(c);
+        }
+        public void RellenarData(DataGridView dgvDatos)
+        {
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = r.GetAll();
+        }
+    }
+
+    public class ControllerInv
+    {
+        RepoInventario r = new RepoInventario();
+        ControllerProd p = new ControllerProd();
+        public ControllerInv() { }
+
+        public Inventario Encontrar(string id)
+        {
+            Inventario c = r.Get(s => s.IdProd == id, tracked: false);
+            return c;
+        }
+
+        public Producto EncontrarProducto(string id)
+        {
+            Producto o = p.Encontrar(id);
+            return o;
+        }
+
+        public void AgregarNuevo(Producto p)
+        {
+            Inventario i = new Inventario();
+            i.IdProd = p.IdProd;
+            i.Existencia = 0;
+            i.CantIng = 0;
+            i.CantRet = 0;
+            i.Tegresos = 0;
+            i.Tingresos= 0;
+            r.Registrar(i);
+        }
+        public void SacarProducto(string id, int cant)
+        {
+            Producto p = EncontrarProducto(id);
+            decimal total = cant * p.PreVenta;
+            Inventario a = Encontrar(id);
+            a.CantRet += cant;
+            a.Existencia -= cant;
+            a.Tegresos += total;
+        }
+        public void EntradaProducto(string id, int cant)
+        {
+            Producto p = EncontrarProducto(id);
+            decimal total = cant * p.PreVenta;
+            Inventario a = Encontrar(id);
+            a.CantIng += cant;
+            a.Existencia += cant;
+            a.Tingresos += total;
+        }
+    }
 
     public class ControllerEntrada
     {
@@ -14,10 +81,21 @@ namespace CONTROLLER
         RepoProducto pd = new RepoProducto();
         public ControllerEntrada() { }
 
-
-        public void AgregarProducto(Producto c)
+        public void RellenarData(DataGridView dgvDatos)
         {
-            pd.Registrar(c);
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = r.GetAll();
+        }
+
+        public int EncontrarUltima()
+        {
+            List<Entrada> f = r.GetAll();
+            var i = (from p in f
+                     orderby p.IdEntrada descending
+                     select p.IdEntrada).FirstOrDefault();
+            if (i == null)
+                return 0;
+            return i;
         }
 
         public void AgregarDatos(Entrada c)

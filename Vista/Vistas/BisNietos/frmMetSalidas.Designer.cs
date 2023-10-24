@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel2 = new Panel();
-            btnAdd = new CustomControls.RJControls.RJButton();
             tableLayoutPanel1 = new TableLayoutPanel();
-            dgvCompras = new DataGridView();
+            dgvSalidas = new DataGridView();
             panel1 = new Panel();
+            txtCosto = new CustomControls.RJControls.RJTextBox();
+            label9 = new Label();
+            txtNomProd = new CustomControls.RJControls.RJTextBox();
+            label8 = new Label();
             txtCant = new CustomControls.RJControls.RJTextBox();
             label2 = new Label();
-            label1 = new Label();
             txtCodBarra = new CustomControls.RJControls.RJTextBox();
-            cmbProveedor = new Controles_personalizados.RJComboBox();
-            label3 = new Label();
             label5 = new Label();
-            txtRecibo = new CustomControls.RJControls.RJTextBox();
             panel3 = new Panel();
             btnAddProducto = new CustomControls.RJControls.RJButton();
             txtTotal = new CustomControls.RJControls.RJTextBox();
@@ -56,90 +54,131 @@
             btn3 = new CustomControls.RJControls.RJButton();
             btn2 = new CustomControls.RJControls.RJButton();
             btn1 = new CustomControls.RJControls.RJButton();
-            panel2.SuspendLayout();
+            plTitle = new Panel();
+            plTitles = new Panel();
+            label4 = new Label();
+            panel2 = new Panel();
+            btnAdd = new CustomControls.RJControls.RJButton();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvCompras).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSalidas).BeginInit();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            plTitle.SuspendLayout();
+            plTitles.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(btnAdd);
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 501);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(977, 60);
-            panel2.TabIndex = 8;
-            // 
-            // btnAdd
-            // 
-            btnAdd.BackColor = Color.MediumAquamarine;
-            btnAdd.BackgroundColor = Color.MediumAquamarine;
-            btnAdd.BorderColor = Color.PaleVioletRed;
-            btnAdd.BorderRadius = 10;
-            btnAdd.BorderSize = 0;
-            btnAdd.FlatAppearance.BorderSize = 0;
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(382, 7);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(150, 50);
-            btnAdd.TabIndex = 2;
-            btnAdd.Text = "Agregar Salida";
-            btnAdd.TextColor = Color.White;
-            btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Visible = false;
-            btnAdd.Click += btnAdd_Click;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 62.5F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 37.5F));
-            tableLayoutPanel1.Controls.Add(dgvCompras, 0, 1);
+            tableLayoutPanel1.Controls.Add(dgvSalidas, 0, 1);
             tableLayoutPanel1.Controls.Add(panel1, 0, 0);
             tableLayoutPanel1.Controls.Add(panel3, 1, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Location = new Point(0, 57);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 29.9823627F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 70.01764F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 30.63063F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 69.36937F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(977, 501);
-            tableLayoutPanel1.TabIndex = 9;
+            tableLayoutPanel1.Size = new Size(977, 444);
+            tableLayoutPanel1.TabIndex = 11;
             // 
-            // dgvCompras
+            // dgvSalidas
             // 
-            dgvCompras.BackgroundColor = Color.White;
-            dgvCompras.BorderStyle = BorderStyle.None;
-            dgvCompras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCompras.Dock = DockStyle.Fill;
-            dgvCompras.Location = new Point(3, 153);
-            dgvCompras.Name = "dgvCompras";
-            dgvCompras.RowTemplate.Height = 25;
-            dgvCompras.Size = new Size(604, 345);
-            dgvCompras.TabIndex = 0;
+            dgvSalidas.BackgroundColor = Color.White;
+            dgvSalidas.BorderStyle = BorderStyle.None;
+            dgvSalidas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSalidas.Dock = DockStyle.Fill;
+            dgvSalidas.Location = new Point(3, 139);
+            dgvSalidas.Name = "dgvSalidas";
+            dgvSalidas.RowTemplate.Height = 25;
+            dgvSalidas.Size = new Size(604, 302);
+            dgvSalidas.TabIndex = 0;
             // 
             // panel1
             // 
+            panel1.Controls.Add(txtCosto);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(txtNomProd);
+            panel1.Controls.Add(label8);
             panel1.Controls.Add(txtCant);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
             panel1.Controls.Add(txtCodBarra);
-            panel1.Controls.Add(cmbProveedor);
-            panel1.Controls.Add(label3);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(txtRecibo);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(604, 144);
+            panel1.Size = new Size(604, 130);
             panel1.TabIndex = 1;
+            // 
+            // txtCosto
+            // 
+            txtCosto.BackColor = SystemColors.Window;
+            txtCosto.BorderColor = Color.RoyalBlue;
+            txtCosto.BorderFocusColor = Color.HotPink;
+            txtCosto.BorderRadius = 0;
+            txtCosto.BorderSize = 2;
+            txtCosto.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCosto.ForeColor = Color.FromArgb(64, 64, 64);
+            txtCosto.Location = new Point(456, 72);
+            txtCosto.Margin = new Padding(4);
+            txtCosto.Multiline = false;
+            txtCosto.Name = "txtCosto";
+            txtCosto.Padding = new Padding(10, 7, 10, 7);
+            txtCosto.PasswordChar = false;
+            txtCosto.PlaceholderColor = Color.DarkGray;
+            txtCosto.PlaceholderText = "";
+            txtCosto.Size = new Size(112, 31);
+            txtCosto.TabIndex = 19;
+            txtCosto.Texts = "";
+            txtCosto.UnderlinedStyle = true;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(374, 78);
+            label9.Name = "label9";
+            label9.Size = new Size(48, 19);
+            label9.TabIndex = 18;
+            label9.Text = "Costo";
+            // 
+            // txtNomProd
+            // 
+            txtNomProd.BackColor = SystemColors.Window;
+            txtNomProd.BorderColor = Color.RoyalBlue;
+            txtNomProd.BorderFocusColor = Color.HotPink;
+            txtNomProd.BorderRadius = 0;
+            txtNomProd.BorderSize = 2;
+            txtNomProd.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNomProd.ForeColor = Color.FromArgb(64, 64, 64);
+            txtNomProd.Location = new Point(88, 72);
+            txtNomProd.Margin = new Padding(4);
+            txtNomProd.Multiline = false;
+            txtNomProd.Name = "txtNomProd";
+            txtNomProd.Padding = new Padding(10, 7, 10, 7);
+            txtNomProd.PasswordChar = false;
+            txtNomProd.PlaceholderColor = Color.DarkGray;
+            txtNomProd.PlaceholderText = "";
+            txtNomProd.Size = new Size(243, 31);
+            txtNomProd.TabIndex = 17;
+            txtNomProd.Texts = "";
+            txtNomProd.UnderlinedStyle = true;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(6, 78);
+            label8.Name = "label8";
+            label8.Size = new Size(72, 19);
+            label8.TabIndex = 16;
+            label8.Text = "Producto";
             // 
             // txtCant
             // 
@@ -150,7 +189,7 @@
             txtCant.BorderSize = 2;
             txtCant.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             txtCant.ForeColor = Color.FromArgb(64, 64, 64);
-            txtCant.Location = new Point(360, 81);
+            txtCant.Location = new Point(356, 27);
             txtCant.Margin = new Padding(4);
             txtCant.Multiline = false;
             txtCant.Name = "txtCant";
@@ -158,7 +197,7 @@
             txtCant.PasswordChar = false;
             txtCant.PlaceholderColor = Color.DarkGray;
             txtCant.PlaceholderText = "";
-            txtCant.Size = new Size(140, 31);
+            txtCant.Size = new Size(112, 31);
             txtCant.TabIndex = 14;
             txtCant.Texts = "";
             txtCant.UnderlinedStyle = true;
@@ -167,21 +206,11 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(278, 87);
+            label2.Location = new Point(274, 33);
             label2.Name = "label2";
             label2.Size = new Size(77, 19);
             label2.TabIndex = 13;
             label2.Text = "Cantidad";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(319, 33);
-            label1.Name = "label1";
-            label1.Size = new Size(104, 19);
-            label1.TabIndex = 10;
-            label1.Text = "No de Recibo";
             // 
             // txtCodBarra
             // 
@@ -192,7 +221,7 @@
             txtCodBarra.BorderSize = 2;
             txtCodBarra.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             txtCodBarra.ForeColor = Color.FromArgb(64, 64, 64);
-            txtCodBarra.Location = new Point(92, 81);
+            txtCodBarra.Location = new Point(88, 27);
             txtCodBarra.Margin = new Padding(4);
             txtCodBarra.Multiline = false;
             txtCodBarra.Name = "txtCodBarra";
@@ -204,67 +233,17 @@
             txtCodBarra.TabIndex = 7;
             txtCodBarra.Texts = "";
             txtCodBarra.UnderlinedStyle = true;
-            // 
-            // cmbProveedor
-            // 
-            cmbProveedor.BackColor = Color.White;
-            cmbProveedor.BorderColor = Color.RoyalBlue;
-            cmbProveedor.BorderSize = 1;
-            cmbProveedor.DropDownStyle = ComboBoxStyle.DropDown;
-            cmbProveedor.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbProveedor.ForeColor = Color.DimGray;
-            cmbProveedor.IconColor = Color.RoyalBlue;
-            cmbProveedor.ListBackColor = Color.FromArgb(230, 228, 245);
-            cmbProveedor.ListTextColor = Color.DimGray;
-            cmbProveedor.Location = new Point(102, 27);
-            cmbProveedor.MinimumSize = new Size(200, 30);
-            cmbProveedor.Name = "cmbProveedor";
-            cmbProveedor.Padding = new Padding(1);
-            cmbProveedor.Size = new Size(200, 30);
-            cmbProveedor.TabIndex = 4;
-            cmbProveedor.Texts = "";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(9, 33);
-            label3.Name = "label3";
-            label3.Size = new Size(79, 19);
-            label3.TabIndex = 3;
-            label3.Text = "Proveedor";
+            txtCodBarra.KeyPress += txtCodBarra_KeyPress;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(10, 87);
+            label5.Location = new Point(6, 33);
             label5.Name = "label5";
             label5.Size = new Size(60, 19);
             label5.TabIndex = 1;
             label5.Text = "Código";
-            // 
-            // txtRecibo
-            // 
-            txtRecibo.BackColor = SystemColors.Window;
-            txtRecibo.BorderColor = Color.RoyalBlue;
-            txtRecibo.BorderFocusColor = Color.HotPink;
-            txtRecibo.BorderRadius = 0;
-            txtRecibo.BorderSize = 2;
-            txtRecibo.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            txtRecibo.ForeColor = Color.FromArgb(64, 64, 64);
-            txtRecibo.Location = new Point(428, 27);
-            txtRecibo.Margin = new Padding(4);
-            txtRecibo.Multiline = false;
-            txtRecibo.Name = "txtRecibo";
-            txtRecibo.Padding = new Padding(10, 7, 10, 7);
-            txtRecibo.PasswordChar = false;
-            txtRecibo.PlaceholderColor = Color.DarkGray;
-            txtRecibo.PlaceholderText = "";
-            txtRecibo.Size = new Size(167, 31);
-            txtRecibo.TabIndex = 0;
-            txtRecibo.Texts = "";
-            txtRecibo.UnderlinedStyle = true;
             // 
             // panel3
             // 
@@ -274,7 +253,7 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(613, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(361, 144);
+            panel3.Size = new Size(361, 130);
             panel3.TabIndex = 3;
             // 
             // btnAddProducto
@@ -288,13 +267,14 @@
             btnAddProducto.FlatStyle = FlatStyle.Flat;
             btnAddProducto.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnAddProducto.ForeColor = Color.White;
-            btnAddProducto.Location = new Point(103, 81);
+            btnAddProducto.Location = new Point(103, 68);
             btnAddProducto.Name = "btnAddProducto";
             btnAddProducto.Size = new Size(175, 40);
             btnAddProducto.TabIndex = 9;
             btnAddProducto.Text = "Agregar Producto";
             btnAddProducto.TextColor = Color.White;
             btnAddProducto.UseVisualStyleBackColor = false;
+            btnAddProducto.Click += btnAddProducto_Click;
             // 
             // txtTotal
             // 
@@ -306,7 +286,7 @@
             txtTotal.Enabled = false;
             txtTotal.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             txtTotal.ForeColor = Color.FromArgb(64, 64, 64);
-            txtTotal.Location = new Point(151, 27);
+            txtTotal.Location = new Point(151, 17);
             txtTotal.Margin = new Padding(4);
             txtTotal.Multiline = false;
             txtTotal.Name = "txtTotal";
@@ -323,7 +303,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(78, 33);
+            label7.Location = new Point(78, 23);
             label7.Name = "label7";
             label7.Size = new Size(41, 19);
             label7.TabIndex = 12;
@@ -346,14 +326,14 @@
             tableLayoutPanel2.Controls.Add(btn2, 1, 0);
             tableLayoutPanel2.Controls.Add(btn1, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(613, 153);
+            tableLayoutPanel2.Location = new Point(613, 139);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 4;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.Size = new Size(361, 345);
+            tableLayoutPanel2.Size = new Size(361, 302);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // btn0
@@ -368,13 +348,14 @@
             btn0.FlatStyle = FlatStyle.Flat;
             btn0.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn0.ForeColor = Color.White;
-            btn0.Location = new Point(123, 261);
+            btn0.Location = new Point(123, 228);
             btn0.Name = "btn0";
-            btn0.Size = new Size(114, 81);
+            btn0.Size = new Size(114, 71);
             btn0.TabIndex = 21;
             btn0.Text = "0";
             btn0.TextColor = Color.White;
             btn0.UseVisualStyleBackColor = false;
+            btn0.Click += AgregarNumero;
             // 
             // btn9
             // 
@@ -388,13 +369,14 @@
             btn9.FlatStyle = FlatStyle.Flat;
             btn9.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn9.ForeColor = Color.White;
-            btn9.Location = new Point(243, 175);
+            btn9.Location = new Point(243, 153);
             btn9.Name = "btn9";
-            btn9.Size = new Size(115, 80);
+            btn9.Size = new Size(115, 69);
             btn9.TabIndex = 19;
             btn9.Text = "9";
             btn9.TextColor = Color.White;
             btn9.UseVisualStyleBackColor = false;
+            btn9.Click += AgregarNumero;
             // 
             // btn8
             // 
@@ -408,13 +390,14 @@
             btn8.FlatStyle = FlatStyle.Flat;
             btn8.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn8.ForeColor = Color.White;
-            btn8.Location = new Point(123, 175);
+            btn8.Location = new Point(123, 153);
             btn8.Name = "btn8";
-            btn8.Size = new Size(114, 80);
+            btn8.Size = new Size(114, 69);
             btn8.TabIndex = 18;
             btn8.Text = "8";
             btn8.TextColor = Color.White;
             btn8.UseVisualStyleBackColor = false;
+            btn8.Click += AgregarNumero;
             // 
             // btn7
             // 
@@ -428,13 +411,14 @@
             btn7.FlatStyle = FlatStyle.Flat;
             btn7.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn7.ForeColor = Color.White;
-            btn7.Location = new Point(3, 175);
+            btn7.Location = new Point(3, 153);
             btn7.Name = "btn7";
-            btn7.Size = new Size(114, 80);
+            btn7.Size = new Size(114, 69);
             btn7.TabIndex = 17;
             btn7.Text = "7";
             btn7.TextColor = Color.White;
             btn7.UseVisualStyleBackColor = false;
+            btn7.Click += AgregarNumero;
             // 
             // btn6
             // 
@@ -448,13 +432,14 @@
             btn6.FlatStyle = FlatStyle.Flat;
             btn6.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn6.ForeColor = Color.White;
-            btn6.Location = new Point(243, 89);
+            btn6.Location = new Point(243, 78);
             btn6.Name = "btn6";
-            btn6.Size = new Size(115, 80);
+            btn6.Size = new Size(115, 69);
             btn6.TabIndex = 16;
             btn6.Text = "6";
             btn6.TextColor = Color.White;
             btn6.UseVisualStyleBackColor = false;
+            btn6.Click += AgregarNumero;
             // 
             // btn5
             // 
@@ -468,13 +453,14 @@
             btn5.FlatStyle = FlatStyle.Flat;
             btn5.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn5.ForeColor = Color.White;
-            btn5.Location = new Point(123, 89);
+            btn5.Location = new Point(123, 78);
             btn5.Name = "btn5";
-            btn5.Size = new Size(114, 80);
+            btn5.Size = new Size(114, 69);
             btn5.TabIndex = 15;
             btn5.Text = "5";
             btn5.TextColor = Color.White;
             btn5.UseVisualStyleBackColor = false;
+            btn5.Click += AgregarNumero;
             // 
             // btn4
             // 
@@ -488,13 +474,14 @@
             btn4.FlatStyle = FlatStyle.Flat;
             btn4.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn4.ForeColor = Color.White;
-            btn4.Location = new Point(3, 89);
+            btn4.Location = new Point(3, 78);
             btn4.Name = "btn4";
-            btn4.Size = new Size(114, 80);
+            btn4.Size = new Size(114, 69);
             btn4.TabIndex = 14;
             btn4.Text = "4";
             btn4.TextColor = Color.White;
             btn4.UseVisualStyleBackColor = false;
+            btn4.Click += AgregarNumero;
             // 
             // btn3
             // 
@@ -510,11 +497,12 @@
             btn3.ForeColor = Color.White;
             btn3.Location = new Point(243, 3);
             btn3.Name = "btn3";
-            btn3.Size = new Size(115, 80);
+            btn3.Size = new Size(115, 69);
             btn3.TabIndex = 13;
             btn3.Text = "3";
             btn3.TextColor = Color.White;
             btn3.UseVisualStyleBackColor = false;
+            btn3.Click += AgregarNumero;
             // 
             // btn2
             // 
@@ -530,11 +518,12 @@
             btn2.ForeColor = Color.White;
             btn2.Location = new Point(123, 3);
             btn2.Name = "btn2";
-            btn2.Size = new Size(114, 80);
+            btn2.Size = new Size(114, 69);
             btn2.TabIndex = 12;
             btn2.Text = "2";
             btn2.TextColor = Color.White;
             btn2.UseVisualStyleBackColor = false;
+            btn2.Click += AgregarNumero;
             // 
             // btn1
             // 
@@ -550,11 +539,70 @@
             btn1.ForeColor = Color.White;
             btn1.Location = new Point(3, 3);
             btn1.Name = "btn1";
-            btn1.Size = new Size(114, 80);
+            btn1.Size = new Size(114, 69);
             btn1.TabIndex = 11;
             btn1.Text = "1";
             btn1.TextColor = Color.White;
             btn1.UseVisualStyleBackColor = false;
+            btn1.Click += AgregarNumero;
+            // 
+            // plTitle
+            // 
+            plTitle.Controls.Add(plTitles);
+            plTitle.Dock = DockStyle.Top;
+            plTitle.Location = new Point(0, 0);
+            plTitle.Name = "plTitle";
+            plTitle.Size = new Size(977, 57);
+            plTitle.TabIndex = 12;
+            // 
+            // plTitles
+            // 
+            plTitles.Controls.Add(label4);
+            plTitles.Dock = DockStyle.Left;
+            plTitles.Location = new Point(0, 0);
+            plTitles.Name = "plTitles";
+            plTitles.Size = new Size(305, 57);
+            plTitles.TabIndex = 2;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(9, 7);
+            label4.Name = "label4";
+            label4.Size = new Size(268, 33);
+            label4.TabIndex = 0;
+            label4.Text = "Salida de Producto";
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(btnAdd);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 501);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(977, 60);
+            panel2.TabIndex = 10;
+            // 
+            // btnAdd
+            // 
+            btnAdd.BackColor = Color.MediumAquamarine;
+            btnAdd.BackgroundColor = Color.MediumAquamarine;
+            btnAdd.BorderColor = Color.PaleVioletRed;
+            btnAdd.BorderRadius = 10;
+            btnAdd.BorderSize = 0;
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(425, 6);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(150, 50);
+            btnAdd.TabIndex = 2;
+            btnAdd.Text = "Agregar Salida";
+            btnAdd.TextColor = Color.White;
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Visible = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // frmMetSalidas
             // 
@@ -563,37 +611,38 @@
             BackColor = Color.White;
             ClientSize = new Size(977, 561);
             Controls.Add(tableLayoutPanel1);
+            Controls.Add(plTitle);
             Controls.Add(panel2);
             Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmMetSalidas";
-            Text = "frmMetSalidas";
-            panel2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvCompras).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSalidas).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
+            plTitle.ResumeLayout(false);
+            plTitles.ResumeLayout(false);
+            plTitles.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel2;
-        private CustomControls.RJControls.RJButton btnAdd;
         private TableLayoutPanel tableLayoutPanel1;
-        private DataGridView dgvCompras;
+        private DataGridView dgvSalidas;
         private Panel panel1;
+        private CustomControls.RJControls.RJTextBox txtCosto;
+        private Label label9;
+        private CustomControls.RJControls.RJTextBox txtNomProd;
+        private Label label8;
         private CustomControls.RJControls.RJTextBox txtCant;
         private Label label2;
-        private Label label1;
         private CustomControls.RJControls.RJTextBox txtCodBarra;
-        private Controles_personalizados.RJComboBox cmbProveedor;
-        private Label label3;
         private Label label5;
-        private CustomControls.RJControls.RJTextBox txtRecibo;
         private Panel panel3;
         private CustomControls.RJControls.RJButton btnAddProducto;
         private CustomControls.RJControls.RJTextBox txtTotal;
@@ -609,5 +658,10 @@
         private CustomControls.RJControls.RJButton btn3;
         private CustomControls.RJControls.RJButton btn2;
         private CustomControls.RJControls.RJButton btn1;
+        private Panel plTitle;
+        private Panel plTitles;
+        private Label label4;
+        private Panel panel2;
+        private CustomControls.RJControls.RJButton btnAdd;
     }
 }

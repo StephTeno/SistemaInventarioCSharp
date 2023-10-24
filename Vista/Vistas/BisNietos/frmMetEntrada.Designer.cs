@@ -41,15 +41,10 @@ namespace Vista.Vistas.BisNietos
             label9 = new Label();
             txtNomProd = new RJTextBox();
             label8 = new Label();
-            label6 = new Label();
             txtCant = new RJTextBox();
             label2 = new Label();
-            label1 = new Label();
             txtCodBarra = new RJTextBox();
-            cmbProveedor = new RJComboBox();
-            label3 = new Label();
             label5 = new Label();
-            txtRecibo = new RJTextBox();
             panel3 = new Panel();
             btnAddProducto = new RJButton();
             txtTotal = new RJTextBox();
@@ -68,6 +63,11 @@ namespace Vista.Vistas.BisNietos
             plTitle = new Panel();
             plTitles = new Panel();
             label4 = new Label();
+            txtRecibo = new RJTextBox();
+            label1 = new Label();
+            label3 = new Label();
+            label6 = new Label();
+            cmbProveedor = new RJComboBox();
             panel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCompras).BeginInit();
@@ -224,16 +224,6 @@ namespace Vista.Vistas.BisNietos
             label8.TabIndex = 16;
             label8.Text = "Producto";
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(153, 60);
-            label6.Name = "label6";
-            label6.Size = new Size(19, 19);
-            label6.TabIndex = 15;
-            label6.Text = "a";
-            // 
             // txtCant
             // 
             txtCant.BackColor = SystemColors.Window;
@@ -266,16 +256,6 @@ namespace Vista.Vistas.BisNietos
             label2.TabIndex = 13;
             label2.Text = "Cantidad";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(319, 33);
-            label1.Name = "label1";
-            label1.Size = new Size(104, 19);
-            label1.TabIndex = 10;
-            label1.Text = "No de Recibo";
-            // 
             // txtCodBarra
             // 
             txtCodBarra.BackColor = SystemColors.Window;
@@ -297,36 +277,7 @@ namespace Vista.Vistas.BisNietos
             txtCodBarra.TabIndex = 7;
             txtCodBarra.Texts = "";
             txtCodBarra.UnderlinedStyle = true;
-            // 
-            // cmbProveedor
-            // 
-            cmbProveedor.BackColor = Color.White;
-            cmbProveedor.BorderColor = Color.RoyalBlue;
-            cmbProveedor.BorderSize = 1;
-            cmbProveedor.DropDownStyle = ComboBoxStyle.DropDown;
-            cmbProveedor.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbProveedor.ForeColor = Color.DimGray;
-            cmbProveedor.IconColor = Color.RoyalBlue;
-            cmbProveedor.ListBackColor = Color.FromArgb(230, 228, 245);
-            cmbProveedor.ListTextColor = Color.DimGray;
-            cmbProveedor.Location = new Point(102, 27);
-            cmbProveedor.MinimumSize = new Size(200, 30);
-            cmbProveedor.Name = "cmbProveedor";
-            cmbProveedor.Padding = new Padding(1);
-            cmbProveedor.Size = new Size(200, 30);
-            cmbProveedor.TabIndex = 4;
-            cmbProveedor.Texts = "";
-            cmbProveedor.OnSelectedIndexChanged += cmbProveedor_OnSelectedIndexChanged;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(9, 33);
-            label3.Name = "label3";
-            label3.Size = new Size(79, 19);
-            label3.TabIndex = 3;
-            label3.Text = "Proveedor";
+            txtCodBarra.KeyPress += txtCodBarra_KeyPress;
             // 
             // label5
             // 
@@ -337,28 +288,6 @@ namespace Vista.Vistas.BisNietos
             label5.Size = new Size(60, 19);
             label5.TabIndex = 1;
             label5.Text = "Código";
-            // 
-            // txtRecibo
-            // 
-            txtRecibo.BackColor = SystemColors.Window;
-            txtRecibo.BorderColor = Color.RoyalBlue;
-            txtRecibo.BorderFocusColor = Color.HotPink;
-            txtRecibo.BorderRadius = 0;
-            txtRecibo.BorderSize = 2;
-            txtRecibo.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            txtRecibo.ForeColor = Color.FromArgb(64, 64, 64);
-            txtRecibo.Location = new Point(442, 27);
-            txtRecibo.Margin = new Padding(4);
-            txtRecibo.Multiline = false;
-            txtRecibo.Name = "txtRecibo";
-            txtRecibo.Padding = new Padding(10, 7, 10, 7);
-            txtRecibo.PasswordChar = false;
-            txtRecibo.PlaceholderColor = Color.DarkGray;
-            txtRecibo.PlaceholderText = "";
-            txtRecibo.Size = new Size(167, 31);
-            txtRecibo.TabIndex = 0;
-            txtRecibo.Texts = "";
-            txtRecibo.UnderlinedStyle = true;
             // 
             // panel3
             // 
@@ -689,6 +618,78 @@ namespace Vista.Vistas.BisNietos
             label4.TabIndex = 0;
             label4.Text = "Entrada de Producto";
             // 
+            // txtRecibo
+            // 
+            txtRecibo.BackColor = SystemColors.Window;
+            txtRecibo.BorderColor = Color.RoyalBlue;
+            txtRecibo.BorderFocusColor = Color.HotPink;
+            txtRecibo.BorderRadius = 0;
+            txtRecibo.BorderSize = 2;
+            txtRecibo.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            txtRecibo.ForeColor = Color.FromArgb(64, 64, 64);
+            txtRecibo.Location = new Point(442, 27);
+            txtRecibo.Margin = new Padding(4);
+            txtRecibo.Multiline = false;
+            txtRecibo.Name = "txtRecibo";
+            txtRecibo.Padding = new Padding(10, 7, 10, 7);
+            txtRecibo.PasswordChar = false;
+            txtRecibo.PlaceholderColor = Color.DarkGray;
+            txtRecibo.PlaceholderText = "";
+            txtRecibo.Size = new Size(167, 31);
+            txtRecibo.TabIndex = 0;
+            txtRecibo.Texts = "";
+            txtRecibo.UnderlinedStyle = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(319, 33);
+            label1.Name = "label1";
+            label1.Size = new Size(104, 19);
+            label1.TabIndex = 10;
+            label1.Text = "No de Recibo";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(9, 33);
+            label3.Name = "label3";
+            label3.Size = new Size(79, 19);
+            label3.TabIndex = 3;
+            label3.Text = "Proveedor";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(153, 60);
+            label6.Name = "label6";
+            label6.Size = new Size(19, 19);
+            label6.TabIndex = 15;
+            label6.Text = "a";
+            // 
+            // cmbProveedor
+            // 
+            cmbProveedor.BackColor = Color.White;
+            cmbProveedor.BorderColor = Color.RoyalBlue;
+            cmbProveedor.BorderSize = 1;
+            cmbProveedor.DropDownStyle = ComboBoxStyle.DropDown;
+            cmbProveedor.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbProveedor.ForeColor = Color.DimGray;
+            cmbProveedor.IconColor = Color.RoyalBlue;
+            cmbProveedor.ListBackColor = Color.FromArgb(230, 228, 245);
+            cmbProveedor.ListTextColor = Color.DimGray;
+            cmbProveedor.Location = new Point(102, 27);
+            cmbProveedor.MinimumSize = new Size(200, 30);
+            cmbProveedor.Name = "cmbProveedor";
+            cmbProveedor.Padding = new Padding(1);
+            cmbProveedor.Size = new Size(200, 30);
+            cmbProveedor.TabIndex = 4;
+            cmbProveedor.Texts = "";
+            cmbProveedor.OnSelectedIndexChanged += cmbProveedor_OnSelectedIndexChanged;
+            // 
             // frmMetEntrada
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -702,7 +703,6 @@ namespace Vista.Vistas.BisNietos
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmMetEntrada";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmMetEntrada";
             Load += frmMetEntrada_Load;
             panel2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
@@ -727,10 +727,7 @@ namespace Vista.Vistas.BisNietos
         private Panel panel1;
         private RJButton btnAddProducto;
         private RJTextBox txtCodBarra;
-        private RJComboBox cmbProveedor;
-        private Label label3;
         private Label label5;
-        private RJTextBox txtRecibo;
         private Panel panel3;
         private Label label7;
         private RJTextBox txtTotal;
@@ -745,16 +742,19 @@ namespace Vista.Vistas.BisNietos
         private RJButton btn3;
         private RJButton btn2;
         private RJButton btn1;
-        private Label label1;
         private RJTextBox txtCant;
         private Label label2;
         private Panel plTitle;
         private Panel plTitles;
         private Label label4;
-        private Label label6;
         private RJTextBox txtCosto;
         private Label label9;
         private RJTextBox txtNomProd;
         private Label label8;
+        private Label label6;
+        private Label label1;
+        private RJComboBox cmbProveedor;
+        private Label label3;
+        private RJTextBox txtRecibo;
     }
 }

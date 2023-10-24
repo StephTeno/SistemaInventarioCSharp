@@ -30,7 +30,6 @@
         {
             panel2 = new Panel();
             btnAdd = new CustomControls.RJControls.RJButton();
-            btnDelete = new CustomControls.RJControls.RJButton();
             panel1 = new Panel();
             label1 = new Label();
             dgvSalidas = new DataGridView();
@@ -42,7 +41,6 @@
             // panel2
             // 
             panel2.Controls.Add(btnAdd);
-            panel2.Controls.Add(btnDelete);
             panel2.Dock = DockStyle.Bottom;
             panel2.Location = new Point(0, 464);
             panel2.Name = "panel2";
@@ -60,34 +58,14 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(353, 18);
+            btnAdd.Location = new Point(468, 18);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(100, 30);
             btnAdd.TabIndex = 2;
             btnAdd.Text = "Agregar";
             btnAdd.TextColor = Color.White;
             btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Visible = false;
             btnAdd.Click += btnAdd_Click;
-            // 
-            // btnDelete
-            // 
-            btnDelete.BackColor = Color.IndianRed;
-            btnDelete.BackgroundColor = Color.IndianRed;
-            btnDelete.BorderColor = Color.PaleVioletRed;
-            btnDelete.BorderRadius = 10;
-            btnDelete.BorderSize = 0;
-            btnDelete.FlatAppearance.BorderSize = 0;
-            btnDelete.FlatStyle = FlatStyle.Flat;
-            btnDelete.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(551, 18);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(100, 30);
-            btnDelete.TabIndex = 3;
-            btnDelete.Text = "Eliminar";
-            btnDelete.TextColor = Color.White;
-            btnDelete.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -144,7 +122,6 @@
 
         private Panel panel2;
         private CustomControls.RJControls.RJButton btnAdd;
-        private CustomControls.RJControls.RJButton btnDelete;
         private Panel panel1;
         private Label label1;
         private DataGridView dgvSalidas;

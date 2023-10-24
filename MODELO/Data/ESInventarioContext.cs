@@ -110,13 +110,8 @@ public partial class ESInventarioContext : DbContext
         {
             entity.HasKey(e => e.IdEntrada).HasName("PK__Entradas__BB164DEAAE59566C");
 
-            entity.Property(e => e.Producto).IsFixedLength();
             entity.Property(e => e.Proveedor).IsFixedLength();
             entity.Property(e => e.Recibo).IsFixedLength();
-
-            entity.HasOne(d => d.ProductoNavigation).WithMany(p => p.Entrada)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Entradas__Produc__4F7CD00D");
 
             entity.HasOne(d => d.ProveedorNavigation).WithMany(p => p.Entrada)
                 .OnDelete(DeleteBehavior.ClientSetNull)

@@ -608,11 +608,11 @@ namespace CONTROLLER.Repositorios
                 context.SaveChanges();
             }
         }
-        public void Registrar(Salida c)
+        public void Registrar(List<Salida> c)
         {
             using (ESInventarioContext context = new ESInventarioContext())
             {
-                context.Salidas.Add(c);
+                context.Salidas.AddRange(c);
                 Save();
             }
         }
