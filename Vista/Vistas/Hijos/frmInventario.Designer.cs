@@ -145,6 +145,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmInventario";
             Text = "Inventario";
+            Load += frmInventario_Load;
             plOptions.ResumeLayout(false);
             plTitle.ResumeLayout(false);
             panel1.ResumeLayout(false);

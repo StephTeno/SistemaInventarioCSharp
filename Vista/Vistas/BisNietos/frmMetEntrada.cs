@@ -105,14 +105,14 @@ namespace Vista.Vistas.BisNietos
         private void frmMetEntrada_Load(object sender, EventArgs e)
         {
             Combo(cmbProveedor);
-            ultima = 1+ed.EncontrarUltima();
+            ultima = 1 + ed.EncontrarUltima();
         }
 
         private void btnAddProducto_Click(object sender, EventArgs e)
         {
             if (VerificarProducto(txtCodBarra.Texts))
             {
-                if(TodosLosTextBoxLlenos())
+                if (TodosLosTextBoxLlenos())
                 {
                     DetalleEntradum me = new DetalleEntradum();
                     me.Cantidad = Convert.ToInt32(txtCant.Texts);
